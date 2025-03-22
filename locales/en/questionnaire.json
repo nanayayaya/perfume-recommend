@@ -1,0 +1,235 @@
+{
+  "quiz": {
+    "title": "Find Your Perfect Scent",
+    "subtitle": "Discover your signature perfume through our personalized quiz",
+    "intro": "Answer our unique personality quiz to discover perfumes that match your aesthetic and cultural preferences.",
+    "start_button": "Start The Quiz",
+    "next_button": "Next Question",
+    "previous_button": "Previous",
+    "finish_button": "See My Results",
+    "restart_button": "Retake Quiz",
+    "progress_text": "Question {current} of {total}",
+    "loading_text": "Analyzing your preferences...",
+    "results_title": "Your Perfume Recommendations",
+    "results_subtitle": "Based on your unique preferences, we've curated these perfumes that match your personality."
+  },
+  "questions": [
+    {
+      "id": 1,
+      "title": "Film Aesthetics",
+      "question": "Which film's visual world would you most like to live in?",
+      "options": [
+        {
+          "id": "grand_budapest",
+          "emoji": "🎩",
+          "title": "The Grand Budapest Hotel",
+          "description": "Symmetrical aesthetics → Vintage pink pepper + iris, elegant and intellectual"
+        },
+        {
+          "id": "blade_runner",
+          "emoji": "🌌",
+          "title": "Blade Runner 2049",
+          "description": "Cyberpunk → Metallic patchouli + electronic smoke notes"
+        },
+        {
+          "id": "alice",
+          "emoji": "🍄",
+          "title": "Alice in Wonderland",
+          "description": "Fantasy adventure → Psychedelic mushroom + berry gourmand notes"
+        },
+        {
+          "id": "legend_1900",
+          "emoji": "🎻",
+          "title": "The Legend of 1900",
+          "description": "Classical romance → Sea salt + vintage cedarwood"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Music Personality",
+      "question": "What's on your late-night playlist?",
+      "options": [
+        {
+          "id": "jazz",
+          "emoji": "🎷",
+          "title": "Jazz (Miles Davis)",
+          "description": "→ Whiskey + tobacco notes"
+        },
+        {
+          "id": "rock",
+          "emoji": "🎸",
+          "title": "Classic Rock (Queen)",
+          "description": "→ Leather + amber"
+        },
+        {
+          "id": "electronic",
+          "emoji": "🎹",
+          "title": "Electronic Music (Daft Punk)",
+          "description": "→ Synthetic musk + ozone elements"
+        },
+        {
+          "id": "classical",
+          "emoji": "🎻",
+          "title": "Classical Music (Bach)",
+          "description": "→ Cashmere wood + old paper scent"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Art Movements",
+      "question": "Which art movement speaks to you the most?",
+      "options": [
+        {
+          "id": "surrealism",
+          "emoji": "🎭",
+          "title": "Surrealism",
+          "description": "→ Fantastic aldehydes"
+        },
+        {
+          "id": "pop_art",
+          "emoji": "🎪",
+          "title": "Pop Art",
+          "description": "→ Sweet fruit notes"
+        },
+        {
+          "id": "renaissance",
+          "emoji": "🏛️",
+          "title": "Renaissance",
+          "description": "→ Myrrh + frankincense"
+        },
+        {
+          "id": "street_art",
+          "emoji": "🖌️",
+          "title": "Street Art",
+          "description": "→ Spray paint metallic notes"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Global Breakfast",
+      "question": "Which morning breakfast scene appeals to you most?",
+      "options": [
+        {
+          "id": "paris",
+          "emoji": "☕",
+          "title": "Paris Café",
+          "description": "Croissant + black coffee → Coffee + butter notes"
+        },
+        {
+          "id": "kyoto",
+          "emoji": "🍵",
+          "title": "Kyoto Tea Room",
+          "description": "Matcha + wagashi → Matcha + bamboo freshness"
+        },
+        {
+          "id": "mexico",
+          "emoji": "🌮",
+          "title": "Mexico City Market",
+          "description": "Chili sauce + corn tortillas → Chili + lime notes"
+        },
+        {
+          "id": "california",
+          "emoji": "🥑",
+          "title": "California Health Breakfast",
+          "description": "Avocado toast → Fig + green leaves notes"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Mystical Powers",
+      "question": "Which mystical power source would you like to possess?",
+      "options": [
+        {
+          "id": "tarot",
+          "emoji": "🔮",
+          "title": "Gypsy Tarot Cards",
+          "description": "→ Ambergris + mysterious incense"
+        },
+        {
+          "id": "runes",
+          "emoji": "🌌",
+          "title": "Nordic Runes",
+          "description": "→ Cold fir + glacier water aquatic notes"
+        },
+        {
+          "id": "iching",
+          "emoji": "🐉",
+          "title": "Chinese I Ching",
+          "description": "→ Agarwood + pu-erh tea"
+        },
+        {
+          "id": "shamanic",
+          "emoji": "🌵",
+          "title": "Shamanic Herbs",
+          "description": "→ Sage + holy wood smoke"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Dream Destination",
+      "question": "Which travel destination calls to you?",
+      "options": [
+        {
+          "id": "easter_island",
+          "emoji": "🌋🗿",
+          "title": "Easter Island Adventure",
+          "description": "→ Volcanic minerals + ancient moss"
+        },
+        {
+          "id": "vienna",
+          "emoji": "🏰🎭",
+          "title": "Vienna Opera House",
+          "description": "→ Velvet + gilded decoration notes"
+        },
+        {
+          "id": "bali",
+          "emoji": "🏄‍♂️🌴",
+          "title": "Bali Surfing",
+          "description": "→ Coconut milk + seaweed salt notes"
+        },
+        {
+          "id": "moon",
+          "emoji": "🚀🌕",
+          "title": "Moon Base",
+          "description": "→ Vacuum metallic + oxygen bubble notes"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Time Travel",
+      "question": "If you had a time machine, which era would you experience?",
+      "options": [
+        {
+          "id": "1920s",
+          "emoji": "🥂",
+          "title": "1920s Jazz Age",
+          "description": "→ Champagne + feather fringe notes"
+        },
+        {
+          "id": "1960s",
+          "emoji": "☮️",
+          "title": "1960s Hippie Movement",
+          "description": "→ Cannabis + psychedelic patchouli"
+        },
+        {
+          "id": "1980s",
+          "emoji": "🪩",
+          "title": "1980s Disco Fever",
+          "description": "→ Neon tube-like synthetic notes"
+        },
+        {
+          "id": "3020s",
+          "emoji": "🤖",
+          "title": "3020s Future City",
+          "description": "→ Liquid metal + nano-particle notes"
+        }
+      ]
+    }
+  ]
+} 

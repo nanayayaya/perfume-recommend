@@ -1,0 +1,235 @@
+{
+  "quiz": {
+    "title": "Trouvez Votre Parfum Idéal",
+    "subtitle": "Découvrez votre signature olfactive grâce à notre quiz personnalisé",
+    "intro": "Répondez à notre quiz de personnalité unique pour découvrir des parfums qui correspondent à vos préférences esthétiques et culturelles.",
+    "start_button": "Commencer Le Quiz",
+    "next_button": "Question Suivante",
+    "previous_button": "Précédent",
+    "finish_button": "Voir Mes Résultats",
+    "restart_button": "Refaire Le Quiz",
+    "progress_text": "Question {current} sur {total}",
+    "loading_text": "Analyse de vos préférences...",
+    "results_title": "Vos Recommandations de Parfums",
+    "results_subtitle": "Basé sur vos préférences uniques, nous avons sélectionné ces parfums qui correspondent à votre personnalité."
+  },
+  "questions": [
+    {
+      "id": 1,
+      "title": "Esthétique Cinématographique",
+      "question": "Dans quel univers visuel de film aimeriez-vous vivre?",
+      "options": [
+        {
+          "id": "grand_budapest",
+          "emoji": "🎩",
+          "title": "The Grand Budapest Hotel",
+          "description": "Esthétique symétrique → Poivre rose vintage + iris, élégant et intellectuel"
+        },
+        {
+          "id": "blade_runner",
+          "emoji": "🌌",
+          "title": "Blade Runner 2049",
+          "description": "Cyberpunk → Patchouli métallique + notes de fumée électronique"
+        },
+        {
+          "id": "alice",
+          "emoji": "🍄",
+          "title": "Alice au Pays des Merveilles",
+          "description": "Aventure fantastique → Champignon psychédélique + notes gourmandes de baies"
+        },
+        {
+          "id": "legend_1900",
+          "emoji": "🎻",
+          "title": "La Légende du Pianiste sur l'Océan",
+          "description": "Romance classique → Sel marin + bois de cèdre vintage"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Personnalité Musicale",
+      "question": "Qu'écoutez-vous tard dans la nuit?",
+      "options": [
+        {
+          "id": "jazz",
+          "emoji": "🎷",
+          "title": "Jazz (Miles Davis)",
+          "description": "→ Notes de whisky + tabac"
+        },
+        {
+          "id": "rock",
+          "emoji": "🎸",
+          "title": "Rock Classique (Queen)",
+          "description": "→ Cuir + ambre"
+        },
+        {
+          "id": "electronic",
+          "emoji": "🎹",
+          "title": "Musique Électronique (Daft Punk)",
+          "description": "→ Musc synthétique + éléments d'ozone"
+        },
+        {
+          "id": "classical",
+          "emoji": "🎻",
+          "title": "Musique Classique (Bach)",
+          "description": "→ Bois de cachemire + odeur de vieux papier"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Mouvements Artistiques",
+      "question": "Quel mouvement artistique vous parle le plus?",
+      "options": [
+        {
+          "id": "surrealism",
+          "emoji": "🎭",
+          "title": "Surréalisme",
+          "description": "→ Aldéhydes fantastiques"
+        },
+        {
+          "id": "pop_art",
+          "emoji": "🎪",
+          "title": "Pop Art",
+          "description": "→ Notes fruitées sucrées"
+        },
+        {
+          "id": "renaissance",
+          "emoji": "🏛️",
+          "title": "Renaissance",
+          "description": "→ Myrrhe + encens"
+        },
+        {
+          "id": "street_art",
+          "emoji": "🖌️",
+          "title": "Art Urbain",
+          "description": "→ Notes métalliques de peinture en spray"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Petit-déjeuner Mondial",
+      "question": "Quelle scène de petit-déjeuner vous attire le plus?",
+      "options": [
+        {
+          "id": "paris",
+          "emoji": "☕",
+          "title": "Café Parisien",
+          "description": "Croissant + café noir → Notes de café + beurre"
+        },
+        {
+          "id": "kyoto",
+          "emoji": "🍵",
+          "title": "Salon de Thé à Kyoto",
+          "description": "Matcha + wagashi → Matcha + fraîcheur de bambou"
+        },
+        {
+          "id": "mexico",
+          "emoji": "🌮",
+          "title": "Marché de Mexico",
+          "description": "Sauce piquante + tortillas de maïs → Notes de piment + citron vert"
+        },
+        {
+          "id": "california",
+          "emoji": "🥑",
+          "title": "Petit-déjeuner Santé Californien",
+          "description": "Toast à l'avocat → Notes de figue + feuilles vertes"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Pouvoirs Mystiques",
+      "question": "Quelle source de pouvoir mystique aimeriez-vous posséder?",
+      "options": [
+        {
+          "id": "tarot",
+          "emoji": "🔮",
+          "title": "Cartes de Tarot Tzigane",
+          "description": "→ Ambre gris + encens mystérieux"
+        },
+        {
+          "id": "runes",
+          "emoji": "🌌",
+          "title": "Runes Nordiques",
+          "description": "→ Sapin froid + notes aquatiques d'eau glaciaire"
+        },
+        {
+          "id": "iching",
+          "emoji": "🐉",
+          "title": "I Ching Chinois",
+          "description": "→ Bois d'agar + thé pu-erh"
+        },
+        {
+          "id": "shamanic",
+          "emoji": "🌵",
+          "title": "Herbes Chamaniques",
+          "description": "→ Sauge + fumée de bois sacré"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Destination de Rêve",
+      "question": "Quelle destination de voyage vous appelle?",
+      "options": [
+        {
+          "id": "easter_island",
+          "emoji": "🌋🗿",
+          "title": "Aventure sur l'Île de Pâques",
+          "description": "→ Minéraux volcaniques + mousse ancienne"
+        },
+        {
+          "id": "vienna",
+          "emoji": "🏰🎭",
+          "title": "Opéra de Vienne",
+          "description": "→ Velours + notes de décoration dorée"
+        },
+        {
+          "id": "bali",
+          "emoji": "🏄‍♂️🌴",
+          "title": "Surf à Bali",
+          "description": "→ Lait de coco + notes salées d'algues"
+        },
+        {
+          "id": "moon",
+          "emoji": "🚀🌕",
+          "title": "Base Lunaire",
+          "description": "→ Métallique du vide + notes de bulle d'oxygène"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Voyage dans le Temps",
+      "question": "Si vous aviez une machine à remonter le temps, quelle époque aimeriez-vous vivre?",
+      "options": [
+        {
+          "id": "1920s",
+          "emoji": "🥂",
+          "title": "Les Années Folles (1920)",
+          "description": "→ Champagne + notes de franges à plumes"
+        },
+        {
+          "id": "1960s",
+          "emoji": "☮️",
+          "title": "Mouvement Hippie (1960)",
+          "description": "→ Cannabis + patchouli psychédélique"
+        },
+        {
+          "id": "1980s",
+          "emoji": "🪩",
+          "title": "Fièvre Disco (1980)",
+          "description": "→ Notes synthétiques rappelant les tubes néon"
+        },
+        {
+          "id": "3020s",
+          "emoji": "🤖",
+          "title": "Ville du Futur (3020)",
+          "description": "→ Métal liquide + notes de nano-particules"
+        }
+      ]
+    }
+  ]
+} 
