@@ -386,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 1,
             name: "Byredo Bibliothèque",
-            image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            image: "images/brown.jpg",
             notes: {
                 top: ["Peach", "Plum"],
                 middle: ["Violet", "Peony"],
@@ -400,7 +400,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 2,
             name: "Maison Margiela Replica Jazz Club",
-            image: "https://images.unsplash.com/photo-1615144178805-991dfd8156f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            image: "images/blue.jpg",
             notes: {
                 top: ["Pink Pepper", "Lemon", "Neroli"],
                 middle: ["Rum", "Clary Sage"],
@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 3,
             name: "Diptyque Philosykos",
-            image: "https://images.unsplash.com/photo-1592945403345-980585f18b26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            image: "images/green.jpg",
             notes: {
                 top: ["Fig Leaf", "Green Notes"],
                 middle: ["Fig", "Coconut"],
@@ -428,7 +428,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 4,
             name: "Le Labo Santal 33",
-            image: "https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            image: "images/purple.jpg",
             notes: {
                 top: ["Violet Accord", "Cardamom"],
                 middle: ["Iris", "Ambrox"],
@@ -442,7 +442,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             id: 5,
             name: "Tom Ford Tobacco Vanille",
-            image: "https://images.unsplash.com/photo-1617184003107-0df15fea4903?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            image: "images/pink.jpg",
             notes: {
                 top: ["Tobacco Leaf", "Spices"],
                 middle: ["Vanilla", "Cacao"],
@@ -500,10 +500,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // 添加香水科普内容数据结构
     const perfumeEducationData = {
         // 香调DNA科普内容
-        scentDNA: {
+        dnaContent: {
             "aquatic": {
                 title: "🌊 Why Aquatic Notes Remind Us of the Ocean",
-                description: `
+                content: `
                     <div class="science-section">
                         <p><span class="highlight">🧪 Scientific Revelation</span>: The molecule Calone, a key component in aquatic fragrances, has a structure similar to sea water evaporation compounds. This triggers hippocampus-based ocean memories.</p>
                         <p><span class="highlight">🏛️ Cultural Origins</span>: Consider Diptyque's "waterside garden" imagery in their fig-based fragrances, blending Mediterranean coastal impressions.</p>
@@ -513,7 +513,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             "woody": {
                 title: "🌲 The Millennial Dialogue Between Cedarwood & Sandalwood",
-                description: `
+                content: `
                     <div class="science-section">
                         <p><span class="highlight">🗺️ Geographic Origins</span>: Compare the density variations between Himalayan Cedarwood (found in Dior Sauvage) and Mysore Sandalwood (featured in Jo Malone fragrances).</p>
                         <p><span class="highlight">🧠 Olfactory Psychology</span>: Woody notes activate the orbitofrontal cortex in the brain, producing neural signals associated with "security" and "grounding".</p>
@@ -522,7 +522,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             "floral": {
                 title: "🌹 The Secret Language of Flowers",
-                description: `
+                content: `
                     <div class="science-section">
                         <p><span class="highlight">🔍 Molecular Complexity</span>: A single Damascus rose contains over 300 aromatic molecules, creating one of nature's most complex scent profiles.</p>
                         <p><span class="highlight">⏳ Historical Impact</span>: Rose waters were used by ancient Egyptian pharaohs as offerings to the gods, believing their scent could transcend to the afterlife.</p>
@@ -531,7 +531,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             "oriental": {
                 title: "✨ The Mystic Journey of Spices and Resins",
-                description: `
+                content: `
                     <div class="science-section">
                         <p><span class="highlight">🧭 Trade History</span>: The famed Silk Road transported not just silks but precious aromatics like frankincense and myrrh, which were worth more than gold by weight.</p>
                         <p><span class="highlight">🔥 Alchemical Traditions</span>: Arabian perfumery developed distillation techniques in the 9th century, transforming how humanity captured scent.</p>
@@ -540,7 +540,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             "citrus": {
                 title: "🍋 The Brightness of Citrus: Nature's Mood Enhancer",
-                description: `
+                content: `
                     <div class="science-section">
                         <p><span class="highlight">⚡️ Neurological Effects</span>: Limonene, the primary molecule in citrus oils, has been shown to directly influence serotonin pathways in the brain.</p>
                         <p><span class="highlight">⏱️ Volatility Secrets</span>: Citrus notes are always top notes because their molecular structure makes them evaporate faster than other scent compounds.</p>
@@ -553,7 +553,7 @@ document.addEventListener('DOMContentLoaded', function() {
         coldFacts: {
             "rose": {
                 title: "🌹 Rose Notes: The Royal Deception",
-                description: `
+                content: `
                     <div class="fact-section">
                         <p><span class="highlight">👑 Historical Easter Egg</span>: Louis XIV used rose water to mask the unpleasant odors of Versailles Palace, establishing roses as a symbol of refinement.</p>
                         <p><span class="highlight">🧪 Chemical Paradox</span>: Damascus roses actually contain sulfur compounds - the same molecular family responsible for unpleasant odors!</p>
@@ -562,7 +562,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             "citrus": {
                 title: "🍊 The Citrus Industry Secret",
-                description: `
+                content: `
                     <div class="fact-section">
                         <p><span class="highlight">🔬 Industry Revelation</span>: 90% of citrus fragrances use synthetic limonene rather than natural extracts.</p>
                         <p><span class="highlight">💰 Economic Impact</span>: It takes approximately 3,000 lemons to produce one kilogram of cold-pressed lemon oil.</p>
@@ -571,7 +571,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             "oud": {
                 title: "🪵 Oud: The Liquid Gold of Perfumery",
-                description: `
+                content: `
                     <div class="fact-section">
                         <p><span class="highlight">💎 Rarity Factor</span>: Genuine oud comes from agarwood trees infected with a specific fungus - only 2% of these trees naturally produce it.</p>
                         <p><span class="highlight">⚖️ Market Value</span>: High-quality oud can cost more than gold by weight, reaching prices of $100,000 per kilogram.</p>
@@ -580,7 +580,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             "musk": {
                 title: "✨ Musk: From Animal Kingdom to Laboratory",
-                description: `
+                content: `
                     <div class="fact-section">
                         <p><span class="highlight">🦌 Ethical Evolution</span>: Originally derived from musk deer glands, almost all modern musks are synthetic recreations designed to replicate the animal scent.</p>
                         <p><span class="highlight">👃 Olfactory Illusion</span>: Some synthetic musks can cause "specific anosmia" - about 10% of people cannot smell certain musk molecules at all!</p>
@@ -593,7 +593,7 @@ document.addEventListener('DOMContentLoaded', function() {
         craftSecrets: [
             {
                 title: "⚗️ How 1 Ton of Rose Petals Becomes 5ml of Essential Oil",
-                description: `
+                content: `
                     <div class="craft-section">
                         <p><span class="highlight">🔥 Traditional Distillation</span> vs <span class="highlight">❄️ Supercritical CO₂ Extraction</span>: The former captures water-soluble compounds while the latter preserves heat-sensitive molecules.</p>
                         <p><span class="highlight">🌹 Molecular Richness</span>: Damascus roses contain 300+ aromatic molecules while China's Pingyin roses have only 127 identifiable compounds.</p>
@@ -603,7 +603,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 title: "🔮 The Art of Synthetic Molecules",
-                description: `
+                content: `
                     <div class="craft-section">
                         <p><span class="highlight">🧪 Nature-Identical Creation</span>: Modern perfumers can synthesize molecules that are chemically identical to those found in nature, but at a fraction of the environmental cost.</p>
                         <p><span class="highlight">🌟 Innovation Timeline</span>: The first synthetic fragrance compound, coumarin (extracted from tonka beans), was created in 1868, revolutionizing the entire perfume industry.</p>
@@ -616,7 +616,7 @@ document.addEventListener('DOMContentLoaded', function() {
         industrySecrets: [
             {
                 title: "⏳ The Truth About Perfume Shelf Life",
-                description: `
+                content: `
                     <div class="secret-section">
                         <p><span class="highlight">🧫 Experimental Evidence</span>: Unopened perfumes stored in ideal conditions have been found usable after 50+ years, contradicting conventional marketing.</p>
                         <p><span class="highlight">📝 Oxidation Facts</span>: The alcohol base in perfumes actually helps preserve ingredients rather than degrading them, when protected from light and heat.</p>
@@ -626,7 +626,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 title: "🕵️‍♀️ The Dupe Perfume Trap",
-                description: `
+                content: `
                     <div class="secret-section">
                         <p><span class="highlight">🧪 Chemical Substitutions</span>: Imitation fragrances often use ethyl maltol to simulate sandalwood notes, creating an initially similar but shorter-lasting impression.</p>
                         <p><span class="highlight">📊 Concentration Differences</span>: Authentic perfumes typically contain 15-30% aromatic compounds, while many dupes contain just 3-8%.</p>
@@ -636,10 +636,10 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         
         // 气味与科学跨界
-        scienceCrossovers: [
+        scienceCrossover: [
             {
                 title: "🔬 Olfactory Memory: The Scientific Validation of the Proust Effect",
-                description: `
+                content: `
                     <div class="science-crossover-section">
                         <p><span class="highlight">🧠 Neural Mechanism</span>: The amygdala encodes scent-emotion connections directly, bypassing conscious processing - explaining why smells trigger powerful memories.</p>
                         <p><span class="highlight">📊 Case Study</span>: Cedar notes activate the brain's "security" regions, making it a common base note in fragrances designed to evoke comfort.</p>
@@ -649,7 +649,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 title: "🧬 Your Genetic Scent Fingerprint",
-                description: `
+                content: `
                     <div class="science-crossover-section">
                         <p><span class="highlight">🔬 Receptor Variation</span>: Humans have approximately 400 olfactory receptors, but genetic variations mean no two people smell the exact same scent identically.</p>
                         <p><span class="highlight">🔍 Personal Chemistry</span>: Your skin's pH and bacterial composition transform perfumes uniquely on your skin - creating your signature scent interaction.</p>
@@ -662,7 +662,7 @@ document.addEventListener('DOMContentLoaded', function() {
         practicalTips: {
             mobile: {
                 title: "📱 Essential Tips for On-the-Go Fragrance",
-                description: `
+                content: `
                     <div class="tips-section">
                         <p><span class="highlight">🔄 Innovative Application</span>: Spray a small amount on the inside of your phone case for subtle fragrance release during calls.</p>
                         <p><span class="highlight">☀️ Preservation Advisory</span>: Avoid direct sunlight exposure - UV rays accelerate perfume breakdown by disrupting molecular bonds.</p>
@@ -672,7 +672,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             desktop: {
                 title: "🖥️ Workspace Scenting Strategies",
-                description: `
+                content: `
                     <div class="tips-section">
                         <p><span class="highlight">💧 Diffusion Hack</span>: Add a few drops of fragrance to your humidifier for subtle, all-day office scenting.</p>
                         <p><span class="highlight">👔 Professional Courtesy</span>: Choose low-sillage fragrances with minimal projection to avoid disrupting colleagues in shared spaces.</p>
@@ -684,44 +684,40 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 互动内容
         interactiveContent: {
-            personalLab: {
-                description: "基于您的香调偏好，创建您的个人香水实验室，在家中尝试调配简易的个性化香氛",
-                recipe: [
-                    "2滴香根草精油 - 带来深沉的木质基调",
-                    "3滴佛手柑精油 - 添加清新的柑橘顶调",
-                    "1滴茉莉精油 - 增添花香的中调层次",
-                    "30ml无味酒精基底 - 作为香料载体",
-                    "将所有材料混合在深色喷雾瓶中，静置2周，每天摇晃一次"
-                ]
-            }
+            title: "🎨 Your Personal Scent Laboratory",
+            content: `
+                <div class="interactive-section">
+                    <p><span class="highlight">🔮 Custom Blend Analysis</span>: Upload your fragrance collection and our AI will generate a scent compatibility report for layering possibilities.</p>
+                    <p><span class="highlight">🧪 DIY Citrus Solid Perfume</span>: Create your own portable fragrance with simple ingredients.</p>
+                    <div class="user-content-section">
+                        <p><span class="highlight">👤 Community Insight</span>: User @ScentExplorer: "Layering the peach shower gel with amber perfume creates the perfect pseudo-skin scent!"</p>
+                        <button class="apple-button">Copy This Recipe ✂️</button>
+                    </div>
+                </div>
+            `
         },
         
         // 转化入口
         conversionEntries: {
             "aquatic": {
                 product: "Hermès Un Jardin Sur Le Nil",
-                text: "Experience the pinnacle of aquatic fragrances →",
-                link: "https://example.com/aquatic-perfumes"
+                text: "Experience the pinnacle of aquatic fragrances →"
             },
             "woody": {
                 product: "Diptyque Tam Dao",
-                text: "Discover the #1 rated spiritual sandalwood →",
-                link: "https://example.com/woody-perfumes"
+                text: "Discover the #1 rated spiritual sandalwood →"
             },
             "floral": {
                 product: "Frédéric Malle Portrait of a Lady",
-                text: "Explore the queen of rose compositions →",
-                link: "https://example.com/floral-perfumes"
+                text: "Explore the queen of rose compositions →"
             },
             "oriental": {
                 product: "Tom Ford Tobacco Vanille",
-                text: "Indulge in the ultimate spiced amber experience →",
-                link: "https://example.com/oriental-perfumes"
+                text: "Indulge in the ultimate spiced amber experience →"
             },
             "citrus": {
                 product: "Acqua di Parma Colonia",
-                text: "Discover Italian citrus perfection →",
-                link: "https://example.com/citrus-perfumes"
+                text: "Discover Italian citrus perfection →"
             }
         }
     };
@@ -811,22 +807,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // 延迟进入下一题，给用户一个视觉反馈
                 setTimeout(() => {
-                    userSelections.push({
-                        questionId: question.id,
-                        value: selectedValue,
-                        optionData: question.options[selectedIndex]
-                    });
+                userSelections.push({
+                    questionId: question.id,
+                    value: selectedValue,
+                    optionData: question.options[selectedIndex]
+                });
                     
                     // 淡出效果
                     questionElement.style.opacity = '0';
                     questionElement.style.transform = 'translateY(-10px)';
                     questionElement.style.transition = 'opacity 0.3s, transform 0.3s';
-                    
-                    // 显示下一题
-                    setTimeout(() => {
+                
+                // 显示下一题
+                setTimeout(() => {
                         currentQuestion++;
-                        showQuestion(currentQuestion);
-                    }, 300);
+                    showQuestion(currentQuestion);
+                }, 300);
                 }, 600);
             });
         });
@@ -834,14 +830,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 显示结果
     function showResults() {
-        console.log("开始显示测试结果...");
         // 分析用户选择并生成香水推荐
         const recommendations = generatePerfumeRecommendations(userSelections);
-        console.log("生成的推荐结果:", recommendations);
         
         // 确定用户的主要香调偏好
         const userPerfumeProfile = determineUserPerfumeProfile(userSelections);
-        console.log("用户香调档案:", userPerfumeProfile);
         
         // 隐藏问卷部分
         quizContainer.innerHTML = '';
@@ -857,7 +850,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="flex justify-center items-center flex-col">
                 <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-apple-pink mb-4"></div>
                 <div class="text-sm text-apple-gray-500 dark:text-apple-gray-400 animate-pulse">Discovering your scent personality...</div>
-            </div>
+                        </div>
         `;
         
         // 添加临时结果
@@ -865,143 +858,105 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 显示推荐香水产品部分
         setTimeout(() => {
-            console.log("开始显示香水推荐...");
-            try {
-                // 获取推荐香水区域
-                const recommendationsContainer = document.getElementById('perfume-recommendations');
+            // 获取推荐香水区域
+            const recommendationsContainer = document.getElementById('perfume-recommendations');
+            
+            // 更新推荐香水的内容
+            updateRecommendationsSection(recommendationsContainer, recommendations);
+            
+            // 显示科普内容区域
+            createAndAddEducationSection(recommendationsContainer, userPerfumeProfile);
+            
+            // 显示推荐香水区域
+            recommendationsContainer.classList.remove('hidden');
+            
+            // 平滑滚动到推荐区域
+            recommendationsContainer.scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+            
+            // 添加气泡效果
+            const bubbles = ['✨', '🌸', '💫', '🌿', '💭'];
+            for (let i = 0; i < 10; i++) {
+                const bubble = document.createElement('div');
+                const randomBubble = bubbles[Math.floor(Math.random() * bubbles.length)];
+                const size = Math.random() * 20 + 10;
                 
-                if (!recommendationsContainer) {
-                    console.error("找不到ID为'perfume-recommendations'的元素");
-                    return;
+                bubble.innerHTML = randomBubble;
+                bubble.className = 'fixed text-xl animate-scent';
+                bubble.style.fontSize = `${size}px`;
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.top = `${Math.random() * 100}%`;
+                bubble.style.opacity = '0.4';
+                bubble.style.animationDelay = `${Math.random() * 5}s`;
+                bubble.style.zIndex = '-1';
+                
+                document.body.appendChild(bubble);
+                
+                setTimeout(() => {
+                    bubble.remove();
+                }, 8000);
+            }
+            
+            // 添加重新开始按钮
+            const restartButton = document.createElement('div');
+            restartButton.className = 'text-center mt-12';
+            restartButton.innerHTML = `
+                <button id="restart-quiz" class="bg-apple-pink hover:bg-apple-pink/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 group relative overflow-hidden">
+                    <span class="relative z-10">✨ Discover More Scents ✨</span>
+                    <span class="absolute inset-0 bg-gradient-to-r from-apple-purple to-apple-pink opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                </button>
+        `;
+        
+            recommendationsContainer.appendChild(restartButton);
+        
+        // 添加重新开始按钮事件
+        document.getElementById('restart-quiz').addEventListener('click', function() {
+                // 重置参数
+            currentQuestion = 0;
+            userSelections = [];
+                
+                // 隐藏推荐区域
+                recommendationsContainer.classList.add('hidden');
+                
+                // 如果有存在的重启按钮，移除它
+                if (document.getElementById('restart-quiz')) {
+                    document.getElementById('restart-quiz').parentElement.remove();
                 }
                 
-                console.log("找到推荐容器元素");
+                // 清除所有气泡
+                document.querySelectorAll('.animate-scent').forEach(bubble => bubble.remove());
+            
+            // 显示介绍页
+            const introElement = document.createElement('div');
+                introElement.className = 'quiz-intro animate-fade-in text-center';
+            introElement.innerHTML = `
+                    <p class="text-xl mb-10 max-w-3xl mx-auto">Your journey to the perfect signature scent begins with a few simple questions about your preferences and personality. 🌸</p>
+                    <button id="start-quiz" class="bg-apple-pink hover:bg-apple-pink/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 relative overflow-hidden group">
+                        <span class="relative z-10">✨ Start Your Scent Journey ✨</span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-apple-purple to-apple-pink opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                </button>
+            `;
+            
+            quizContainer.innerHTML = '';
+            quizContainer.appendChild(introElement);
                 
-                // 更新推荐香水的内容
-                updateRecommendationsSection(recommendationsContainer, recommendations);
-                console.log("已更新推荐容器内容");
-                
-                // 显示科普内容区域
-                createAndAddEducationSection(userPerfumeProfile);
-                console.log("已添加科普内容");
-                
-                // 显示推荐香水区域
-                recommendationsContainer.classList.remove('hidden');
-                console.log("已显示推荐香水区域");
-                
-                // 平滑滚动到推荐区域
-                recommendationsContainer.scrollIntoView({ 
+                // 平滑滚动到问卷区域
+                document.getElementById('quiz').scrollIntoView({ 
                     behavior: 'smooth' 
                 });
+            
+            // 重新绑定开始按钮事件
+            document.getElementById('start-quiz').addEventListener('click', function() {
+                document.querySelector('.quiz-intro').classList.add('hidden');
+                showQuestion(currentQuestion);
+            });
                 
-                // 添加气泡效果
-                const bubbles = ['✨', '🌸', '💫', '🌿', '💭'];
-                for (let i = 0; i < 10; i++) {
-                    const bubble = document.createElement('div');
-                    const randomBubble = bubbles[Math.floor(Math.random() * bubbles.length)];
-                    const size = Math.random() * 20 + 10;
-                    
-                    bubble.innerHTML = randomBubble;
-                    bubble.className = 'fixed text-xl animate-scent';
-                    bubble.style.fontSize = `${size}px`;
-                    bubble.style.left = `${Math.random() * 100}%`;
-                    bubble.style.top = `${Math.random() * 100}%`;
-                    bubble.style.opacity = '0.4';
-                    bubble.style.animationDelay = `${Math.random() * 5}s`;
-                    bubble.style.zIndex = '-1';
-                    
-                    document.body.appendChild(bubble);
-                    
-                    setTimeout(() => {
-                        bubble.remove();
-                    }, 8000);
+                // 重新初始化幻灯片
+                if (document.querySelector('.slideshow-container')) {
+                    initSlideshow();
                 }
-                
-                // 添加重新开始按钮
-                const restartButton = document.createElement('div');
-                restartButton.className = 'text-center mt-12';
-                restartButton.innerHTML = `
-                    <button id="restart-quiz" class="bg-apple-pink hover:bg-apple-pink/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 group relative overflow-hidden">
-                        <span class="relative z-10">✨ Discover More Scents ✨</span>
-                        <span class="absolute inset-0 bg-gradient-to-r from-apple-purple to-apple-pink opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    </button>
-                `;
-                
-                recommendationsContainer.appendChild(restartButton);
-                console.log("已添加重新开始按钮");
-                
-                // 添加重新开始按钮事件
-                const restartQuizButton = document.getElementById('restart-quiz');
-                if (restartQuizButton) {
-                    restartQuizButton.addEventListener('click', function() {
-                        // 重置参数
-                        currentQuestion = 0;
-                        userSelections = [];
-                        
-                        // 隐藏推荐区域
-                        recommendationsContainer.classList.add('hidden');
-                        
-                        // 清空推荐区域内容，避免重复添加
-                        const gridContainer = recommendationsContainer.querySelector('.grid');
-                        if (gridContainer) {
-                            gridContainer.innerHTML = '';
-                        }
-                        
-                        // 移除科普内容和重启按钮
-                        const educationSections = recommendationsContainer.querySelectorAll('.perfume-education, .text-center.mt-12');
-                        educationSections.forEach(section => section.remove());
-                        
-                        // 清除所有气泡
-                        document.querySelectorAll('.animate-scent').forEach(bubble => bubble.remove());
-                        
-                        // 显示介绍页
-                        const introElement = document.createElement('div');
-                        introElement.className = 'quiz-intro animate-fade-in text-center';
-                        introElement.innerHTML = `
-                            <div class="mb-10 max-w-3xl mx-auto bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20 shadow-xl transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
-                                <div class="space-y-3">
-                                    <p class="text-lg italic font-light text-apple-gray-700 dark:text-apple-gray-300 animate-float" style="animation-delay: 0.1s;">
-                                        <span class="inline-block transform hover:scale-105 transition-transform duration-300">✨</span> 
-                                        <span class="font-serif">Embark on a</span> 
-                                        <span class="title-highlight font-semibold">mystical journey</span> 
-                                        <span class="font-serif">through the</span> 
-                                        <span class="title-highlight font-semibold">realm of scents</span>
-                                        <span class="inline-block transform hover:scale-105 transition-transform duration-300">✨</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <button id="start-quiz" class="bg-apple-pink hover:bg-apple-pink/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 relative overflow-hidden group">
-                                <span class="relative z-10">✨ Start Your Scent Journey ✨</span>
-                                <span class="absolute inset-0 bg-gradient-to-r from-apple-purple to-apple-pink opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                            </button>
-                        `;
-                        
-                        quizContainer.innerHTML = '';
-                        quizContainer.appendChild(introElement);
-                        
-                        // 平滑滚动到问卷区域
-                        document.getElementById('quiz').scrollIntoView({ 
-                            behavior: 'smooth' 
-                        });
-                        
-                        // 重新绑定开始按钮事件
-                        document.getElementById('start-quiz').addEventListener('click', function() {
-                            document.querySelector('.quiz-intro').classList.add('hidden');
-                            showQuestion(currentQuestion);
-                        });
-                        
-                        // 重新初始化幻灯片
-                        if (document.querySelector('.slideshow-container')) {
-                            initSlideshow();
-                        }
-                    });
-                } else {
-                    console.error("找不到ID为'restart-quiz'的元素");
-                }
-            } catch (error) {
-                console.error("显示结果时发生错误:", error);
-                alert("抱歉，显示测试结果时出现了问题。请重新加载页面再试。");
-            }
+            });
         }, 1800); // 1.8秒后显示香水推荐，给用户感觉是在"分析"他们的选择
     }
 
@@ -1079,76 +1034,104 @@ document.addEventListener('DOMContentLoaded', function() {
                 const question = quizQuestions.find(q => q.id === selection.questionId);
                 const option = question.options.find(o => o.value === selection.value);
                 
-                matchReason = `<div class="mt-4 bg-apple-gray-200/50 dark:bg-apple-gray-700/50 p-4 rounded-lg">
-                    <span class="font-semibold text-apple-pink">✨ Why this matches you: </span>
-                    Your preference for ${option.title} suggests ${option.explanation}
+                matchReason = `<div class="mt-4 bg-apple-gray-100/60 dark:bg-apple-gray-700/60 p-5 rounded-xl backdrop-blur-sm">
+                    <div class="flex items-center mb-2">
+                        <span class="text-xl mr-2">✨</span>
+                        <span class="font-semibold text-gradient">Why This Matches You</span>
+                    </div>
+                    <p>Your preference for <span class="font-medium">${option.title}</span> suggests ${option.explanation}</p>
                 </div>`;
             }
             
             // 匹配香水配置文件
             const profileBadges = perfume.profiles.map(profile => 
-                `<span class="inline-block px-2 py-1 rounded-full bg-apple-purple/10 text-apple-purple text-xs mr-1 mb-1">${profile}</span>`
+                `<span class="inline-block px-3 py-1 rounded-full bg-apple-purple/15 text-apple-purple text-xs mr-1 mb-1 transition-all hover:bg-apple-purple hover:text-white">${profile}</span>`
             ).join('');
             
-            // 构建笔记展示 - 使用新的容器样式
+            // 构建笔记展示 - 使用新的卡片样式
             const notes = `
-                <div class="notes-container">
-                    <div class="notes-row">
-                        <div class="notes-label">
-                            <span class="notes-label-emoji">🍋</span>Top
+                <div class="mt-6 space-y-4">
+                    <h4 class="text-base font-medium text-apple-gray-700 dark:text-apple-gray-300">Fragrance Notes</h4>
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="bg-apple-gray-100/60 dark:bg-apple-gray-700/60 rounded-xl p-3 backdrop-blur-sm">
+                            <div class="flex items-center justify-center mb-2">
+                                <span class="text-xl">🍋</span>
+                            </div>
+                            <div class="text-center text-xs font-medium mb-2 text-apple-gray-500">Top Notes</div>
+                            <div class="flex flex-col items-center space-y-1">
+                                ${perfume.notes.top.map(note => 
+                                    `<span class="text-sm text-center">${note}</span>`
+                                ).join('')}
+                            </div>
                         </div>
-                        <div class="flex flex-wrap gap-1">
-                            ${perfume.notes.top.map(note => 
-                                `<span class="note-tag note-tag-top">${note}</span>`
-                            ).join('')}
+                        <div class="bg-apple-gray-100/60 dark:bg-apple-gray-700/60 rounded-xl p-3 backdrop-blur-sm">
+                            <div class="flex items-center justify-center mb-2">
+                                <span class="text-xl">🌺</span>
+                            </div>
+                            <div class="text-center text-xs font-medium mb-2 text-apple-gray-500">Middle Notes</div>
+                            <div class="flex flex-col items-center space-y-1">
+                                ${perfume.notes.middle.map(note => 
+                                    `<span class="text-sm text-center">${note}</span>`
+                                ).join('')}
+                            </div>
                         </div>
-                    </div>
-                    <div class="notes-row">
-                        <div class="notes-label">
-                            <span class="notes-label-emoji">🌺</span>Middle
-                        </div>
-                        <div class="flex flex-wrap gap-1">
-                            ${perfume.notes.middle.map(note => 
-                                `<span class="note-tag note-tag-middle">${note}</span>`
-                            ).join('')}
-                        </div>
-                    </div>
-                    <div class="notes-row">
-                        <div class="notes-label">
-                            <span class="notes-label-emoji">🌲</span>Base
-                        </div>
-                        <div class="flex flex-wrap gap-1">
-                            ${perfume.notes.base.map(note => 
-                                `<span class="note-tag note-tag-base">${note}</span>`
-                            ).join('')}
+                        <div class="bg-apple-gray-100/60 dark:bg-apple-gray-700/60 rounded-xl p-3 backdrop-blur-sm">
+                            <div class="flex items-center justify-center mb-2">
+                                <span class="text-xl">🌲</span>
+                            </div>
+                            <div class="text-center text-xs font-medium mb-2 text-apple-gray-500">Base Notes</div>
+                            <div class="flex flex-col items-center space-y-1">
+                                ${perfume.notes.base.map(note => 
+                                    `<span class="text-sm text-center">${note}</span>`
+                                ).join('')}
+                            </div>
                         </div>
                     </div>
                 </div>
             `;
             
-            // 创建卡片 - 使用玻璃效果
+            // 创建卡片 - 使用苹果风格卡片效果
             const card = document.createElement('div');
-            card.className = 'glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2';
+            card.className = 'glass-effect rounded-2xl overflow-hidden transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 opacity-0';
             card.innerHTML = `
-                <div class="h-64 overflow-hidden relative">
-                    <div class="absolute top-3 left-3 bg-apple-purple text-white px-3 py-1 rounded-full text-sm font-medium z-10 shadow-md">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/40 z-10"></div>
+                    <div class="absolute top-3 left-3 bg-apple-purple text-white px-3 py-1 rounded-full text-sm font-medium z-20 shadow-lg">
                         ✨ Match #${index + 1}
                     </div>
-                    <img src="${perfume.image}" alt="${perfume.name}" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                    <div class="h-72 overflow-hidden">
+                        <img src="${perfume.image}" alt="${perfume.name}" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110">
+                    </div>
+                    <div class="absolute bottom-4 left-4 right-4 z-20">
+                        <div class="bg-white/80 dark:bg-apple-gray-800/80 backdrop-blur-md px-4 py-3 rounded-xl">
+                            <h3 class="text-xl font-semibold">${perfume.name}</h3>
+                            <div class="flex items-center justify-between">
+                                <span class="text-base font-medium">${perfume.price}</span>
+                                <div class="flex space-x-1">
+                                    <span class="px-2 py-1 rounded-md bg-apple-gray-200/50 dark:bg-apple-gray-700/50 text-xs">★★★★★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-semibold mb-2">${perfume.name}</h3>
-                    <div class="mb-3">
+                    <div class="flex flex-wrap mb-4">
                         ${profileBadges}
                     </div>
-                    <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-3">${perfume.description}</p>
+                    <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-5 leading-relaxed">${perfume.description}</p>
                     ${notes}
                     ${matchReason}
-                    <div class="flex justify-between items-center mt-5">
-                        <span class="text-lg font-semibold">${perfume.price}</span>
-                        <a href="#" class="bg-apple-blue hover:bg-apple-blue/90 text-white py-2 px-5 rounded-full text-sm transition-all transform hover:-translate-y-1 shadow-md hover:shadow-lg">
-                            ✨ Learn More
+                    <div class="flex justify-between items-center mt-6 pt-4 border-t border-apple-gray-200 dark:border-apple-gray-700">
+                        <a href="#" class="text-apple-blue hover:underline flex items-center">
+                            <span>View Details</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
                         </a>
+                        <button class="bg-apple-blue hover:bg-apple-blue/90 text-white py-2 px-5 rounded-full text-sm transition-all transform hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center">
+                            <span class="mr-1">Add to Cart</span>
+                            <span>🛍️</span>
+                        </button>
                     </div>
                 </div>
             `;
@@ -1157,9 +1140,24 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // 添加淡入动画，错开时间
             setTimeout(() => {
-                card.classList.add('animate-fade-in');
+                card.style.opacity = '1';
+                card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
             }, 100 * index);
         });
+        
+        // 添加CSS样式
+        if (!document.getElementById('perfume-card-styles')) {
+            const styleEl = document.createElement('style');
+            styleEl.id = 'perfume-card-styles';
+            styleEl.textContent = `
+                .text-gradient {
+                    background: linear-gradient(to right, var(--apple-pink), var(--apple-purple));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            `;
+            document.head.appendChild(styleEl);
+        }
     }
 
     // 确定用户的香水档案偏好
@@ -1221,7 +1219,9 @@ document.addEventListener('DOMContentLoaded', function() {
             'champagne': 'sparkling',
             'feather': 'powdery',
             'cannabis': 'herbal',
-            'neon': 'synthetic'
+            'neon': 'synthetic',
+            'metal': 'metallic',
+            'nano': 'synthetic'
         };
         
         // 统计香调家族出现次数
@@ -1302,305 +1302,144 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 根据用户的香水档案创建和添加教育内容区域
-    function createAndAddEducationSection(userProfile) {
-        console.log("开始创建教育内容区域, 用户配置文件:", userProfile);
+    // 创建并添加科普内容区域
+    function createAndAddEducationSection(container, userProfile) {
+        // 创建科普内容区域
+        const educationSection = document.createElement('section');
+        educationSection.className = 'perfume-education max-w-7xl mx-auto glass-effect rounded-3xl shadow-xl p-8 md:p-12 transform transition-all hover:shadow-2xl mt-20 animate-fade-in';
         
-        try {
-            // 获取推荐容器
-            const targetContainer = document.getElementById('perfume-recommendations');
+        // 获取合适的香调DNA内容
+        const dnaContent = perfumeEducationData.dnaContent[userProfile.mainProfile] || perfumeEducationData.dnaContent.floral;
+        
+        // 获取合适的冷知识内容
+        const coldFact = perfumeEducationData.coldFacts[userProfile.coldFactType] || perfumeEducationData.coldFacts.rose;
+        
+        // 随机选择一个工艺解密
+        const craftSecret = perfumeEducationData.craftSecrets[Math.floor(Math.random() * perfumeEducationData.craftSecrets.length)];
+        
+        // 随机选择一个行业揭秘
+        const industrySecret = perfumeEducationData.industrySecrets[Math.floor(Math.random() * perfumeEducationData.industrySecrets.length)];
+        
+        // 随机选择一个科学跨界
+        const scienceCrossover = perfumeEducationData.scienceCrossover[Math.floor(Math.random() * perfumeEducationData.scienceCrossover.length)];
+        
+        // 获取合适的实用技巧
+        const practicalTip = perfumeEducationData.practicalTips[userProfile.deviceType];
+        
+        // 获取互动内容
+        const interactiveContent = perfumeEducationData.interactiveContent;
+        
+        // 获取转化入口
+        const conversionEntry = perfumeEducationData.conversionEntries[userProfile.mainProfile] || perfumeEducationData.conversionEntries.floral;
+        
+        // 构建科普内容HTML
+        educationSection.innerHTML = `
+            <h2 class="text-3xl font-bold mb-8 text-center">✨ Expand Your Fragrance Knowledge ✨</h2>
             
-            if (!targetContainer) {
-                console.error("找不到ID为'perfume-recommendations'的元素，无法添加教育内容");
-                return;
-            }
-            
-            console.log("找到目标容器，准备添加教育内容");
-            
-            // 确保用户配置文件存在所需的属性
-            userProfile = userProfile || {};
-            const mainProfile = userProfile.mainProfile || "floral";
-            const coldFactType = userProfile.coldFactType || "rose";
-            const deviceType = userProfile.deviceType || "desktop";
-            
-            // 创建教育内容区域
-            const educationSection = document.createElement('div');
-            educationSection.className = 'perfume-education mt-16';
-            
-            // 创建标题
-            const educationTitle = document.createElement('h3');
-            educationTitle.className = 'text-2xl font-semibold mb-8 text-center';
-            educationTitle.textContent = '✨ 探索更多香水知识 ✨';
-            educationSection.appendChild(educationTitle);
-            
-            // 创建说明
-            const educationDescription = document.createElement('p');
-            educationDescription.className = 'text-center mb-8 text-apple-gray-700 dark:text-apple-gray-300';
-            educationDescription.textContent = '点击卡片了解更多关于香水制作、香调特性和使用技巧的知识';
-            educationSection.appendChild(educationDescription);
-            
-            // 创建卡片容器
-            const cardsContainer = document.createElement('div');
-            cardsContainer.className = 'cards-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6';
-            educationSection.appendChild(cardsContainer);
-            
-            // 生成每种教育内容的交互式卡片
-            
-            // 1. 添加香调DNA卡片
-            const dnaData = perfumeEducationData.scentDNA[mainProfile] || 
-                            perfumeEducationData.scentDNA.floral; // 默认使用floral如果找不到匹配项
-            
-            createInteractiveCard(
-                cardsContainer,
-                '您的香调DNA',
-                dnaData.title,
-                dnaData.description,
-                'dna-card'
-            );
-            
-            // 2. 添加冷知识卡片
-            const factData = perfumeEducationData.coldFacts[coldFactType] || 
-                            perfumeEducationData.coldFacts.rose; // 默认使用rose如果找不到匹配项
-            
-            createInteractiveCard(
-                cardsContainer,
-                '冷知识',
-                factData.title,
-                factData.description,
-                'fact-card'
-            );
-            
-            // 3. 添加制作秘密卡片（随机选择1-2个制作秘密）
-            const craftSecrets = Object.values(perfumeEducationData.craftSecrets);
-            const selectedCraftSecrets = shuffleAndSelect(craftSecrets, 1 + Math.floor(Math.random() * 2));
-            
-            selectedCraftSecrets.forEach(secret => {
-                createInteractiveCard(
-                    cardsContainer,
-                    '制作秘密',
-                    secret.title,
-                    secret.description,
-                    'craft-card'
-                );
-            });
-            
-            // 4. 添加行业内幕卡片（随机选择1个）
-            const industrySecrets = Object.values(perfumeEducationData.industrySecrets);
-            const selectedIndustrySecret = shuffleAndSelect(industrySecrets, 1)[0];
-            
-            createInteractiveCard(
-                cardsContainer,
-                '行业内幕',
-                selectedIndustrySecret.title,
-                selectedIndustrySecret.description,
-                'secret-card'
-            );
-            
-            // 5. 添加科学交叉卡片（随机选择1个）
-            const scienceCrossovers = Object.values(perfumeEducationData.scienceCrossovers);
-            const selectedScienceCrossover = shuffleAndSelect(scienceCrossovers, 1)[0];
-            
-            createInteractiveCard(
-                cardsContainer,
-                '科学交叉',
-                selectedScienceCrossover.title,
-                selectedScienceCrossover.description,
-                'science-card'
-            );
-            
-            // 6. 添加实用技巧卡片
-            const tipsData = perfumeEducationData.practicalTips[deviceType] || 
-                            perfumeEducationData.practicalTips.desktop; // 默认使用desktop如果找不到匹配项
-            
-            createInteractiveCard(
-                cardsContainer,
-                '实用技巧',
-                tipsData.title,
-                tipsData.description,
-                'tips-card'
-            );
-            
-            // 7. 添加互动内容卡片 - 使用翻转卡片效果
-            const interactiveData = perfumeEducationData.interactiveContent;
-            const flipCardContainer = document.createElement('div');
-            flipCardContainer.className = 'flip-card col-span-1 md:col-span-2 lg:col-span-3 h-64 my-6';
-            
-            flipCardContainer.innerHTML = `
-                <div class="flip-card-inner">
-                    <div class="flip-card-front p-6 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-800 text-white flex flex-col justify-center items-center text-center">
-                        <h4 class="text-xl font-bold mb-3">💫 个人香水实验室 💫</h4>
-                        <p>${interactiveData.personalLab.description}</p>
-                        <span class="mt-4 text-sm text-white/80">点击查看DIY配方</span>
+            <!-- 用户相关内容 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Your Scent DNA</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 香调DNA -->
+                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                        <h4 class="text-xl font-medium mb-4">${dnaContent.title}</h4>
+                        ${dnaContent.content}
                     </div>
-                    <div class="flip-card-back p-6 rounded-xl bg-gradient-to-br from-indigo-800 to-purple-600 text-white flex flex-col justify-center items-center overflow-auto">
-                        <h4 class="text-xl font-bold mb-3">您的专属DIY配方</h4>
-                        <div class="recipe-container">
-                            <ul class="list-disc pl-5 text-left">
-                                ${interactiveData.personalLab.recipe.map(item => `<li>${item}</li>`).join('')}
-                            </ul>
-                        </div>
+                    
+                    <!-- 专属冷知识 -->
+                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                        <h4 class="text-xl font-medium mb-4">${coldFact.title}</h4>
+                        ${coldFact.content}
                     </div>
                 </div>
-            `;
-            
-            cardsContainer.appendChild(flipCardContainer);
-            
-            // 8. 添加转化入口 - 根据用户配置文件类型显示相关产品链接
-            const conversionEntry = perfumeEducationData.conversionEntries[mainProfile] || 
-                                perfumeEducationData.conversionEntries.floral; // 默认使用floral如果找不到匹配项
-            
-            // 确保每个转化入口都有链接
-            const conversionLink = conversionEntry.link || "#";
-            
-            // 创建CTA按钮容器
-            const ctaContainer = document.createElement('div');
-            ctaContainer.className = 'text-center mt-12 mb-8';
-            
-            // 添加CTA按钮
-            ctaContainer.innerHTML = `
-                <a href="${conversionLink}" target="_blank" class="cta-button inline-block bg-gradient-to-r from-apple-pink to-apple-purple text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl relative overflow-hidden">
-                    <span class="relative z-10">立即探索</span>
-                    <div class="particles-container"></div>
-                </a>
-                <p class="mt-4 text-sm text-apple-gray-600 dark:text-apple-gray-400">
-                    探索更多与您的香调偏好相匹配的香水
-                </p>
-            `;
-            
-            educationSection.appendChild(ctaContainer);
-            
-            // 将整个教育部分添加到页面
-            targetContainer.appendChild(educationSection);
-            
-            // 添加交互性到卡片
-            addInteractivityToCards();
-            
-            // 添加按钮粒子效果
-            addParticleEffectToButton();
-            
-            console.log("教育内容已成功添加到页面");
-            
-        } catch (error) {
-            console.error("添加教育内容时出错:", error);
-        }
-    }
-
-    // 辅助函数：创建交互式卡片
-    function createInteractiveCard(container, category, title, content, cardType) {
-        const card = document.createElement('div');
-        card.className = `interactive-card ${cardType}`;
-        
-        card.innerHTML = `
-            <div class="card-preview">
-                <div class="card-category">${category}</div>
-                <h4 class="card-title">${title}</h4>
-                <div class="card-icon">${getCardIcon(cardType)}</div>
             </div>
-            <div class="card-content">
-                <p>${content}</p>
+            
+            <!-- 通用科普内容 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Perfume Industry Insights</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 工艺解密 -->
+                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                        <h4 class="text-xl font-medium mb-4">${craftSecret.title}</h4>
+                        ${craftSecret.content}
+                    </div>
+                    
+                    <!-- 行业揭秘 -->
+                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                        <h4 class="text-xl font-medium mb-4">${industrySecret.title}</h4>
+                        ${industrySecret.content}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 场景化生活方式 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Fragrance Lifestyle</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 气味与科学跨界 -->
+                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                        <h4 class="text-xl font-medium mb-4">${scienceCrossover.title}</h4>
+                        ${scienceCrossover.content}
+                    </div>
+                    
+                    <!-- 实用技巧 -->
+                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                        <h4 class="text-xl font-medium mb-4">${practicalTip.title}</h4>
+                        ${practicalTip.content}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 互动与转化 -->
+            <div class="mb-8">
+                <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                    <h4 class="text-xl font-medium mb-4">${interactiveContent.title}</h4>
+                    ${interactiveContent.content}
+                </div>
+            </div>
+            
+            <!-- 转化入口 -->
+            <div class="text-center mt-12">
+                <a href="#" class="bg-apple-blue hover:bg-apple-blue/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center group relative overflow-hidden">
+                    <span class="relative z-10">${conversionEntry.text}</span>
+                    <span class="ml-2 relative z-10">✨</span>
+                    <span class="absolute inset-0 bg-gradient-to-r from-apple-purple to-apple-blue opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                </a>
             </div>
         `;
         
-        container.appendChild(card);
-    }
-
-    // 辅助函数：为卡片添加交互性
-    function addInteractivityToCards() {
-        const cards = document.querySelectorAll('.interactive-card');
+        // 添加科普内容到容器
+        container.appendChild(educationSection);
         
-        cards.forEach(card => {
-            const preview = card.querySelector('.card-preview');
-            const content = card.querySelector('.card-content');
-            
-            preview.addEventListener('click', () => {
-                // 检查当前卡片是否已经展开
-                const isExpanded = card.classList.contains('expanded');
-                
-                // 如果已经展开，则收起
-                if (isExpanded) {
-                    card.classList.remove('expanded');
-                    content.style.maxHeight = '0';
-                } else {
-                    // 展开当前卡片
-                    card.classList.add('expanded');
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                }
-            });
-        });
-        
-        // 为翻转卡片添加点击事件
-        const flipCard = document.querySelector('.flip-card');
-        if (flipCard) {
-            flipCard.addEventListener('click', () => {
-                flipCard.classList.toggle('flipped');
-            });
-        }
-    }
-
-    // 辅助函数：为CTA按钮添加粒子效果
-    function addParticleEffectToButton() {
-        const ctaButton = document.querySelector('.cta-button');
-        const particlesContainer = document.querySelector('.particles-container');
-        
-        if (ctaButton && particlesContainer) {
-            ctaButton.addEventListener('mouseenter', () => {
-                // 创建粒子
-                for (let i = 0; i < 20; i++) {
-                    createParticle(particlesContainer);
-                }
-            });
-        }
-    }
-
-    // 辅助函数：创建粒子
-    function createParticle(container) {
-        const particle = document.createElement('span');
-        particle.className = 'particle';
-        
-        // 随机粒子大小、位置和动画持续时间
-        const size = Math.random() * 5 + 5;
-        const left = Math.random() * 100;
-        const animDuration = Math.random() * 1 + 0.5;
-        
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        particle.style.left = `${left}%`;
-        particle.style.animationDuration = `${animDuration}s`;
-        
-        container.appendChild(particle);
-        
-        // 动画结束后移除粒子
+        // 添加交互事件
         setTimeout(() => {
-            particle.remove();
-        }, animDuration * 1000);
-    }
-
-    // 辅助函数：获取卡片图标
-    function getCardIcon(cardType) {
-        const icons = {
-            'dna-card': '🧬',
-            'fact-card': '❄️',
-            'craft-card': '🧪',
-            'secret-card': '🔍',
-            'science-card': '🔬',
-            'tips-card': '💡'
-        };
-        
-        return icons[cardType] || '✨';
-    }
-
-    // 辅助函数：洗牌并选择指定数量的项目
-    function shuffleAndSelect(array, count) {
-        // 克隆数组以避免修改原始数据
-        const shuffled = [...array];
-        
-        // Fisher-Yates 洗牌算法
-        for (let i = shuffled.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-        }
-        
-        // 返回指定数量的项目
-        return shuffled.slice(0, count);
+            // 为所有按钮添加点击动画
+            const buttons = educationSection.querySelectorAll('.apple-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 添加点击波浪效果
+                    const ripple = document.createElement('span');
+                    ripple.className = 'absolute inset-0 bg-white/20 rounded-full scale-0';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.animation = 'ripple 0.6s linear';
+                    ripple.style.transformOrigin = 'center';
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 700);
+                    
+                    // 显示一个简单的提示
+                    const actionText = this.textContent;
+                    alert(`Feature coming soon: ${actionText}`);
+                });
+            });
+        }, 100);
     }
 });
