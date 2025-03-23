@@ -385,115 +385,303 @@ document.addEventListener('DOMContentLoaded', function() {
     const perfumeData = [
         {
             id: 1,
-            name: "Byredo Bibliothèque",
-            image: "images/brown.jpg",
+            brand: "Chanel",
+            name: "No. 5",
+            price: "$350",
+            image: "https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=704&q=80",
+            description: "一款传奇香水，以其复杂的花香调和浓郁的情感表达而著称。",
+            profiles: ["sophisticated", "iconic", "feminine", "elegant", "complex", "timeless"],
+            suitedFor: ["romance", "night", "classics", "formal"],
             notes: {
-                top: ["Peach", "Plum"],
-                middle: ["Violet", "Peony"],
-                base: ["Leather", "Patchouli", "Vanilla"]
-            },
-            price: "$190",
-            description: "A sophisticated fragrance that evokes the atmosphere of an old library with leather-bound books.",
-            profiles: ["intellectual", "elegant", "vintage"],
-            suitedFor: ["grand_budapest", "classical"]
+                top: ["aldehydes", "bergamot", "lemon", "neroli"],
+                middle: ["jasmine", "rose", "lily of the valley", "iris"],
+                base: ["vetiver", "sandalwood", "vanilla", "amber", "patchouli"]
+            }
         },
         {
             id: 2,
-            name: "Maison Margiela Replica Jazz Club",
-            image: "images/blue.jpg",
+            brand: "Dior",
+            name: "Sauvage",
+            price: "$155",
+            image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+            description: "以强烈的清新和浓郁的木质香调为特色，是现代男性气息的象征。",
+            profiles: ["fresh", "masculine", "powerful", "modern", "intense"],
+            suitedFor: ["everyday", "business", "outdoors", "confidence"],
             notes: {
-                top: ["Pink Pepper", "Lemon", "Neroli"],
-                middle: ["Rum", "Clary Sage"],
-                base: ["Tobacco Leaf", "Vanilla Bean", "Styrax"]
-            },
-            price: "$135",
-            description: "A warm and spicy fragrance reminiscent of a Brooklyn jazz club.",
-            profiles: ["warm", "sophisticated", "masculine"],
-            suitedFor: ["jazz", "1920s", "rock"]
+                top: ["bergamot", "pepper", "ambroxan"],
+                middle: ["lavender", "pink pepper", "sichuan pepper", "vetiver"],
+                base: ["ambroxan", "cedar", "labdanum"]
+            }
         },
         {
             id: 3,
-            name: "Diptyque Philosykos",
-            image: "images/green.jpg",
+            brand: "Tom Ford",
+            name: "Tobacco Vanille",
+            price: "$375",
+            image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+            description: "浓郁的香草与烟草混合，带来温暖馥郁的东方香调体验。",
+            profiles: ["warm", "luxurious", "rich", "sweet", "addictive", "unisex"],
+            suitedFor: ["winter", "evening", "luxury", "comfort"],
             notes: {
-                top: ["Fig Leaf", "Green Notes"],
-                middle: ["Fig", "Coconut"],
-                base: ["Cedar", "Woody Notes"]
-            },
-            price: "$165",
-            description: "A fresh and green fragrance inspired by the fig trees of Greece.",
-            profiles: ["fresh", "natural", "mediterranean"],
-            suitedFor: ["california", "bali", "green_leaves"]
+                top: ["tobacco leaf", "spices"],
+                middle: ["vanilla", "cacao", "tonka bean"],
+                base: ["dry fruits", "woody notes"]
+            }
         },
         {
             id: 4,
-            name: "Le Labo Santal 33",
-            image: "images/purple.jpg",
+            brand: "Creed",
+            name: "Aventus",
+            price: "$445",
+            image: "https://images.unsplash.com/photo-1615354650192-e25b833531e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+            description: "鼓舞人心的男士香水，融合了水果、麝香和木质香调，象征成功与力量。",
+            profiles: ["confident", "masculine", "distinctive", "sophisticated", "fresh"],
+            suitedFor: ["success", "business", "confidence", "leadership"],
             notes: {
-                top: ["Violet Accord", "Cardamom"],
-                middle: ["Iris", "Ambrox"],
-                base: ["Sandalwood", "Cedar", "Leather"]
-            },
-            price: "$215",
-            description: "An iconic unisex fragrance that blends spicy, leathery, and musky notes.",
-            profiles: ["iconic", "unisex", "distinctive"],
-            suitedFor: ["leather", "rock", "surrealism"]
+                top: ["bergamot", "blackcurrant", "apple", "pineapple"],
+                middle: ["rose", "birch", "moroccan jasmine", "patchouli"],
+                base: ["musk", "oak moss", "ambergris", "vanilla"]
+            }
         },
         {
             id: 5,
-            name: "Tom Ford Tobacco Vanille",
-            image: "images/pink.jpg",
+            brand: "Jo Malone",
+            name: "Wood Sage & Sea Salt",
+            price: "$150",
+            image: "https://images.unsplash.com/photo-1553691158-e6ec3c3d9e87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+            description: "清新的海洋气息与温暖的木质香调相融合，如同在海岸边的自然漫步。",
+            profiles: ["fresh", "natural", "light", "mineral", "beachy", "unisex"],
+            suitedFor: ["summer", "casual", "outdoors", "relaxation"],
             notes: {
-                top: ["Tobacco Leaf", "Spices"],
-                middle: ["Vanilla", "Cacao"],
-                base: ["Dried Fruits", "Woody Notes"]
-            },
-            price: "$240",
-            description: "A rich, spicy, and sweet fragrance with opulent notes of tobacco and vanilla.",
-            profiles: ["luxurious", "rich", "sweet"],
-            suitedFor: ["tobacco", "jazz", "renaissance"]
+                top: ["ambrette seeds", "sea salt"],
+                middle: ["sage", "seaweed"],
+                base: ["driftwood", "ambergris", "musk"]
+            }
         },
         {
             id: 6,
-            name: "Frederic Malle Portrait of a Lady",
-            image: "https://images.unsplash.com/photo-1585178433635-fbf36dc1e376?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            brand: "Byredo",
+            name: "Gypsy Water",
+            price: "$280",
+            image: "https://images.unsplash.com/photo-1600612253971-422e7f7faeb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+            description: "灵感来自罗姆人的自由精神，融合了森林与麝香香调的纯净之作。",
+            profiles: ["natural", "fresh", "woody", "mysterious", "unisex", "romantic"],
+            suitedFor: ["everyday", "spiritual", "adventure", "outdoors"],
             notes: {
-                top: ["Rose", "Blackcurrant"],
-                middle: ["Raspberry", "Clove"],
-                base: ["Patchouli", "Sandalwood", "Incense"]
-            },
-            price: "$275",
-            description: "An opulent and sophisticated fragrance built around an unprecedented concentration of rose.",
-            profiles: ["opulent", "intense", "elegant"],
-            suitedFor: ["tarot", "vienna", "renaissance"]
+                top: ["bergamot", "lemon", "pepper", "juniper berries"],
+                middle: ["incense", "pine needles", "orris"],
+                base: ["amber", "vanilla", "sandalwood"]
+            }
         },
         {
             id: 7,
-            name: "Comme des Garçons Concrete",
-            image: "https://images.unsplash.com/photo-1589732025089-075a3485b04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            brand: "Maison Francis Kurkdjian",
+            name: "Baccarat Rouge 540",
+            price: "$325",
+            image: "https://images.unsplash.com/photo-1524469652540-8ea22af8f16b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            description: "奢华的琥珀香调，散发出水晶般的纯净与复杂性，成为现代香水界的经典。",
+            profiles: ["luxurious", "distinctive", "sweet", "elegant", "warm", "addictive"],
+            suitedFor: ["special occasions", "luxury", "romance", "evening"],
             notes: {
-                top: ["Sandalwood"],
-                middle: ["Rose Oxide"],
-                base: ["Concrete Accord", "Woody Notes"]
-            },
-            price: "$145",
-            description: "A futuristic and industrial fragrance with a unique concrete accord.",
-            profiles: ["avant-garde", "architectural", "modern"],
-            suitedFor: ["blade_runner", "street_art", "3020s"]
+                top: ["saffron", "jasmine"],
+                middle: ["amberwood", "cedar"],
+                base: ["fir resin", "ambergris"]
+            }
         },
         {
             id: 8,
-            name: "Jo Malone English Pear & Freesia",
-            image: "https://images.unsplash.com/photo-1608528577891-eb055944b2d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            brand: "Frederic Malle",
+            name: "Portrait of a Lady",
+            price: "$395",
+            image: "https://images.unsplash.com/photo-1600612253971-422e7f7faeb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+            description: "强烈而优雅的玫瑰与香料混合，展现出优雅而神秘的女性魅力。",
+            profiles: ["sophisticated", "elegant", "intense", "complex", "opulent", "feminine"],
+            suitedFor: ["evening", "formal", "romance", "winter"],
             notes: {
-                top: ["Pear", "Melon"],
-                middle: ["Freesia", "Rose"],
-                base: ["Musk", "Patchouli", "Amber"]
-            },
+                top: ["rose", "cinnamon", "blackcurrant"],
+                middle: ["raspberry", "clove", "patchouli"],
+                base: ["sandalwood", "incense", "musk", "amber"]
+            }
+        },
+        {
+            id: 9,
+            brand: "Diptyque",
+            name: "Philosykos",
+            price: "$190",
+            image: "https://images.unsplash.com/photo-1563170352-ba54c22ec835?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+            description: "充满地中海气息的无花果香调，带来阳光、绿意与温暖的感觉。",
+            profiles: ["fresh", "natural", "mediterranean", "green", "unisex", "vibrant"],
+            suitedFor: ["summer", "spring", "casual", "nature"],
+            notes: {
+                top: ["fig leaf", "green notes"],
+                middle: ["fig fruit", "coconut"],
+                base: ["cedar", "woody notes"]
+            }
+        },
+        {
+            id: 10,
+            brand: "Le Labo",
+            name: "Santal 33",
+            price: "$215",
+            image: "https://images.unsplash.com/photo-1600612253971-422e7f7faeb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+            description: "一款叛逆的檀香木香水，混合皮革和香料，创造出独特的个人印记。",
+            profiles: ["woody", "distinctive", "unisex", "addictive", "sophisticated"],
+            suitedFor: ["everyday", "signature", "urban", "creative"],
+            notes: {
+                top: ["violet accord", "cardamom"],
+                middle: ["iris", "ambrox"],
+                base: ["sandalwood", "leather", "cedar"]
+            }
+        },
+        {
+            id: 11,
+            brand: "Guerlain",
+            name: "Shalimar",
+            price: "$160",
+            image: "https://images.unsplash.com/photo-1572511354994-e14ef13fe9a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
+            description: "传奇的东方香水，讲述了一个永恒的爱情故事，以其浓郁的香草和琥珀基调而闻名。",
+            profiles: ["vintage", "opulent", "sophisticated", "sensual", "timeless", "romantic"],
+            suitedFor: ["evening", "formal", "romance", "winter"],
+            notes: {
+                top: ["bergamot", "lemon", "cedar"],
+                middle: ["jasmine", "rose", "patchouli", "vetiver"],
+                base: ["vanilla", "tonka bean", "incense", "civet", "leather"]
+            }
+        },
+        {
+            id: 12,
+            brand: "Issey Miyake",
+            name: "L'Eau d'Issey",
+            price: "$106",
+            image: "https://images.unsplash.com/photo-1563132272-91a02542e938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+            description: "如同清澈山泉的水生花香调，象征纯净与自然平衡之美。",
+            profiles: ["fresh", "aquatic", "light", "modern", "clean", "feminine"],
+            suitedFor: ["everyday", "office", "spring", "summer"],
+            notes: {
+                top: ["lotus", "freesia", "cyclamen", "rose water"],
+                middle: ["lily", "carnation"],
+                base: ["sandalwood", "cedar", "amber", "musk"]
+            }
+        },
+        {
+            id: 13,
+            brand: "Serge Lutens",
+            name: "Ambre Sultan",
+            price: "$230",
+            image: "https://images.unsplash.com/photo-1578083881160-9f96d731dcdd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+            description: "浓郁的东方琥珀香调，融合草本与香脂，展现沙漠般的神秘与野性。",
+            profiles: ["oriental", "rich", "complex", "mysterious", "bold", "intellectual"],
+            suitedFor: ["winter", "evening", "artistic", "spiritual"],
+            notes: {
+                top: ["coriander", "bay leaf", "oregano"],
+                middle: ["amber", "cistus", "angelica"],
+                base: ["vanilla", "benzoin", "resins", "patchouli"]
+            }
+        },
+        {
+            id: 14,
+            brand: "Comme des Garçons",
+            name: "Wonderwood",
+            price: "$131",
+            image: "https://images.unsplash.com/photo-1618330834871-dd22c2c22e35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+            description: "多层次的木质香调探索，结合不同种类的木材与香料，创造出独特的现代气息。",
+            profiles: ["woody", "architectural", "unisex", "modern", "distinctive", "intellectual"],
+            suitedFor: ["urban", "creative", "autumn", "individuality"],
+            notes: {
+                top: ["madagascan pepper", "bergamot", "nutmeg"],
+                middle: ["Virginia cedar", "Somalian incense", "guaiac wood"],
+                base: ["sandalwood", "vetiver", "oud", "cashmeran"]
+            }
+        },
+        {
+            id: 15,
+            brand: "Acqua di Parma",
+            name: "Colonia",
+            price: "$175",
+            image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+            description: "经典的意大利柑橘香调，清新优雅，展现地中海风情与生活格调。",
+            profiles: ["fresh", "citrus", "classic", "elegant", "mediterranean", "timeless"],
+            suitedFor: ["summer", "spring", "refined", "everyday"],
+            notes: {
+                top: ["sicilian citrus", "bergamot", "lemon", "orange"],
+                middle: ["lavender", "rosemary", "verbena", "rose"],
+                base: ["sandalwood", "vetiver", "patchouli", "amber"]
+            }
+        },
+        {
+            id: 16,
+            brand: "Hermès",
+            name: "Terre d'Hermès",
+            price: "$150",
+            image: "https://images.unsplash.com/photo-1590736969571-da769d512682?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+            description: "大地与矿物质的交响曲，展现自然与人类创造力的完美平衡。",
+            profiles: ["woody", "mineral", "masculine", "elegant", "earthy", "intellectual"],
+            suitedFor: ["business", "outdoors", "autumn", "confidence"],
+            notes: {
+                top: ["orange", "grapefruit", "flint"],
+                middle: ["pepper", "geranium", "flint"],
+                base: ["vetiver", "cedar", "patchouli", "benzoin"]
+            }
+        },
+        {
+            id: 17,
+            brand: "Maison Margiela",
+            name: "Jazz Club",
+            price: "$144",
+            image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+            description: "温暖的烟草与朗姆酒香调，如同走进复古爵士俱乐部的怀旧体验。",
+            profiles: ["warm", "boozy", "sweet", "vintage", "rich", "nostalgic"],
+            suitedFor: ["evening", "winter", "social", "nostalgic"],
+            notes: {
+                top: ["pink pepper", "lemon", "neroli"],
+                middle: ["rum", "clary sage", "vetiver"],
+                base: ["tobacco leaf", "vanilla", "styrax"]
+            }
+        },
+        {
+            id: 18,
+            brand: "Penhaligon's",
+            name: "Halfeti",
+            price: "$285",
+            image: "https://images.unsplash.com/photo-1620868489300-566a646a2e76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+            description: "灵感来自土耳其罕见的黑玫瑰，融合香料与皮革，展现东西方的奢华交融。",
+            profiles: ["oriental", "opulent", "complex", "mysterious", "luxurious", "bold"],
+            suitedFor: ["special occasions", "evening", "winter", "luxury"],
+            notes: {
+                top: ["bergamot", "green notes", "armoise", "cypress"],
+                middle: ["cumin", "nutmeg", "violet", "saffron", "rose", "jasmine"],
+                base: ["leather", "oud", "amber", "sandalwood", "tonka bean", "vanilla", "musk"]
+            }
+        },
+        {
+            id: 19,
+            brand: "Frédéric Malle",
+            name: "Carnal Flower",
+            price: "$440",
+            image: "https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=704&q=80",
+            description: "现代白花香调的杰作，将夹竹桃花的浓郁与清新完美平衡。",
+            profiles: ["floral", "feminine", "ethereal", "luxurious", "complex", "sensual"],
+            suitedFor: ["spring", "summer", "elegant", "confident"],
+            notes: {
+                top: ["bergamot", "melon", "eucalyptus"],
+                middle: ["tuberose", "ylang-ylang", "jasmine", "orange blossom"],
+                base: ["coconut", "musk", "white musks"]
+            }
+        },
+        {
+            id: 20,
+            brand: "Comme des Garçons",
+            name: "Avignon",
             price: "$155",
-            description: "A delicate and fresh fragrance capturing the luscious scent of just-ripe pears and freesias.",
-            profiles: ["light", "fresh", "elegant"],
-            suitedFor: ["california", "pop_art", "alice"]
+            image: "https://images.unsplash.com/photo-1608257817838-48322be0adeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80",
+            description: "如同走进中世纪大教堂的深邃体验，乳香与木质香调带来神秘的精神氛围。",
+            profiles: ["spiritual", "mysterious", "incense", "avant-garde", "intellectual", "ethereal"],
+            suitedFor: ["spiritual", "winter", "introspection", "artistic"],
+            notes: {
+                top: ["Roman chamomile", "aldehydes"],
+                middle: ["incense", "myrrh", "cistus"],
+                base: ["vanilla", "patchouli", "cedar"]
+            }
         }
     ];
 
@@ -966,21 +1154,105 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedValues = selections.map(s => s.value);
         const allNotes = selections.flatMap(s => s.optionData.notes);
         
-        // 创建推荐评分系统
+        // 创建详细的打分系统
         let perfumeScores = {};
         
-        // 为每个香水初始化评分
+        // 收集用户的风格偏好
+        const userComplexity = selections
+            .filter(s => s.optionData.complexity !== undefined)
+            .map(s => s.optionData.complexity)
+            .reduce((sum, val) => sum + val, 0) / 
+                (selections.filter(s => s.optionData.complexity !== undefined).length || 1);
+                
+        const userIntensity = selections
+            .filter(s => s.optionData.intensity !== undefined)
+            .map(s => s.optionData.intensity)
+            .reduce((sum, val) => sum + val, 0) / 
+                (selections.filter(s => s.optionData.intensity !== undefined).length || 1);
+                
+        const userQuirkiness = selections
+            .filter(s => s.optionData.quirkiness !== undefined)
+            .map(s => s.optionData.quirkiness)
+            .reduce((sum, val) => sum + val, 0) / 
+                (selections.filter(s => s.optionData.quirkiness !== undefined).length || 1);
+                
+        const userRegions = selections
+            .filter(s => s.optionData.region !== undefined)
+            .map(s => s.optionData.region);
+            
+        const userSpirituality = selections
+            .filter(s => s.optionData.spirituality !== undefined)
+            .map(s => s.optionData.spirituality)
+            .reduce((sum, val) => sum + val, 0) / 
+                (selections.filter(s => s.optionData.spirituality !== undefined).length || 1);
+                
+        const userAdventure = selections
+            .filter(s => s.optionData.adventure !== undefined)
+            .map(s => s.optionData.adventure)
+            .reduce((sum, val) => sum + val, 0) / 
+                (selections.filter(s => s.optionData.adventure !== undefined).length || 1);
+                
+        const userNostalgia = selections
+            .filter(s => s.optionData.nostalgia !== undefined)
+            .map(s => s.optionData.nostalgia)
+            .reduce((sum, val) => sum + val, 0) / 
+                (selections.filter(s => s.optionData.nostalgia !== undefined).length || 1);
+        
+        // 映射香水特性到用户风格偏好
+        const perfumeTraits = {
+            "intellectual": { complexity: 4, intensity: 2 },
+            "elegant": { complexity: 3, intensity: 2, nostalgia: 3 },
+            "vintage": { complexity: 4, nostalgia: 5 },
+            "warm": { intensity: 4 },
+            "sophisticated": { complexity: 4 },
+            "masculine": { intensity: 4 },
+            "fresh": { intensity: 2, complexity: 2 },
+            "natural": { complexity: 2, spirituality: 3 },
+            "mediterranean": { region: "europe" },
+            "iconic": { complexity: 3, nostalgia: 3 },
+            "unisex": { complexity: 3 },
+            "distinctive": { quirkiness: 4 },
+            "luxurious": { complexity: 4, intensity: 3 },
+            "rich": { intensity: 4, complexity: 3 },
+            "sweet": { intensity: 3 },
+            "opulent": { intensity: 5, complexity: 4 },
+            "intense": { intensity: 5 },
+            "avant-garde": { complexity: 5, quirkiness: 5 },
+            "architectural": { complexity: 4, quirkiness: 3 },
+            "modern": { nostalgia: 1 },
+            "light": { intensity: 1 },
+            "floral": { complexity: 3 },
+            "feminine": { intensity: 2 },
+            "powerful": { intensity: 4 },
+            "confident": { intensity: 4 },
+            "romantic": { intensity: 3, spirituality: 3 },
+            "timeless": { nostalgia: 4 },
+            "fruity": { intensity: 2, complexity: 2 },
+            "complex": { complexity: 5 },
+            "beachy": { region: "tropical" },
+            "bold": { intensity: 4, quirkiness: 3 },
+            "sensual": { intensity: 3 },
+            "addictive": { intensity: 4 },
+            "mineral": { complexity: 3, quirkiness: 3 },
+            "ethereal": { spirituality: 4, complexity: 4 },
+            "mysterious": { complexity: 4, spirituality: 3 },
+            "classic": { nostalgia: 4 },
+            "vibrant": { intensity: 3 }
+        };
+        
+        // 为每个香水计算得分
         perfumeData.forEach(perfume => {
             perfumeScores[perfume.id] = 0;
             
-            // 基于直接匹配增加分数
+            // 1. 基于选择值直接匹配增加分数
             perfume.suitedFor.forEach(trait => {
                 if (selectedValues.includes(trait)) {
-                    perfumeScores[perfume.id] += 3;
+                    perfumeScores[perfume.id] += 4; // 直接匹配的权重更高
                 }
             });
             
-            // 基于笔记匹配增加分数
+            // 2. 基于笔记匹配增加分数
+            let noteMatchCount = 0;
             allNotes.forEach(note => {
                 const allPerfumeNotes = [
                     ...perfume.notes.top, 
@@ -988,22 +1260,128 @@ document.addEventListener('DOMContentLoaded', function() {
                     ...perfume.notes.base
                 ].map(n => n.toLowerCase());
                 
-                if (allPerfumeNotes.some(n => n.includes(note) || note.includes(n))) {
-                    perfumeScores[perfume.id] += 1;
+                // 检查是否有任何香水笔记包含用户选择的笔记
+                const hasMatch = allPerfumeNotes.some(n => 
+                    n.includes(note) || note.includes(n)
+                );
+                
+                if (hasMatch) {
+                    noteMatchCount++;
                 }
             });
             
-            // 添加一些随机性以避免完全相同的结果
+            // 香调匹配得分，根据匹配的笔记数量给予递增奖励
+            if (noteMatchCount > 0) {
+                perfumeScores[perfume.id] += Math.pow(1.5, noteMatchCount);
+            }
+            
+            // 3. 基于香水特性与用户风格偏好的匹配
+            let traitMatchScore = 0;
+            perfume.profiles.forEach(profile => {
+                const trait = perfumeTraits[profile];
+                if (trait) {
+                    // 复杂度匹配
+                    if (trait.complexity !== undefined && !isNaN(userComplexity)) {
+                        const complexityDiff = 5 - Math.abs(trait.complexity - userComplexity);
+                        traitMatchScore += complexityDiff * 0.3;
+                    }
+                    
+                    // 强度匹配
+                    if (trait.intensity !== undefined && !isNaN(userIntensity)) {
+                        const intensityDiff = 5 - Math.abs(trait.intensity - userIntensity);
+                        traitMatchScore += intensityDiff * 0.3;
+                    }
+                    
+                    // 怪奇度匹配
+                    if (trait.quirkiness !== undefined && !isNaN(userQuirkiness)) {
+                        const quirkinessDiff = 5 - Math.abs(trait.quirkiness - userQuirkiness);
+                        traitMatchScore += quirkinessDiff * 0.3;
+                    }
+                    
+                    // 地区匹配
+                    if (trait.region && userRegions.includes(trait.region)) {
+                        traitMatchScore += 2;
+                    }
+                    
+                    // 精神性匹配
+                    if (trait.spirituality !== undefined && !isNaN(userSpirituality)) {
+                        const spiritualityDiff = 5 - Math.abs(trait.spirituality - userSpirituality);
+                        traitMatchScore += spiritualityDiff * 0.3;
+                    }
+                    
+                    // 冒险度匹配
+                    if (trait.adventure !== undefined && !isNaN(userAdventure)) {
+                        const adventureDiff = 5 - Math.abs(trait.adventure - userAdventure);
+                        traitMatchScore += adventureDiff * 0.3;
+                    }
+                    
+                    // 怀旧度匹配
+                    if (trait.nostalgia !== undefined && !isNaN(userNostalgia)) {
+                        const nostalgiaDiff = 5 - Math.abs(trait.nostalgia - userNostalgia);
+                        traitMatchScore += nostalgiaDiff * 0.3;
+                    }
+                }
+            });
+            
+            // 将特性匹配得分加到总分
+            perfumeScores[perfume.id] += traitMatchScore;
+            
+            // 4. 价格区间偏好（假设用户喜欢中等价位）
+            const price = parseInt(perfume.price.replace(/\D/g,''));
+            if (price <= 100) {
+                perfumeScores[perfume.id] += 0.5; // 更经济实惠
+            } else if (price > 300) {
+                perfumeScores[perfume.id] += 0.2; // 高端奢侈
+            } else {
+                perfumeScores[perfume.id] += 1; // 中等价位
+            }
+            
+            // 5. 添加一点随机性以在多次测试中得到不同结果
             perfumeScores[perfume.id] += Math.random() * 0.5;
         });
         
-        // 根据评分对香水进行排序
+        // 对香水按分数排序
         const sortedPerfumes = Object.entries(perfumeScores)
             .sort((a, b) => b[1] - a[1])
             .map(([id]) => perfumeData.find(p => p.id === parseInt(id)));
         
-        // 返回前4个推荐
-        return sortedPerfumes.slice(0, 4);
+        // 获取前5名，但确保推荐结果多样性
+        // 避免选择太多特性相似的香水
+        const recommendations = [];
+        const profilesIncluded = new Set();
+        
+        // 首先添加得分最高的香水
+        if (sortedPerfumes.length > 0) {
+            recommendations.push(sortedPerfumes[0]);
+            sortedPerfumes[0].profiles.forEach(p => profilesIncluded.add(p));
+        }
+        
+        // 然后基于多样性添加其他香水
+        for (let i = 1; i < sortedPerfumes.length && recommendations.length < 4; i++) {
+            const perfume = sortedPerfumes[i];
+            
+            // 计算与已包含香水的特性重叠度
+            const overlapCount = perfume.profiles.filter(p => profilesIncluded.has(p)).length;
+            const diversityScore = 1 - (overlapCount / perfume.profiles.length);
+            
+            // 如果特性重叠度低于阈值或已经选择了足够多的香水，则添加此香水
+            if (diversityScore > 0.5 || recommendations.length < 2) {
+                recommendations.push(perfume);
+                perfume.profiles.forEach(p => profilesIncluded.add(p));
+            }
+        }
+        
+        // 如果推荐不足4个，从排序列表中继续添加
+        while (recommendations.length < 4 && recommendations.length < sortedPerfumes.length) {
+            const nextIndex = recommendations.length;
+            if (sortedPerfumes[nextIndex] && !recommendations.includes(sortedPerfumes[nextIndex])) {
+                recommendations.push(sortedPerfumes[nextIndex]);
+            } else {
+                break;
+            }
+        }
+        
+        return recommendations;
     }
 
     // 更新推荐香水区域
