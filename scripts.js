@@ -423,22 +423,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="bg-gradient-to-r from-apple-purple to-apple-pink h-full rounded-full transition-all" style="width: ${(index + 1) / quizQuestions.length * 100}%"></div>
             </div>
             <div class="text-right text-sm text-apple-gray-500 dark:text-apple-gray-400 mb-8">
-                Question ${index + 1} of ${quizQuestions.length}
+                Question ${index + 1} of ${quizQuestions.length} ✨
             </div>
         `;
         
         // 构建问题HTML
         questionElement.innerHTML = `
             ${progressBar}
-            <h3 class="text-2xl font-semibold mb-4">${question.title}</h3>
+            <h3 class="text-2xl font-semibold mb-4 animate-float">${question.title}</h3>
             <p class="text-xl mb-8">${question.question}</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 ${question.options.map((option, optionIndex) => `
-                    <button class="option-card bg-apple-gray-100 dark:bg-apple-gray-800 p-6 rounded-xl hover:bg-apple-gray-200 dark:hover:bg-apple-gray-700 hover:shadow-lg transition-all text-left flex items-start" 
+                    <button class="option-card glass-effect p-6 rounded-xl hover:shadow-lg transition-all text-left flex items-start transform hover:-translate-y-1 duration-300 relative overflow-hidden" 
                             data-value="${option.value}" data-index="${optionIndex}">
-                        <span class="text-3xl mr-4">${option.emoji}</span>
-                        <div>
-                            <h4 class="font-semibold">${option.title}</h4>
+                        <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-r from-apple-purple/10 to-apple-pink/10 opacity-0 hover:opacity-100 transition-opacity"></div>
+                        <span class="text-4xl mr-4 animate-float" style="animation-delay: ${0.2 * optionIndex}s">${option.emoji}</span>
+                        <div class="relative z-10">
+                            <h4 class="font-semibold text-lg">${option.title}</h4>
                         </div>
                     </button>
                 `).join('')}
@@ -454,8 +455,21 @@ document.addEventListener('DOMContentLoaded', function() {
         optionCards.forEach(card => {
             card.addEventListener('click', function() {
                 // 高亮选中选项
-                optionCards.forEach(c => c.classList.remove('ring-2', 'ring-apple-pink'));
+                optionCards.forEach(c => {
+                    c.classList.remove('ring-2', 'ring-apple-pink');
+                    c.querySelector('.absolute').classList.remove('opacity-100');
+                    c.querySelector('.absolute').classList.add('opacity-0');
+                });
+                
                 this.classList.add('ring-2', 'ring-apple-pink');
+                this.querySelector('.absolute').classList.remove('opacity-0');
+                this.querySelector('.absolute').classList.add('opacity-100');
+                
+                // 添加选中效果
+                const selectedEmoji = document.createElement('div');
+                selectedEmoji.className = 'absolute top-2 right-2 text-apple-pink text-lg animate-pulse';
+                selectedEmoji.textContent = '✓';
+                this.appendChild(selectedEmoji);
                 
                 // 保存用户选择
                 const selectedValue = this.getAttribute('data-value');
@@ -469,10 +483,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         optionData: question.options[selectedIndex]
                     });
                     
+                    // 淡出效果
+                    questionElement.style.opacity = '0';
+                    questionElement.style.transform = 'translateY(-10px)';
+                    questionElement.style.transition = 'opacity 0.3s, transform 0.3s';
+                    
                     // 显示下一题
-                    currentQuestion++;
-                    showQuestion(currentQuestion);
-                }, 400);
+                    setTimeout(() => {
+                        currentQuestion++;
+                        showQuestion(currentQuestion);
+                    }, 300);
+                }, 600);
             });
         });
     }
@@ -491,10 +512,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 构建临时结果HTML
         resultsElement.innerHTML = `
-            <h3 class="text-2xl font-semibold mb-6 text-center">Analyzing Your Preferences</h3>
-            <p class="text-xl mb-8 text-center">We're selecting the perfect perfumes for your unique style...</p>
-            <div class="flex justify-center">
-                <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-apple-pink"></div>
+            <h3 class="text-2xl font-semibold mb-6 text-center">✨ Analyzing Your Preferences ✨</h3>
+            <p class="text-xl mb-8 text-center">We're crafting the perfect fragrance selection just for you...</p>
+            <div class="flex justify-center items-center flex-col">
+                <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-apple-pink mb-4"></div>
+                <div class="text-sm text-apple-gray-500 dark:text-apple-gray-400 animate-pulse">Discovering your scent personality...</div>
             </div>
         `;
         
@@ -517,12 +539,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: 'smooth' 
             });
             
+            // 添加气泡效果
+            const bubbles = ['✨', '🌸', '💫', '🌿', '💭'];
+            for (let i = 0; i < 10; i++) {
+                const bubble = document.createElement('div');
+                const randomBubble = bubbles[Math.floor(Math.random() * bubbles.length)];
+                const size = Math.random() * 20 + 10;
+                
+                bubble.innerHTML = randomBubble;
+                bubble.className = 'fixed text-xl animate-scent';
+                bubble.style.fontSize = `${size}px`;
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.top = `${Math.random() * 100}%`;
+                bubble.style.opacity = '0.4';
+                bubble.style.animationDelay = `${Math.random() * 5}s`;
+                bubble.style.zIndex = '-1';
+                
+                document.body.appendChild(bubble);
+                
+                setTimeout(() => {
+                    bubble.remove();
+                }, 8000);
+            }
+            
             // 添加重新开始按钮
             const restartButton = document.createElement('div');
             restartButton.className = 'text-center mt-12';
             restartButton.innerHTML = `
                 <button id="restart-quiz" class="bg-apple-pink hover:bg-apple-pink/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 group relative overflow-hidden">
-                    <span class="relative z-10">Discover More Scents</span>
+                    <span class="relative z-10">✨ Discover More Scents ✨</span>
                     <span class="absolute inset-0 bg-gradient-to-r from-apple-purple to-apple-pink opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 </button>
             `;
@@ -543,13 +588,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('restart-quiz').parentElement.remove();
                 }
                 
+                // 清除所有气泡
+                document.querySelectorAll('.animate-scent').forEach(bubble => bubble.remove());
+                
                 // 显示介绍页
                 const introElement = document.createElement('div');
                 introElement.className = 'quiz-intro animate-fade-in text-center';
                 introElement.innerHTML = `
-                    <p class="text-xl mb-10 max-w-3xl mx-auto">Your journey to the perfect signature scent begins with a few simple questions about your preferences and personality.</p>
+                    <p class="text-xl mb-10 max-w-3xl mx-auto">Your journey to the perfect signature scent begins with a few simple questions about your preferences and personality. 🌸</p>
                     <button id="start-quiz" class="bg-apple-pink hover:bg-apple-pink/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 relative overflow-hidden group">
-                        <span class="relative z-10">Start Your Scent Journey</span>
+                        <span class="relative z-10">✨ Start Your Scent Journey ✨</span>
                         <span class="absolute inset-0 bg-gradient-to-r from-apple-purple to-apple-pink opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     </button>
                 `;
@@ -621,11 +669,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateRecommendationsSection(container, recommendations) {
         // 更新标题
         const titleElement = container.querySelector('h2');
-        titleElement.textContent = "Your Perfect Perfume Matches";
+        titleElement.textContent = "✨ Your Perfect Perfume Matches ✨";
         
         // 更新描述
         const descriptionElement = container.querySelector('p');
-        descriptionElement.innerHTML = "Based on your unique preferences, we've curated these <span class='text-apple-pink font-semibold'>exclusive fragrances</span> that will complement your personality.";
+        descriptionElement.innerHTML = "Based on your unique preferences, we've curated these <span class='text-apple-pink font-semibold'>exclusive fragrances</span> that will complement your personality. 🌟";
         
         // 找到卡片容器
         const cardsContainer = container.querySelector('.grid');
@@ -645,65 +693,86 @@ document.addEventListener('DOMContentLoaded', function() {
                 const question = quizQuestions.find(q => q.id === selection.questionId);
                 const option = question.options.find(o => o.value === selection.value);
                 
-                matchReason = `<div class="mt-4 bg-apple-gray-200/50 dark:bg-apple-gray-700/50 p-3 rounded-lg">
-                    <span class="font-semibold text-apple-pink">Why this matches you: </span>
+                matchReason = `<div class="mt-4 bg-apple-gray-200/50 dark:bg-apple-gray-700/50 p-4 rounded-lg">
+                    <span class="font-semibold text-apple-pink">✨ Why this matches you: </span>
                     Your preference for ${option.title} suggests ${option.explanation}
                 </div>`;
             }
             
-            // 构建笔记展示
+            // 匹配香水配置文件
+            const profileBadges = perfume.profiles.map(profile => 
+                `<span class="inline-block px-2 py-1 rounded-full bg-apple-purple/10 text-apple-purple text-xs mr-1 mb-1">${profile}</span>`
+            ).join('');
+            
+            // 构建笔记展示 - 使用新的容器样式
             const notes = `
-                <div class="flex flex-wrap gap-2 mt-3 mb-4">
-                    <div class="flex flex-col items-center">
-                        <span class="text-xs text-apple-gray-500 dark:text-apple-gray-400 mb-1">Top</span>
-                        <div class="flex gap-1">
+                <div class="notes-container">
+                    <div class="notes-row">
+                        <div class="notes-label">
+                            <span class="notes-label-emoji">🍋</span>Top
+                        </div>
+                        <div class="flex flex-wrap gap-1">
                             ${perfume.notes.top.map(note => 
-                                `<span class="px-2 py-1 bg-apple-pink/10 text-apple-pink rounded-full text-xs">${note}</span>`
+                                `<span class="note-tag note-tag-top">${note}</span>`
                             ).join('')}
                         </div>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <span class="text-xs text-apple-gray-500 dark:text-apple-gray-400 mb-1">Middle</span>
-                        <div class="flex gap-1">
+                    <div class="notes-row">
+                        <div class="notes-label">
+                            <span class="notes-label-emoji">🌺</span>Middle
+                        </div>
+                        <div class="flex flex-wrap gap-1">
                             ${perfume.notes.middle.map(note => 
-                                `<span class="px-2 py-1 bg-apple-purple/10 text-apple-purple rounded-full text-xs">${note}</span>`
+                                `<span class="note-tag note-tag-middle">${note}</span>`
                             ).join('')}
                         </div>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <span class="text-xs text-apple-gray-500 dark:text-apple-gray-400 mb-1">Base</span>
-                        <div class="flex gap-1">
+                    <div class="notes-row">
+                        <div class="notes-label">
+                            <span class="notes-label-emoji">🌲</span>Base
+                        </div>
+                        <div class="flex flex-wrap gap-1">
                             ${perfume.notes.base.map(note => 
-                                `<span class="px-2 py-1 bg-apple-blue/10 text-apple-blue rounded-full text-xs">${note}</span>`
+                                `<span class="note-tag note-tag-base">${note}</span>`
                             ).join('')}
                         </div>
                     </div>
                 </div>
             `;
             
-            // 创建卡片
+            // 创建卡片 - 使用玻璃效果
             const card = document.createElement('div');
-            card.className = 'bg-apple-gray-100 dark:bg-apple-gray-800 rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1';
+            card.className = 'glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2';
             card.innerHTML = `
                 <div class="h-64 overflow-hidden relative">
-                    <div class="absolute top-3 left-3 bg-apple-purple text-white px-3 py-1 rounded-full text-sm font-medium z-10">
-                        Match #${index + 1}
+                    <div class="absolute top-3 left-3 bg-apple-purple text-white px-3 py-1 rounded-full text-sm font-medium z-10 shadow-md">
+                        ✨ Match #${index + 1}
                     </div>
-                    <img src="${perfume.image}" alt="${perfume.name}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    <img src="${perfume.image}" alt="${perfume.name}" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                 </div>
                 <div class="p-6">
                     <h3 class="text-2xl font-semibold mb-2">${perfume.name}</h3>
-                    <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-2">${perfume.description}</p>
+                    <div class="mb-3">
+                        ${profileBadges}
+                    </div>
+                    <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-3">${perfume.description}</p>
                     ${notes}
                     ${matchReason}
-                    <div class="flex justify-between items-center mt-4">
+                    <div class="flex justify-between items-center mt-5">
                         <span class="text-lg font-semibold">${perfume.price}</span>
-                        <a href="#" class="bg-apple-blue hover:bg-apple-blue/90 text-white py-2 px-4 rounded-full text-sm transition-all">Learn More</a>
+                        <a href="#" class="bg-apple-blue hover:bg-apple-blue/90 text-white py-2 px-5 rounded-full text-sm transition-all transform hover:-translate-y-1 shadow-md hover:shadow-lg">
+                            ✨ Learn More
+                        </a>
                     </div>
                 </div>
             `;
             
             cardsContainer.appendChild(card);
+            
+            // 添加淡入动画，错开时间
+            setTimeout(() => {
+                card.classList.add('animate-fade-in');
+            }, 100 * index);
         });
     }
 });
