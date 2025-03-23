@@ -358,70 +358,85 @@ document.addEventListener('DOMContentLoaded', function() {
         // 分析用户选择并生成香水推荐
         const recommendations = analyzeSelections(userSelections);
         
-        // 创建结果元素
+        // 隐藏问卷部分
+        quizContainer.innerHTML = '';
+        
+        // 创建结果元素，告知用户正在生成推荐
         const resultsElement = document.createElement('div');
         resultsElement.className = 'quiz-results animate-fade-in';
         
-        // 构建结果HTML
+        // 构建临时结果HTML
         resultsElement.innerHTML = `
-            <h3 class="text-2xl font-semibold mb-6">Your Perfume Recommendations</h3>
-            <p class="text-xl mb-8">Based on your unique preferences, we've curated these perfumes that match your personality.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                ${recommendations.map((rec, index) => `
-                    <div class="result-card bg-white dark:bg-apple-gray-800 p-6 rounded-xl shadow-lg">
-                        <div class="flex items-center mb-4">
-                            <span class="text-3xl mr-3">${rec.emoji}</span>
-                            <h4 class="text-xl font-semibold">${rec.name}</h4>
-                        </div>
-                        <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-3">${rec.description}</p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            ${rec.notes.map(note => `
-                                <span class="px-3 py-1 bg-apple-gray-100 dark:bg-apple-gray-700 rounded-full text-sm">
-                                    ${note}
-                                </span>
-                            `).join('')}
-                        </div>
-                    </div>
-                `).join('')}
-            </div>
-            
-            <div class="text-center">
-                <button id="restart-quiz" class="bg-apple-blue hover:bg-apple-blue/90 text-white font-semibold py-3 px-8 rounded-full text-lg transition-all">
-                    Retake Quiz
-                </button>
+            <h3 class="text-2xl font-semibold mb-6">Analyzing Your Preferences</h3>
+            <p class="text-xl mb-8">We're selecting the perfect perfumes for your unique style...</p>
+            <div class="flex justify-center">
+                <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-apple-pink"></div>
             </div>
         `;
         
-        // 清空容器并添加结果
-        quizContainer.innerHTML = '';
+        // 添加临时结果
         quizContainer.appendChild(resultsElement);
         
-        // 添加重新开始按钮事件
-        document.getElementById('restart-quiz').addEventListener('click', function() {
-            currentQuestion = 0;
-            userSelections = [];
-            document.querySelector('.quiz-results').classList.add('hidden');
+        // 显示推荐香水产品部分
+        setTimeout(() => {
+            // 显示之前添加的香水推荐部分
+            document.getElementById('perfume-recommendations').classList.remove('hidden');
             
-            // 显示介绍页
-            const introElement = document.createElement('div');
-            introElement.className = 'quiz-intro animate-fade-in';
-            introElement.innerHTML = `
-                <p class="text-xl mb-8">Answer our unique personality quiz to discover perfumes that match your aesthetic and cultural preferences.</p>
-                <button id="start-quiz" class="bg-apple-blue hover:bg-apple-blue/90 text-white font-semibold py-3 px-8 rounded-full text-lg transition-all">
-                    Start The Quiz
+            // 平滑滚动到推荐区域
+            document.getElementById('perfume-recommendations').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+            
+            // 添加重新开始按钮
+            const restartButton = document.createElement('div');
+            restartButton.className = 'text-center mt-8';
+            restartButton.innerHTML = `
+                <button id="restart-quiz" class="bg-apple-blue hover:bg-apple-blue/90 text-white font-semibold py-3 px-8 rounded-full text-lg transition-all">
+                    Retake Quiz
                 </button>
             `;
             
-            quizContainer.innerHTML = '';
-            quizContainer.appendChild(introElement);
+            document.getElementById('perfume-recommendations').appendChild(restartButton);
             
-            // 重新绑定开始按钮事件
-            document.getElementById('start-quiz').addEventListener('click', function() {
-                document.querySelector('.quiz-intro').classList.add('hidden');
-                showQuestion(currentQuestion);
+            // 添加重新开始按钮事件
+            document.getElementById('restart-quiz').addEventListener('click', function() {
+                // 重置参数
+                currentQuestion = 0;
+                userSelections = [];
+                
+                // 隐藏推荐区域
+                document.getElementById('perfume-recommendations').classList.add('hidden');
+                
+                // 如果有存在的重启按钮，移除它
+                if (document.getElementById('restart-quiz')) {
+                    document.getElementById('restart-quiz').parentElement.remove();
+                }
+                
+                // 显示介绍页
+                const introElement = document.createElement('div');
+                introElement.className = 'quiz-intro animate-fade-in';
+                introElement.innerHTML = `
+                    <p class="text-xl mb-8">Answer our unique personality quiz to discover perfumes that match your aesthetic and cultural preferences.</p>
+                    <button id="start-quiz" class="bg-apple-blue hover:bg-apple-blue/90 text-white font-semibold py-3 px-8 rounded-full text-lg transition-all">
+                        Start The Quiz
+                    </button>
+                `;
+                
+                quizContainer.innerHTML = '';
+                quizContainer.appendChild(introElement);
+                
+                // 平滑滚动到问卷区域
+                document.getElementById('quiz').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+                
+                // 重新绑定开始按钮事件
+                document.getElementById('start-quiz').addEventListener('click', function() {
+                    document.querySelector('.quiz-intro').classList.add('hidden');
+                    showQuestion(currentQuestion);
+                });
             });
-        });
+        }, 1500); // 1.5秒后显示香水推荐，给用户感觉是在"分析"他们的选择
     }
 
     // 分析用户选择并生成推荐

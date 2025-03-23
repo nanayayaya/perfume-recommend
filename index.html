@@ -97,7 +97,8 @@
             </div>
         </section>
 
-        <section id="quiz" class="bg-white dark:bg-apple-gray-900 p-8 md:p-12 rounded-3xl shadow-xl mb-16">
+        <!-- 问答测试部分移到这里并扩大空间 -->
+        <section id="quiz" class="bg-white dark:bg-apple-gray-900 p-8 md:p-12 rounded-3xl shadow-xl mb-16 min-h-screen flex flex-col justify-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-8 text-apple-gray-900 dark:text-white">Find Your Signature Scent</h2>
             
             <div id="quiz-container" class="space-y-12">
@@ -147,6 +148,62 @@
             </div>
         </section>
 
+        <!-- 新增具体香水产品推荐区域 -->
+        <section id="perfume-recommendations" class="bg-white dark:bg-apple-gray-900 p-8 md:p-12 rounded-3xl shadow-xl mb-16 hidden">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-apple-gray-900 dark:text-white">Your Perfect Perfumes</h2>
+            <p class="text-xl mb-12">Based on your unique preferences, we recommend these exquisite fragrances that will complement your personality.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 推荐香水1 -->
+                <div class="bg-apple-gray-100 dark:bg-apple-gray-800 rounded-2xl overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                             alt="Byredo Bibliothèque" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Byredo Bibliothèque</h3>
+                        <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-4">A sophisticated fragrance that evokes the atmosphere of an old library with leather-bound books. Features notes of peach, plum, violet, leather, and patchouli.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-semibold">$190</span>
+                            <a href="#" class="bg-apple-blue text-white py-2 px-4 rounded-full text-sm">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 推荐香水2 -->
+                <div class="bg-apple-gray-100 dark:bg-apple-gray-800 rounded-2xl overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1615144178805-991dfd8156f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                             alt="Maison Margiela Replica Jazz Club" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Maison Margiela Jazz Club</h3>
+                        <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-4">A warm and spicy fragrance reminiscent of a Brooklyn jazz club. Features notes of pink pepper, rum, tobacco leaf, and vanilla bean.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-semibold">$135</span>
+                            <a href="#" class="bg-apple-blue text-white py-2 px-4 rounded-full text-sm">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 推荐香水3 -->
+                <div class="bg-apple-gray-100 dark:bg-apple-gray-800 rounded-2xl overflow-hidden">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1592945403345-980585f18b26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                             alt="Diptyque Philosykos" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2">Diptyque Philosykos</h3>
+                        <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-4">A fresh and green fragrance inspired by the fig trees of Greece. Features notes of fig leaf, fig wood, and black pepper creating a lush Mediterranean atmosphere.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-semibold">$165</span>
+                            <a href="#" class="bg-apple-blue text-white py-2 px-4 rounded-full text-sm">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-8 text-apple-gray-900 dark:text-white">Why Our Approach Works</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -161,14 +218,6 @@
                     <p class="text-lg text-apple-gray-700 dark:text-apple-gray-300">We've mapped the complex relationship between aesthetic preferences and scent appreciation to create recommendations that feel surprisingly personal.</p>
                 </div>
             </div>
-        </section>
-
-        <section class="bg-apple-gray-100 dark:bg-apple-gray-800 p-8 md:p-12 rounded-3xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-apple-gray-900 dark:text-white">Ready to Find Your Perfect Scent?</h2>
-            <p class="text-xl mb-8 max-w-3xl">Take our unique personality quiz and discover perfumes curated specifically for your aesthetic sensibilities and cultural preferences.</p>
-            <a href="#quiz" class="bg-apple-purple hover:bg-apple-purple/90 text-white font-semibold py-3 px-8 rounded-full text-lg inline-block transition-all">
-                Start The Quiz
-            </a>
         </section>
     </main>
 
