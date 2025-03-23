@@ -865,7 +865,7 @@ document.addEventListener('DOMContentLoaded', function() {
             updateRecommendationsSection(recommendationsContainer, recommendations);
             
             // 显示科普内容区域
-            createAndAddEducationSection(recommendationsContainer, userPerfumeProfile);
+            createAndAddEducationSection(userPerfumeProfile);
             
             // 显示推荐香水区域
             recommendationsContainer.classList.remove('hidden');
@@ -1259,144 +1259,278 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 创建并添加科普内容区域
-    function createAndAddEducationSection(container, userProfile) {
-        // 创建科普内容区域
-        const educationSection = document.createElement('section');
-        educationSection.className = 'perfume-education max-w-7xl mx-auto glass-effect rounded-3xl shadow-xl p-8 md:p-12 transform transition-all hover:shadow-2xl mt-20 animate-fade-in';
+    // 修改createAndAddEducationSection函数，实现交互式内容展示
+    function createAndAddEducationSection(userProfile) {
+        const educationSection = document.createElement('div');
+        educationSection.className = 'perfume-education';
         
-        // 获取合适的香调DNA内容
-        const dnaContent = perfumeEducationData.dnaContent[userProfile.mainProfile] || perfumeEducationData.dnaContent.floral;
+        // 添加标题
+        const sectionTitle = document.createElement('h2');
+        sectionTitle.className = 'section-title';
+        sectionTitle.innerHTML = `✨ 香水科普内容 <span class="highlight">Fragrance Education</span> ✨`;
+        educationSection.appendChild(sectionTitle);
         
-        // 获取合适的冷知识内容
-        const coldFact = perfumeEducationData.coldFacts[userProfile.coldFactType] || perfumeEducationData.coldFacts.rose;
+        const sectionDesc = document.createElement('p');
+        sectionDesc.className = 'section-description';
+        sectionDesc.innerHTML = `根据您的香调偏好，我们为您精选了以下专属内容 🌟`;
+        educationSection.appendChild(sectionDesc);
         
-        // 随机选择一个工艺解密
-        const craftSecret = perfumeEducationData.craftSecrets[Math.floor(Math.random() * perfumeEducationData.craftSecrets.length)];
+        // 创建瀑布流网格布局容器
+        const masonryGrid = document.createElement('div');
+        masonryGrid.className = 'masonry-grid';
         
-        // 随机选择一个行业揭秘
-        const industrySecret = perfumeEducationData.industrySecrets[Math.floor(Math.random() * perfumeEducationData.industrySecrets.length)];
+        // 1. 添加"您的香调DNA"卡片
+        const dnaData = perfumeEducationData.dnaContent[userProfile.mainProfile];
+        const dnaCard = createInteractiveCard('您的香调DNA 🧬', dnaData, 'dna-card');
         
-        // 随机选择一个科学跨界
-        const scienceCrossover = perfumeEducationData.scienceCrossover[Math.floor(Math.random() * perfumeEducationData.scienceCrossover.length)];
+        // 添加分子装饰元素
+        const moleculeAnimation = document.createElement('div');
+        moleculeAnimation.className = 'molecule-animation';
+        dnaCard.querySelector('.card-preview').appendChild(moleculeAnimation);
         
-        // 获取合适的实用技巧
-        const practicalTip = perfumeEducationData.practicalTips[userProfile.deviceType];
+        // 添加展开动画类
+        dnaCard.querySelector('.card-content-inner').classList.add('dna-expand-animation');
         
-        // 获取互动内容
-        const interactiveContent = perfumeEducationData.interactiveContent;
+        masonryGrid.appendChild(dnaCard);
         
-        // 获取转化入口
-        const conversionEntry = perfumeEducationData.conversionEntries[userProfile.mainProfile] || perfumeEducationData.conversionEntries.floral;
+        // 2. 添加"冷知识"卡片
+        const factData = perfumeEducationData.coldFacts[userProfile.coldFactType];
+        const factCard = createInteractiveCard('香水冷知识 💫', factData, 'fact-card');
         
-        // 构建科普内容HTML
-        educationSection.innerHTML = `
-            <h2 class="text-3xl font-bold mb-8 text-center">✨ Expand Your Fragrance Knowledge ✨</h2>
+        // 添加装饰元素
+        const factIconContainer = document.createElement('div');
+        factIconContainer.className = 'fact-icon-container';
+        const factIcon = document.createElement('div');
+        factIcon.className = 'fact-icon';
+        factIconContainer.appendChild(factIcon);
+        factCard.querySelector('.card-preview').appendChild(factIconContainer);
+        
+        // 添加展开动画类
+        factCard.querySelector('.card-content-inner').classList.add('fact-expand-animation');
+        
+        masonryGrid.appendChild(factCard);
+        
+        // 3. 添加"工艺解密"卡片 - 随机选择两个
+        const craftSecrets = shuffleAndPick(perfumeEducationData.craftSecrets, 2);
+        craftSecrets.forEach((craftData, index) => {
+            const craftCard = createInteractiveCard(`工艺解密 ${index + 1} 🧪`, craftData, 'craft-card');
             
-            <!-- 用户相关内容 -->
-            <div class="mb-16">
-                <h3 class="text-2xl font-semibold mb-6 text-center">Your Scent DNA</h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- 香调DNA -->
-                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
-                        <h4 class="text-xl font-medium mb-4">${dnaContent.title}</h4>
-                        ${dnaContent.content}
-                    </div>
-                    
-                    <!-- 专属冷知识 -->
-                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
-                        <h4 class="text-xl font-medium mb-4">${coldFact.title}</h4>
-                        ${coldFact.content}
-                    </div>
+            // 添加波浪装饰元素
+            const craftAnimation = document.createElement('div');
+            craftAnimation.className = 'craft-animation';
+            craftCard.querySelector('.card-preview').appendChild(craftAnimation);
+            
+            // 添加展开动画类
+            craftCard.querySelector('.card-content-inner').classList.add('craft-expand-animation');
+            
+            masonryGrid.appendChild(craftCard);
+        });
+        
+        // 4. 添加"行业揭秘"卡片 - 随机选择两个
+        const industrySecrets = shuffleAndPick(perfumeEducationData.industrySecrets, 2);
+        industrySecrets.forEach((secretData, index) => {
+            const secretCard = createInteractiveCard(`行业揭秘 ${index + 1} 🔍`, secretData, 'secret-card');
+            
+            // 添加星空装饰元素
+            const secretAnimation = document.createElement('div');
+            secretAnimation.className = 'secret-animation';
+            secretCard.querySelector('.card-preview').appendChild(secretAnimation);
+            
+            // 添加展开动画类
+            secretCard.querySelector('.card-content-inner').classList.add('secret-expand-animation');
+            
+            masonryGrid.appendChild(secretCard);
+        });
+        
+        // 5. 添加"科学跨界"卡片 - 随机选择两个
+        const scienceCrossovers = shuffleAndPick(perfumeEducationData.scienceCrossover, 2);
+        scienceCrossovers.forEach((scienceData, index) => {
+            const scienceCard = createInteractiveCard(`科学跨界 ${index + 1} 🔬`, scienceData, 'science-card');
+            
+            // 添加神经网络装饰元素
+            const neuroscienceAnimation = document.createElement('div');
+            neuroscienceAnimation.className = 'neuroscience-animation';
+            scienceCard.querySelector('.card-preview').appendChild(neuroscienceAnimation);
+            
+            // 添加展开动画类
+            scienceCard.querySelector('.card-content-inner').classList.add('science-expand-animation');
+            
+            masonryGrid.appendChild(scienceCard);
+        });
+        
+        // 6. 添加"实用技巧"卡片
+        const tipsData = perfumeEducationData.practicalTips[userProfile.deviceType];
+        const tipsCard = createInteractiveCard('实用技巧 💡', tipsData, 'tips-card');
+        
+        // 添加装饰元素
+        const tipsAnimation = document.createElement('div');
+        tipsAnimation.className = 'tips-animation';
+        tipsCard.querySelector('.card-preview').appendChild(tipsAnimation);
+        
+        // 添加展开动画类
+        tipsCard.querySelector('.card-content-inner').classList.add('tips-expand-animation');
+        
+        masonryGrid.appendChild(tipsCard);
+        
+        educationSection.appendChild(masonryGrid);
+        
+        // 7. 添加"互动实验室"翻转卡片
+        const labSection = document.createElement('div');
+        labSection.className = 'perspective-container';
+        
+        const flipCard = document.createElement('div');
+        flipCard.className = 'flip-card';
+        flipCard.innerHTML = `
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3>您的个人调香实验室 🧪</h3>
+                    <p>点击翻转卡片，探索基于您喜好的DIY香水配方</p>
+                    <div class="lab-animation-front"></div>
+                    <div class="flip-icon">↺</div>
                 </div>
-            </div>
-            
-            <!-- 通用科普内容 -->
-            <div class="mb-16">
-                <h3 class="text-2xl font-semibold mb-6 text-center">Perfume Industry Insights</h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- 工艺解密 -->
-                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
-                        <h4 class="text-xl font-medium mb-4">${craftSecret.title}</h4>
-                        ${craftSecret.content}
+                <div class="flip-card-back">
+                    <h3>${perfumeEducationData.interactiveContent.title}</h3>
+                    <div style="margin-top: 1rem; text-align: left;">
+                        ${perfumeEducationData.interactiveContent.content.replace(/\n/g, '<br>')}
                     </div>
-                    
-                    <!-- 行业揭秘 -->
-                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
-                        <h4 class="text-xl font-medium mb-4">${industrySecret.title}</h4>
-                        ${industrySecret.content}
-                    </div>
+                    <button class="flip-back">返回 ↩</button>
                 </div>
-            </div>
-            
-            <!-- 场景化生活方式 -->
-            <div class="mb-16">
-                <h3 class="text-2xl font-semibold mb-6 text-center">Fragrance Lifestyle</h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- 气味与科学跨界 -->
-                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
-                        <h4 class="text-xl font-medium mb-4">${scienceCrossover.title}</h4>
-                        ${scienceCrossover.content}
-                    </div>
-                    
-                    <!-- 实用技巧 -->
-                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
-                        <h4 class="text-xl font-medium mb-4">${practicalTip.title}</h4>
-                        ${practicalTip.content}
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 互动与转化 -->
-            <div class="mb-8">
-                <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
-                    <h4 class="text-xl font-medium mb-4">${interactiveContent.title}</h4>
-                    ${interactiveContent.content}
-                </div>
-            </div>
-            
-            <!-- 转化入口 -->
-            <div class="text-center mt-12">
-                <a href="#" class="bg-apple-blue hover:bg-apple-blue/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center group relative overflow-hidden">
-                    <span class="relative z-10">${conversionEntry.text}</span>
-                    <span class="ml-2 relative z-10">✨</span>
-                    <span class="absolute inset-0 bg-gradient-to-r from-apple-purple to-apple-blue opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                </a>
             </div>
         `;
         
-        // 添加科普内容到容器
-        container.appendChild(educationSection);
+        labSection.appendChild(flipCard);
+        educationSection.appendChild(labSection);
         
-        // 添加交互事件
+        // 8. 添加"立即购买"CTA按钮，带粒子效果
+        const ctaContainer = document.createElement('div');
+        ctaContainer.className = 'cta-container';
+        
+        // 添加粒子容器
+        const particleContainer = document.createElement('div');
+        particleContainer.className = 'cta-particle-container';
+        
+        // 生成10个随机粒子
+        for (let i = 0; i < 10; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'cta-particle';
+            particle.style.width = `${Math.random() * 10 + 5}px`;
+            particle.style.height = particle.style.width;
+            particle.style.backgroundColor = ['#ff2d55', '#af52de', '#007aff'][Math.floor(Math.random() * 3)];
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.animationDelay = `${Math.random() * 2}s`;
+            particleContainer.appendChild(particle);
+        }
+        
+        ctaContainer.appendChild(particleContainer);
+        
+        const ctaButton = document.createElement('button');
+        ctaButton.className = 'apple-cta-button';
+        ctaButton.textContent = '立即探索适合您的香水 →';
+        
+        const conversionURL = perfumeEducationData.conversionEntries[userProfile.mainProfile].link;
+        ctaButton.addEventListener('click', function() {
+            window.open(conversionURL, '_blank');
+        });
+        
+        ctaContainer.appendChild(ctaButton);
+        educationSection.appendChild(ctaContainer);
+        
+        // 展示内容区域
+        document.getElementById('recommendations').appendChild(educationSection);
+        
+        // 添加交互逻辑
+        addInteractivityToCards();
+        
+        // 使用动画序列显示元素
         setTimeout(() => {
-            // 为所有按钮添加点击动画
-            const buttons = educationSection.querySelectorAll('.apple-button');
-            buttons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // 添加点击波浪效果
-                    const ripple = document.createElement('span');
-                    ripple.className = 'absolute inset-0 bg-white/20 rounded-full scale-0';
-                    ripple.style.transform = 'scale(0)';
-                    ripple.style.animation = 'ripple 0.6s linear';
-                    ripple.style.transformOrigin = 'center';
-                    
-                    this.appendChild(ripple);
-                    
-                    setTimeout(() => {
-                        ripple.remove();
-                    }, 700);
-                    
-                    // 显示一个简单的提示
-                    const actionText = this.textContent;
-                    alert(`Feature coming soon: ${actionText}`);
-                });
+            const cards = document.querySelectorAll('.interactive-card, .flip-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('appear');
+                }, index * 100);
             });
-        }, 100);
+        }, 300);
+    }
+
+    // 创建交互式卡片
+    function createInteractiveCard(title, data, cardClass) {
+        const card = document.createElement('div');
+        card.className = `interactive-card ${cardClass}`;
+        
+        // 预览部分（标题和展开按钮）
+        const preview = document.createElement('div');
+        preview.className = 'card-preview';
+        preview.innerHTML = `
+            <h3 class="card-title">${title}</h3>
+            <span class="expand-icon">+</span>
+        `;
+        
+        // 内容部分（默认隐藏）
+        const content = document.createElement('div');
+        content.className = 'card-content';
+        
+        const contentInner = document.createElement('div');
+        contentInner.className = 'card-content-inner';
+        contentInner.innerHTML = data.replace(/\n/g, '<br>');
+        
+        content.appendChild(contentInner);
+        
+        card.appendChild(preview);
+        card.appendChild(content);
+        
+        return card;
+    }
+
+    // 添加交互逻辑
+    function addInteractivityToCards() {
+        // 为卡片预览添加点击事件，展开/收起内容
+        document.querySelectorAll('.card-preview').forEach(preview => {
+            preview.addEventListener('click', () => {
+                const card = preview.parentElement;
+                card.classList.toggle('expanded');
+            });
+        });
+        
+        // 为翻转卡片添加点击事件
+        document.querySelector('.flip-card').addEventListener('click', function() {
+            this.querySelector('.flip-card-inner').classList.add('flipped');
+        });
+        
+        // 为翻转卡片的返回按钮添加点击事件
+        document.querySelector('.flip-back').addEventListener('click', function(e) {
+            e.stopPropagation(); // 阻止事件冒泡
+            document.querySelector('.flip-card-inner').classList.remove('flipped');
+        });
+        
+        // 为CTA按钮添加鼠标悬停效果，生成更多粒子
+        const ctaButton = document.querySelector('.apple-cta-button');
+        if (ctaButton) {
+            ctaButton.addEventListener('mouseenter', () => {
+                const container = document.querySelector('.cta-particle-container');
+                
+                // 清除现有粒子
+                container.innerHTML = '';
+                
+                // 生成20个新粒子
+                for (let i = 0; i < 20; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'cta-particle';
+                    particle.style.width = `${Math.random() * 10 + 5}px`;
+                    particle.style.height = particle.style.width;
+                    particle.style.backgroundColor = ['#ff2d55', '#af52de', '#007aff'][Math.floor(Math.random() * 3)];
+                    particle.style.left = `${Math.random() * 100}%`;
+                    particle.style.top = `${Math.random() * 100}%`;
+                    particle.style.animationDelay = `${Math.random() * 2}s`;
+                    container.appendChild(particle);
+                }
+            });
+        }
+    }
+
+    // 辅助函数：随机洗牌并选择n个元素
+    function shuffleAndPick(array, n) {
+        const shuffled = [...array].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, n);
     }
 });
