@@ -1,0 +1,32 @@
+# 香水推荐显示问题调试笔记
+
+## 已确认的问题
+1. 香水推荐结果无法显示的主要原因是推荐容器元素有一个"hidden"类，CSS中将其定义为`display: none;`
+2. 虽然scripts.js中的showResults函数尝试通过`recommendationsContainer.classList.remove('hidden')`移除这个类，但由于某些原因可能没有正确执行
+
+## 解决方案
+1. 添加了额外的修复脚本到index.html文件末尾：
+   - 在DOMContentLoaded事件中设置了监听器
+   - 监听测试提交按钮的点击事件
+   - 点击提交按钮后延迟3秒（确保原始代码执行完成）
+   - 确保通过多种方式使推荐容器可见：
+     * 移除hidden类
+     * 设置display为block
+     * 设置visibility为visible
+     * 设置opacity为1
+   - 并平滑滚动到推荐区域
+
+2. 添加了全局函数window.fixRecommendations()，可在控制台手动修复:
+   ```js
+   // 在浏览器控制台输入以下命令可手动修复:
+   fixRecommendations()
+   ```
+
+3. 创建了单独的fix_recommendations.js文件作为备用
+
+## 测试方法
+1. 重新加载页面
+2. 完成测试问卷
+3. 提交后应该会自动显示推荐
+4. 如果没有显示，打开控制台执行fixRecommendations()
+5. 检查控制台是否有错误信息
