@@ -355,26 +355,26 @@
                 <h2 class="text-3xl font-bold mb-8 text-center">✨ Ready to Find Your Perfect Scent? ✨</h2>
                 
                 <div class="mx-auto mb-12 max-w-md">
-                    <!-- 轮播图容器 -->
-                    <div class="slideshow-container w-full rounded-xl shadow-lg overflow-hidden relative h-64 mx-auto">
+                    <!-- 轮播图容器（使用padding-bottom技术实现1:1比例） -->
+                    <div class="slideshow-container w-full rounded-xl shadow-lg overflow-hidden relative mx-auto" style="padding-bottom: 100%;">
                         <div class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none"></div>
-                        <div class="slide fade active">
+                        <div class="slide fade active absolute inset-0">
                             <img src="images/pink.jpg" alt="粉色调香水" class="w-full h-full object-cover">
                         </div>
-                        <div class="slide fade">
+                        <div class="slide fade absolute inset-0">
                             <img src="images/blue.jpg" alt="蓝色调香水" class="w-full h-full object-cover">
                         </div>
-                        <div class="slide fade">
+                        <div class="slide fade absolute inset-0">
                             <img src="images/purple.jpg" alt="紫色调香水" class="w-full h-full object-cover">
                         </div>
-                        <div class="slide fade">
+                        <div class="slide fade absolute inset-0">
                             <img src="images/green.jpg" alt="绿色调香水" class="w-full h-full object-cover">
                         </div>
-                        <div class="slide fade">
+                        <div class="slide fade absolute inset-0">
                             <img src="images/brown.jpg" alt="棕色调香水" class="w-full h-full object-cover">
                         </div>
                         
-                        <!-- 导航点整合到轮播内部 -->
+                        <!-- 添加导航点 -->
                         <div class="absolute bottom-4 left-0 right-0 z-20 flex justify-center">
                             <div class="dots-container inline-flex bg-black/30 backdrop-blur-sm px-3 py-2 rounded-full space-x-2">
                                 <span class="dot active" data-slide="0"></span>
