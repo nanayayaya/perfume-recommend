@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 启动轮播定时器函数
         function startSlideInterval() {
             clearInterval(slideInterval); // 清除现有定时器
-            slideInterval = setInterval(nextSlide, 4000); // 每4秒切换一次图片
+            slideInterval = setInterval(nextSlide, 2000); // 每2秒切换一次图片
             console.log("开始自动轮播");
         }
         

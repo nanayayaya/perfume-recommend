@@ -269,8 +269,17 @@
         }
         
         @keyframes shimmer {
-            0% { background-position: 100% 0; }
-            100% { background-position: 0 0; }
+            0% { background-position: 100% 0; transform: translateX(-100%); }
+            100% { background-position: 0 0; transform: translateX(100%); }
+        }
+        
+        @keyframes shimmer-light {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .animate-shimmer {
+            animation: shimmer-light 1.5s infinite;
         }
         
         /* 幻灯片样式 */
@@ -294,7 +303,7 @@
             width: 100%;
             height: 100%;
             opacity: 0;
-            transition: opacity 1.5s ease-in-out;
+            transition: opacity 0.8s ease-in-out;
             z-index: 1;
         }
         
@@ -389,10 +398,33 @@
                 
                 <div id="quiz-container">
                     <div class="quiz-intro animate-fade-in text-center">
-                        <p class="text-xl mb-10 max-w-3xl mx-auto">Your journey to the perfect signature scent begins with a few simple questions about your preferences and personality. 🌸</p>
-                        <button id="start-quiz" class="bg-apple-pink hover:bg-apple-pink/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 relative overflow-hidden group">
-                            <span class="relative z-10">✨ Start Your Scent Journey ✨</span>
-                            <span class="absolute inset-0 bg-gradient-to-r from-apple-purple to-apple-pink opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                        <div class="mb-10 max-w-3xl mx-auto bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20 shadow-xl transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
+                            <div class="space-y-3">
+                                <p class="text-lg italic font-light text-apple-gray-700 dark:text-apple-gray-300 animate-float" style="animation-delay: 0.1s;">
+                                    <span class="inline-block transform hover:scale-105 transition-transform duration-300">✨</span> 
+                                    <span class="font-serif">Embark on a</span> 
+                                    <span class="title-highlight font-semibold">mystical journey</span> 
+                                    <span class="font-serif">through the</span> 
+                                    <span class="title-highlight font-semibold">realm of scents</span>
+                                    <span class="inline-block transform hover:scale-105 transition-transform duration-300">✨</span>
+                                </p>
+                                <p class="text-base text-apple-gray-700 dark:text-apple-gray-300 animate-float" style="animation-delay: 0.3s;">
+                                    <span class="inline-block transform hover:rotate-12 transition-transform duration-500">🌸</span> 
+                                    Where your <span class="font-semibold">desires</span> and <span class="font-semibold">dreams</span> transform into delicate notes that dance upon your skin
+                                    <span class="inline-block transform hover:rotate-12 transition-transform duration-500">🌸</span>
+                                </p>
+                                <p class="text-base text-apple-gray-700 dark:text-apple-gray-300 animate-float" style="animation-delay: 0.5s;">
+                                    <span class="inline-block transform hover:rotate-12 transition-transform duration-500">💫</span> 
+                                    Answer these <span class="title-highlight font-semibold">enchanted questions</span> to unlock the fragrance that mirrors your soul
+                                    <span class="inline-block transform hover:rotate-12 transition-transform duration-500">💫</span>
+                                </p>
+                            </div>
+                            <div class="w-32 h-1 bg-gradient-to-r from-apple-purple to-apple-pink mx-auto mt-4 rounded-full"></div>
+                        </div>
+                        <button id="start-quiz" class="bg-apple-pink hover:bg-apple-pink/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden group">
+                            <span class="relative z-10">✨ Begin Your Enchanted Journey ✨</span>
+                            <span class="absolute inset-0 bg-gradient-to-r from-apple-purple to-apple-pink opacity-0 group-hover:opacity-100 transition-all"></span>
+                            <span class="absolute -inset-x-10 top-0 h-40 opacity-50 blur-2xl bg-gradient-to-r from-apple-pink/40 via-transparent to-apple-purple/40 transform -translate-x-full animate-pulse group-hover:animate-shimmer"></span>
                         </button>
                     </div>
                 </div>
