@@ -423,526 +423,75 @@
             }
         }
         
-        /* 交互式卡片基础样式 */
-        .interactive-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 1rem;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        
-        .interactive-card.appear {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .card-preview {
-            padding: 1.25rem;
-            cursor: pointer;
+        /* 导航栏样式 */
+        .nav-link {
             position: relative;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            color: var(--apple-gray-700);
+            font-weight: 500;
             transition: all 0.3s ease;
+            padding: 0.5rem 0;
         }
         
-        .card-title {
-            font-weight: 600;
-            font-size: 1.125rem;
-            margin: 0;
-            color: #1d1d1f;
+        .dark .nav-link {
+            color: var(--apple-gray-300);
         }
         
-        .card-content {
-            transition: max-height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            max-height: 0;
-            overflow: hidden;
-            padding: 0 1.25rem;
+        .nav-link:hover {
+            color: var(--apple-pink);
         }
         
-        .card-content-inner {
-            padding-bottom: 1.25rem;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-        }
-        
-        .expand-icon {
-            font-size: 1.5rem;
-            font-weight: 200;
-            color: #af52de;
-            transition: all 0.3s ease;
-        }
-        
-        .interactive-card:hover .expand-icon {
-            transform: scale(1.2);
-        }
-        
-        .interactive-card.expanded .expand-icon {
-            transform: rotate(45deg);
-        }
-        
-        .interactive-card.expanded .card-content {
-            max-height: 500px;
-        }
-        
-        .interactive-card.expanded .card-content-inner {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .interactive-card.expanded {
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* 卡片装饰元素 */
-        .card-decoration {
+        .nav-link::after {
+            content: '';
             position: absolute;
-            top: 0;
-            right: 0;
+            width: 0;
+            height: 2px;
             bottom: 0;
-            left: 0;
-            pointer-events: none;
-            opacity: 0.2;
-            overflow: hidden;
+            left: 50%;
+            background: linear-gradient(to right, var(--apple-purple), var(--apple-pink));
+            transition: width 0.3s ease, left 0.3s ease;
+            transform: translateX(-50%);
         }
         
-        /* DNA卡片特殊效果 */
-        .dna-card .card-preview {
-            background: linear-gradient(45deg, rgba(175, 82, 222, 0.05), rgba(255, 45, 85, 0.05));
-        }
-        
-        .molecule-animation {
-            position: absolute;
-            right: -20px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 80px;
-            height: 80px;
-            background: radial-gradient(circle, #af52de 3px, transparent 4px),
-                        radial-gradient(circle, #ff2d55 3px, transparent 4px);
-            background-size: 30px 30px;
-            background-position: 0 0, 15px 15px;
-            opacity: 0.3;
-            animation: rotate 20s linear infinite;
-        }
-        
-        .dna-expand-animation {
-            animation: fadeInUp 0.5s forwards;
-        }
-        
-        /* 冷知识卡片特殊效果 */
-        .fact-card .card-preview {
-            background: linear-gradient(45deg, rgba(255, 204, 0, 0.05), rgba(255, 149, 0, 0.05));
-        }
-        
-        .fact-icon-container {
-            position: absolute;
-            right: 10px;
-            bottom: 10px;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .fact-icon {
-            width: 40px;
-            height: 40px;
-            background: radial-gradient(circle, #ffcc00 20%, transparent 21%),
-                        radial-gradient(circle, transparent 10%, #ff9500 11%, transparent 30%),
-                        radial-gradient(circle, #ffcc00 30%, transparent 31%);
-            background-size: 10px 10px, 25px 25px, 40px 40px;
-            background-position: center;
-            opacity: 0.3;
-            animation: pulse 3s ease-in-out infinite;
-        }
-        
-        .fact-expand-animation {
-            animation: fadeInLeft 0.5s forwards;
-        }
-        
-        /* 工艺解密卡片特殊效果 */
-        .craft-card .card-preview {
-            background: linear-gradient(45deg, rgba(52, 199, 89, 0.05), rgba(90, 200, 250, 0.05));
-        }
-        
-        .craft-animation {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 20px;
-            background: linear-gradient(90deg, #34c759, #5ac8fa);
-            opacity: 0.1;
-            transform-origin: bottom;
-            animation: liquidWave 4s ease-in-out infinite;
-        }
-        
-        .craft-expand-animation {
-            animation: fadeInRight 0.5s forwards;
-        }
-        
-        /* 行业揭秘卡片特殊效果 */
-        .secret-card .card-preview {
-            background: linear-gradient(45deg, rgba(0, 0, 0, 0.05), rgba(66, 66, 69, 0.05));
-        }
-        
-        .secret-animation {
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(0, 0, 0, 0.15) 1px, transparent 5px),
-                radial-gradient(circle at 40% 70%, rgba(0, 0, 0, 0.1) 2px, transparent 7px),
-                radial-gradient(circle at 70% 20%, rgba(0, 0, 0, 0.05) 3px, transparent 8px);
-            opacity: 0.3;
-            animation: starryNight 10s ease infinite;
-        }
-        
-        .secret-expand-animation {
-            animation: zoomIn 0.5s forwards;
-        }
-        
-        /* 科学跨界卡片特殊效果 */
-        .science-card .card-preview {
-            background: linear-gradient(45deg, rgba(0, 122, 255, 0.05), rgba(90, 200, 250, 0.05));
-        }
-        
-        .neuroscience-animation {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 30% 30%, #af52de 2px, transparent 3px),
-                radial-gradient(circle at 70% 20%, #007aff 3px, transparent 4px),
-                radial-gradient(circle at 40% 50%, #5ac8fa 1px, transparent 2px),
-                radial-gradient(circle at 60% 70%, #af52de 1px, transparent 2px);
-            opacity: 0.2;
-            animation: brainActivity 8s ease infinite;
-        }
-        
-        .science-expand-animation {
-            animation: fadeInDown 0.5s forwards;
-        }
-        
-        /* 实用技巧卡片特殊效果 */
-        .tips-card .card-preview {
-            background: linear-gradient(45deg, rgba(255, 45, 85, 0.05), rgba(255, 149, 0, 0.05));
-        }
-        
-        .tips-animation {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .nav-link:hover::after {
             width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(45deg, transparent 48%, #ff2d55 49%, #ff2d55 51%, transparent 52%),
-                linear-gradient(-45deg, transparent 48%, #ff9500 49%, #ff9500 51%, transparent 52%);
-            background-size: 30px 30px;
-            opacity: 0.05;
-            background-position: 0 0;
-            animation: tilesShift 15s linear infinite;
         }
         
-        .tips-expand-animation {
-            animation: bounceIn 0.5s forwards;
+        .mobile-nav-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            color: var(--apple-gray-700);
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
         
-        /* 互动实验室翻转卡片效果 */
-        .perspective-container {
-            perspective: 1000px;
-            margin-bottom: 1.5rem;
+        .dark .mobile-nav-link {
+            color: var(--apple-gray-300);
         }
         
-        .flip-card {
+        .mobile-nav-link:hover {
+            background-color: rgba(255, 45, 85, 0.1);
+            color: var(--apple-pink);
+        }
+        
+        /* 章节标题样式 */
+        .section-title {
             position: relative;
-            height: 200px;
-            background: transparent;
-            border-radius: 1rem;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        
-        .flip-card.appear {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .flip-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-        }
-        
-        .flip-card-inner.flipped {
-            transform: rotateY(180deg);
-        }
-        
-        .flip-card-front,
-        .flip-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 1.25rem;
-            border-radius: 1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .flip-card-front {
-            background: linear-gradient(45deg, rgba(175, 82, 222, 0.05), rgba(0, 122, 255, 0.05));
-        }
-        
-        .flip-card-back {
-            background: linear-gradient(45deg, rgba(0, 122, 255, 0.05), rgba(175, 82, 222, 0.05));
-            transform: rotateY(180deg);
-            overflow-y: auto;
-            justify-content: flex-start;
-        }
-        
-        .flip-icon {
-            position: absolute;
-            bottom: 1rem;
-            right: 1rem;
-            font-size: 1.5rem;
-            color: #af52de;
-            transition: all 0.3s ease;
-        }
-        
-        .flip-card:hover .flip-icon {
-            transform: rotate(90deg);
-        }
-        
-        .flip-back {
-            position: absolute;
-            bottom: 1rem;
-            right: 1rem;
-            background: transparent;
-            border: none;
-            color: #007aff;
-            font-size: 0.875rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 9999px;
-            transition: all 0.3s ease;
-        }
-        
-        .flip-back:hover {
-            background: rgba(0, 122, 255, 0.1);
-        }
-        
-        .lab-animation-front {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            width: 80px;
-            height: 60px;
-            background-image: 
-                radial-gradient(circle at 30% 50%, #007aff 1px, transparent 5px),
-                radial-gradient(circle at 70% 30%, #ff2d55 1px, transparent 5px),
-                radial-gradient(circle at 50% 70%, #af52de 1px, transparent 5px);
-            opacity: 0.3;
-            animation: bubbles 5s ease-in-out infinite;
-        }
-        
-        /* 网格布局 */
-        .masonry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-gap: 1.5rem;
             margin-bottom: 2rem;
-        }
-        
-        /* CTA按钮粒子效果 */
-        .cta-container {
-            position: relative;
-            margin-top: 2rem;
+            font-weight: 700;
             text-align: center;
         }
         
-        .apple-cta-button {
-            background: linear-gradient(45deg, #ff2d55, #af52de);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(175, 82, 222, 0.3);
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 10;
-            font-size: 1rem;
-        }
-        
-        .apple-cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 7px 20px rgba(175, 82, 222, 0.4);
-        }
-        
-        .cta-particle-container {
+        .section-title::after {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 5;
-        }
-        
-        .cta-particle {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.8;
-            pointer-events: none;
-            animation: particleFloat 3s ease-in-out infinite;
-        }
-        
-        /* 动画定义 */
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.1); opacity: 0.5; }
-        }
-        
-        @keyframes rotate {
-            0% { transform: translateY(-50%) rotate(0deg); }
-            100% { transform: translateY(-50%) rotate(360deg); }
-        }
-        
-        @keyframes liquidWave {
-            0%, 100% { transform: scaleY(1); }
-            50% { transform: scaleY(1.5); }
-        }
-        
-        @keyframes starryNight {
-            0%, 100% { background-position: 0% 0%, 0% 0%, 0% 0%; }
-            50% { background-position: 5% 5%, 10% 10%, -5% -5%; }
-        }
-        
-        @keyframes brainActivity {
-            0%, 100% { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%; opacity: 0.2; }
-            50% { background-position: 5% 5%, -5% 5%, 10% 10%, -10% 10%; opacity: 0.5; }
-        }
-        
-        @keyframes tilesShift {
-            0% { background-position: 0 0; }
-            100% { background-position: 60px 60px; }
-        }
-        
-        @keyframes bubbles {
-            0%, 100% { transform: translateY(0); opacity: 0.3; }
-            50% { transform: translateY(-10px); opacity: 0.5; }
-        }
-        
-        @keyframes particleFloat {
-            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.8; }
-            50% { transform: translateY(-20px) translateX(10px); opacity: 0; }
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        
-        @keyframes zoomIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
-        @keyframes bounceIn {
-            0% { opacity: 0; transform: scale(0.3); }
-            50% { opacity: 1; transform: scale(1.05); }
-            70% { transform: scale(0.9); }
-            100% { transform: scale(1); }
-        }
-        
-        /* 响应式调整 */
-        @media (max-width: 768px) {
-            .masonry-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .interactive-card {
-                margin-bottom: 1rem;
-            }
-            
-            .flip-card {
-                height: 180px;
-            }
-            
-            .flip-card-back {
-                padding: 1rem;
-            }
-        }
-        
-        /* 暗色模式适配 */
-        @media (prefers-color-scheme: dark) {
-            .interactive-card {
-                background: rgba(29, 29, 31, 0.7);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            
-            .card-title {
-                color: #f5f5f7;
-            }
-            
-            .flip-card-front,
-            .flip-card-back {
-                background: rgba(29, 29, 31, 0.7);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            
-            .flip-back:hover {
-                background: rgba(0, 122, 255, 0.2);
-            }
-            
-            .molecule-animation,
-            .fact-icon,
-            .neuroscience-animation {
-                opacity: 0.4;
-            }
+            bottom: -0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4rem;
+            height: 0.25rem;
+            border-radius: 0.25rem;
+            background: linear-gradient(to right, var(--apple-purple), var(--apple-pink));
         }
     </style>
 </head>
@@ -954,6 +503,43 @@
     <div class="scent-particle animate-scent" style="top: 75%; left: 80%; font-size: 2.5rem; animation-delay: 3s;">💫</div>
     <div class="scent-particle animate-scent" style="top: 20%; left: 60%; font-size: 1.5rem; animation-delay: 4s;">🌿</div>
     <div class="scent-particle animate-scent" style="top: 85%; left: 25%; font-size: 2rem; animation-delay: 5s;">🍃</div>
+
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 z-50 backdrop-blur-lg bg-white/70 dark:bg-apple-gray-900/70 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-semibold title-highlight">✨ Scent</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#quiz" class="nav-link">🔍 Quiz</a>
+                        <a href="#education" class="nav-link">🧠 Education</a>
+                        <a href="#personalization" class="nav-link">🌱 Lifestyle</a>
+                        <a href="#coordination" class="nav-link">🔄 Coordination</a>
+                        <a href="#experience" class="nav-link">✨ Experience</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-apple-gray-800 dark:text-white hover:bg-apple-gray-200 dark:hover:bg-apple-gray-700 p-2 rounded-md">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/90 dark:bg-apple-gray-900/90 backdrop-blur-lg shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#quiz" class="mobile-nav-link">🔍 Quiz</a>
+                <a href="#education" class="mobile-nav-link">🧠 Education</a>
+                <a href="#personalization" class="mobile-nav-link">🌱 Lifestyle</a>
+                <a href="#coordination" class="mobile-nav-link">🔄 Coordination</a>
+                <a href="#experience" class="mobile-nav-link">✨ Experience</a>
+            </div>
+        </div>
+    </nav>
 
     <header class="py-12 animate-fade-in">
         <div class="container mx-auto px-4 text-center">
@@ -1036,7 +622,819 @@
             </div>
         </section>
 
-        <!-- 推荐香水部分 -->
+        <!-- 选香教育板块 -->
+        <section id="education" class="mb-20 py-16">
+            <div class="max-w-7xl mx-auto glass-effect rounded-3xl shadow-xl p-8 md:p-12 transform transition-all hover:shadow-2xl">
+                <h2 class="text-3xl font-bold section-title">🧠 The Science & Art of Fragrance Selection</h2>
+                <p class="text-xl text-center mb-12 max-w-4xl mx-auto">Discover why choosing the right fragrance is both a personal art and a science backed by research.</p>
+                
+                <!-- 选香重要性解析 -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">✨ Why Your Fragrance Choice Matters</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- 情绪影响力 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">🧠</span>
+                                <h4 class="text-xl font-medium">Emotional Impact</h4>
+                            </div>
+                            <p class="mb-4">Neurological studies show different fragrance families stimulate distinct brain regions:</p>
+                            <ul class="space-y-2">
+                                <li><span class="highlight">🍊 Citrus notes</span>: Stimulate the frontal cortex, increasing focus and mental clarity</li>
+                                <li><span class="highlight">🌲 Woody accords</span>: Activate the amygdala, reducing anxiety and promoting calm</li>
+                                <li><span class="highlight">🌹 Floral elements</span>: Enhance activity in emotion-processing regions, elevating mood</li>
+                            </ul>
+                            <p class="mt-4 italic">Choosing the right fragrance isn't merely aesthetic—it's crafting a personal emotional management strategy.</p>
+                        </div>
+                        
+                        <!-- 社交符号属性 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">👥</span>
+                                <h4 class="text-xl font-medium">Social Signaling</h4>
+                            </div>
+                            <p class="mb-4">Fragrances function as non-verbal communication tools in social contexts:</p>
+                            <ul class="space-y-2">
+                                <li><span class="highlight">💼 Professional settings</span>: Oud and vetiver convey authority and competence</li>
+                                <li><span class="highlight">💕 Romantic encounters</span>: Rose and vanilla notes subtly signal warmth and approachability</li>
+                                <li><span class="highlight">🌿 Creative environments</span>: Unique compositions reflect innovation and individuality</li>
+                            </ul>
+                            <p class="mt-4 italic">Your fragrance choice projects personality traits before you speak a single word.</p>
+                        </div>
+                        
+                        <!-- 数据佐证 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">📊</span>
+                                <h4 class="text-xl font-medium">Evidence-Based Selection</h4>
+                            </div>
+                            <p class="mb-4">Research-backed fragrance compatibility data:</p>
+                            <ul class="space-y-2">
+                                <li><span class="highlight">🧪 Skin chemistry</span>: Oily skin types should avoid high-concentration EDPs to prevent unwanted scent alterations</li>
+                                <li><span class="highlight">🌡️ Climate factors</span>: Humidity amplifies fragrance projection by 35%, requiring lighter application in tropical environments</li>
+                                <li><span class="highlight">⏱️ Longevity metrics</span>: Natural body temperature variations affect scent duration, with higher temperatures accelerating evaporation</li>
+                            </ul>
+                            <p class="mt-4 italic">The consequences of fragrance mismatch can range from premature scent fading to creating jarring olfactory experiences.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 选香难点拆解 -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-center">🔍 Demystifying Fragrance Selection Challenges</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- 香调认知门槛 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">🧩</span>
+                                <h4 class="text-xl font-medium">Fragrance Literacy</h4>
+                            </div>
+                            <p class="mb-4">Understanding the 8 major fragrance families is critical to informed selection:</p>
+                            <div class="space-y-2">
+                                <p><span class="highlight">Common misconception</span>: "Aquatic" and "Marine" notes are identical</p>
+                                <p><span class="highlight">Reality</span>: Aquatic notes emphasize freshwater elements, while marine notes capture oceanic salinity</p>
+                            </div>
+                            <div class="mt-4 bg-apple-gray-100 dark:bg-apple-gray-800 p-4 rounded-lg">
+                                <p class="font-medium mb-2">Test your fragrance knowledge:</p>
+                                <p class="italic">"Which family features bergamot, neroli and lemon?"</p>
+                                <p class="text-right mt-2"><a href="#" class="text-apple-blue">Reveal answer →</a></p>
+                            </div>
+                        </div>
+                        
+                        <!-- 试香局限性 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">🧪</span>
+                                <h4 class="text-xl font-medium">Testing Limitations</h4>
+                            </div>
+                            <p class="mb-4">Traditional testing methods have significant shortcomings:</p>
+                            <ul class="space-y-2">
+                                <li><span class="highlight">Paper strips</span>: Cannot reproduce how fragrances interact with skin chemistry</li>
+                                <li><span class="highlight">Store environment</span>: Ambient scents interfere with accurate perception</li>
+                                <li><span class="highlight">Initial impression bias</span>: Top notes fade within 15 minutes, yet often drive purchase decisions</li>
+                            </ul>
+                            <div class="mt-4 text-center">
+                                <button class="apple-button">Try AR Fragrance Simulation ✨</button>
+                            </div>
+                        </div>
+                        
+                        <!-- 商业陷阱预警 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">⚠️</span>
+                                <h4 class="text-xl font-medium">Industry Pitfalls</h4>
+                            </div>
+                            <p class="mb-4">Common marketing tactics to be aware of:</p>
+                            <ul class="space-y-2">
+                                <li><span class="highlight">Dupes and alternatives</span>: Often use synthetic coumarin to imitate natural sandalwood, resulting in shorter longevity</li>
+                                <li><span class="highlight">Concentration labeling</span>: "Eau de Parfum" can legally contain 15-20% fragrance oils—a significant variance affecting performance</li>
+                                <li><span class="highlight">Limited editions</span>: Frequently use lower quality ingredients than flagship products, capitalizing on exclusivity appeal</li>
+                            </ul>
+                            <p class="mt-4 italic">Professional guidance can help navigate these commercial complexities while ensuring quality and value.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 个性化衍生推荐板块 -->
+        <section id="personalization" class="mb-20 py-16">
+            <div class="max-w-7xl mx-auto glass-effect rounded-3xl shadow-xl p-8 md:p-12 transform transition-all hover:shadow-2xl">
+                <h2 class="text-3xl font-bold section-title">🌱 From Fragrance to Lifestyle</h2>
+                <p class="text-xl text-center mb-12 max-w-4xl mx-auto">Discover how your fragrance preferences connect to your broader lifestyle, extending beyond perfume to create a complete sensory identity.</p>
+                
+                <!-- 个性化香型智能匹配 -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">✨ Your Daily Fragrance Personality</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <!-- 性格适配 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">🧿</span>
+                                <h4 class="text-xl font-medium">Personality Matching</h4>
+                            </div>
+                            <p class="mb-4">Fragrance families aligned with personality types:</p>
+                            
+                            <div class="space-y-6">
+                                <!-- 外向型 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2 flex items-center">
+                                        <span class="text-xl mr-2">🌟</span> Extroverted Personalities
+                                    </h5>
+                                    <p class="mb-2">Harmonize with fragrances that match your social energy:</p>
+                                    <ul class="space-y-1 ml-6 list-disc">
+                                        <li><span class="font-medium">Fougère</span>: Lavender and oakmoss create vibrant complexity (Try: <span class="italic">Dior Sauvage</span>)</li>
+                                        <li><span class="font-medium">Oriental</span>: Vanilla and amber project warmth and presence (Try: <span class="italic">YSL Black Opium</span>)</li>
+                                    </ul>
+                                    <p class="mt-2 text-sm italic">Based on energy expression theory: extroverts benefit from scents that amplify their natural charisma</p>
+                                </div>
+                                
+                                <!-- 内敛型 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2 flex items-center">
+                                        <span class="text-xl mr-2">🌿</span> Introverted Personalities
+                                    </h5>
+                                    <p class="mb-2">Complement your thoughtful nature with these notes:</p>
+                                    <ul class="space-y-1 ml-6 list-disc">
+                                        <li><span class="font-medium">Woody</span>: Cedarwood and patchouli ground and center (Try: <span class="italic">Le Labo Santal 33</span>)</li>
+                                        <li><span class="font-medium">Green</span>: Fresh-cut grass and vetiver create a natural shield (Try: <span class="italic">Diptyque Philosykos</span>)</li>
+                                    </ul>
+                                    <p class="mt-2 text-sm italic">Aligned with natural healing principles: these scents provide comfort without overwhelming</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 场景扩展 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">🗓️</span>
+                                <h4 class="text-xl font-medium">Contextual Curation</h4>
+                            </div>
+                            <p class="mb-4">Tailor your fragrance to specific scenarios:</p>
+                            
+                            <div class="space-y-6">
+                                <!-- 工作场景 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2 flex items-center">
+                                        <span class="text-xl mr-2">💼</span> Professional Settings
+                                    </h5>
+                                    <div class="space-y-2">
+                                        <p><span class="font-medium">Morning Meetings</span>: Light citrus or subtle aromatics provide alertness without distraction</p>
+                                        <p><span class="font-medium">Client Presentations</span>: Refined woody notes convey authority and trustworthiness</p>
+                                        <div class="mt-3 flex justify-between items-center text-sm">
+                                            <span>Classic Option: <span class="italic">Hermès Terre d'Hermès</span></span>
+                                            <span>Modern Alternative: <span class="italic">MFK Gentle Fluidity Silver</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 休闲场景 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2 flex items-center">
+                                        <span class="text-xl mr-2">🌳</span> Leisure Activities
+                                    </h5>
+                                    <div class="space-y-2">
+                                        <p><span class="font-medium">Weekend Brunches</span>: Gourmand notes with vanilla or caramel create a comfortable atmosphere</p>
+                                        <p><span class="font-medium">Outdoor Adventures</span>: Fresh aquatic or green scents align with natural environments</p>
+                                        <div class="mt-3 flex justify-between items-center text-sm">
+                                            <span>Classic Option: <span class="italic">Dior J'adore</span></span>
+                                            <span>Modern Alternative: <span class="italic">Chanel Chance Eau Fraîche</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 空间香氛生态系统 -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-center">🏠 Your Home Fragrance Ecosystem</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- 房间功能适配 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">🛋️</span>
+                                <h4 class="text-xl font-medium">Room-by-Room Scenting</h4>
+                            </div>
+                            <p class="mb-4">Optimize each space with purpose-driven fragrances:</p>
+                            
+                            <div class="space-y-6">
+                                <!-- 卧室 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2 flex items-center">
+                                        <span class="text-xl mr-2">🛌</span> Bedroom
+                                    </h5>
+                                    <p class="mb-2">Create a sanctuary for rest and relaxation:</p>
+                                    <ul class="space-y-1">
+                                        <li><span class="highlight">Primary</span>: Lavender candles promote delta brain waves associated with deep sleep</li>
+                                        <li><span class="highlight">Secondary</span>: Sandalwood reed diffusers add depth while stabilizing nighttime emotions</li>
+                                    </ul>
+                                    <p class="mt-2 text-sm italic">EEG studies show lavender exposure increases time spent in restorative sleep cycles by 20%</p>
+                                </div>
+                                
+                                <!-- 书房/工作空间 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2 flex items-center">
+                                        <span class="text-xl mr-2">📚</span> Study/Home Office
+                                    </h5>
+                                    <p class="mb-2">Enhance concentration and productivity:</p>
+                                    <ul class="space-y-1">
+                                        <li><span class="highlight">Primary</span>: Rosemary essential oil diffuser improves memory retention and mental clarity</li>
+                                        <li><span class="highlight">Secondary</span>: Citrus room mist provides periodic refreshment during extended focus periods</li>
+                                    </ul>
+                                    <p class="mt-2 text-sm italic">Cognitive testing reveals 15% improvement in task completion when working in rosemary-scented environments</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 季节动态调整 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">🍃</span>
+                                <h4 class="text-xl font-medium">Seasonal Fragrance Transitions</h4>
+                            </div>
+                            <p class="mb-4">Adjust your home scent palette throughout the year:</p>
+                            
+                            <div class="space-y-4">
+                                <!-- 春季 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-pink-200 to-green-200 flex items-center justify-center text-2xl">
+                                        🌸
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="font-medium text-lg">Spring Garden</h5>
+                                        <p>Jasmine and lily of the valley reed diffusers capture renewal energy</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- 夏季 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-blue-200 to-cyan-200 flex items-center justify-center text-2xl">
+                                        🌊
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="font-medium text-lg">Summer Breeze</h5>
+                                        <p>Calone-infused room sprays evoke oceanside freshness and cooling sensations</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- 秋季 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-orange-200 to-amber-200 flex items-center justify-center text-2xl">
+                                        🍂
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="font-medium text-lg">Autumn Forest</h5>
+                                        <p>Pine and cedar solid balms with hints of fallen leaves and earthy mushroom</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- 冬季 -->
+                                <div class="flex">
+                                    <div class="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-indigo-200 to-purple-200 flex items-center justify-center text-2xl">
+                                        ❄️
+                                    </div>
+                                    <div class="ml-4">
+                                        <h5 class="font-medium text-lg">Winter Hearth</h5>
+                                        <p>Vanilla and benzoin candles with smoky undertones evoking crackling fireplaces</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 产品协同使用指南 -->
+        <section id="coordination" class="mb-20 py-16">
+            <div class="max-w-7xl mx-auto glass-effect rounded-3xl shadow-xl p-8 md:p-12 transform transition-all hover:shadow-2xl">
+                <h2 class="text-3xl font-bold section-title">🔮 Fragrance Coordination Matrix</h2>
+                <p class="text-xl text-center mb-12 max-w-4xl mx-auto">Master the art of layering and combining fragrances to create your signature scent symphony while avoiding common pitfalls.</p>
+                
+                <!-- 香水叠加使用方法 -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">📋 Strategic Layering Formulas</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                        <!-- 基础叠加技巧 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">🧪</span>
+                                <h4 class="text-xl font-medium">Foundational Layering Principles</h4>
+                            </div>
+                            <p class="mb-4">Master these core techniques for successful fragrance combinations:</p>
+                            
+                            <div class="space-y-6">
+                                <!-- 叠加顺序 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2 flex items-center">
+                                        <span class="text-xl mr-2">⏱️</span> Application Sequence
+                                    </h5>
+                                    <ol class="space-y-2 ml-6 list-decimal">
+                                        <li><span class="font-medium">Base first</span>: Apply heavier, longer-lasting fragrances (e.g., body lotions, oils) as your foundation</li>
+                                        <li><span class="font-medium">Middle amplification</span>: Layer matching or complementary eau de parfum on pulse points</li>
+                                        <li><span class="font-medium">Top accent</span>: Finish with targeted application of lighter eau de toilette or hair mist for dimension</li>
+                                    </ol>
+                                    <p class="mt-2 text-sm italic">This sequence optimizes longevity while maintaining a balanced projection profile</p>
+                                </div>
+                                
+                                <!-- 叠加技巧 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2 flex items-center">
+                                        <span class="text-xl mr-2">📐</span> Intensity Calibration
+                                    </h5>
+                                    <p class="mb-2">Control your scent presence through strategic application:</p>
+                                    <ul class="space-y-1 ml-6 list-disc">
+                                        <li><span class="font-medium">6-inch rule</span>: Your fragrance should be detectable within this distance for ideal professional settings</li>
+                                        <li><span class="font-medium">12-inch rule</span>: Appropriate for social settings where greater presence is acceptable</li>
+                                        <li><span class="font-medium">Tip</span>: Reduce spray count by 1 when layering multiple products to prevent olfactory fatigue</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 高级叠加配方 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">✨</span>
+                                <h4 class="text-xl font-medium">Advanced Layering Recipes</h4>
+                            </div>
+                            <p class="mb-4">Curated combinations for specific scent profiles:</p>
+                            
+                            <div class="space-y-6">
+                                <!-- 配方1 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2 flex items-center">
+                                        <span class="text-xl mr-2">🌲</span> Forest Meditation
+                                    </h5>
+                                    <div class="space-y-2">
+                                        <p class="flex justify-between"><span class="font-medium">Base</span> <span>Cedarwood/Sandalwood Body Oil</span></p>
+                                        <p class="flex justify-between"><span class="font-medium">Middle</span> <span>Vetiver-dominant EDP</span></p>
+                                        <p class="flex justify-between"><span class="font-medium">Top</span> <span>Pine/Cypress Hair Mist</span></p>
+                                        <p class="mt-3 text-sm italic">Creates a grounding yet uplifting atmosphere of forest tranquility</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- 配方2 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2 flex items-center">
+                                        <span class="text-xl mr-2">🍊</span> Citrus Sophisticate
+                                    </h5>
+                                    <div class="space-y-2">
+                                        <p class="flex justify-between"><span class="font-medium">Base</span> <span>Neroli Body Lotion</span></p>
+                                        <p class="flex justify-between"><span class="font-medium">Middle</span> <span>Bergamot/Orange Blossom EDP</span></p>
+                                        <p class="flex justify-between"><span class="font-medium">Top</span> <span>Petitgrain Pulse Point Oil</span></p>
+                                        <p class="mt-3 text-sm italic">Enhances mental clarity while providing sophisticated freshness all day</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 产品冲突与禁忌 -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-center">⚠️ Fragrance Conflict Warnings</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- 成分冲突 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">🚫</span>
+                                <h4 class="text-xl font-medium">Ingredient Conflicts</h4>
+                            </div>
+                            <p class="mb-4">Avoid these potentially problematic combinations:</p>
+                            
+                            <div class="space-y-6">
+                                <!-- 皮肤安全 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2 flex items-center">
+                                        <span class="text-xl mr-2">🧴</span> Skin Safety Concerns
+                                    </h5>
+                                    <div class="space-y-2">
+                                        <div class="flex items-start">
+                                            <div class="flex-shrink-0 bg-red-100 dark:bg-red-900/30 rounded-full w-8 h-8 flex items-center justify-center text-red-700 dark:text-red-300 mt-1">
+                                                ⚠️
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="font-medium">Citrus Oils + Sun Exposure</p>
+                                                <p class="text-sm">Bergamot, lime, and other photosensitizing oils can cause hyperpigmentation when exposed to UV light</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-start">
+                                            <div class="flex-shrink-0 bg-red-100 dark:bg-red-900/30 rounded-full w-8 h-8 flex items-center justify-center text-red-700 dark:text-red-300 mt-1">
+                                                ⚠️
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="font-medium">High-Concentration Essential Oils + Sensitive Skin</p>
+                                                <p class="text-sm">Cinnamon, clove, and mint oils may cause irritation when undiluted or over-applied</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 化学冲突 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2 flex items-center">
+                                        <span class="text-xl mr-2">⚗️</span> Chemical Interactions
+                                    </h5>
+                                    <div class="space-y-2">
+                                        <div class="flex items-start">
+                                            <div class="flex-shrink-0 bg-yellow-100 dark:bg-yellow-900/30 rounded-full w-8 h-8 flex items-center justify-center text-yellow-700 dark:text-yellow-300 mt-1">
+                                                ⚠️
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="font-medium">Alcohol-based Fragrance + AHA/BHA Products</p>
+                                                <p class="text-sm">Can increase absorption rates and potential for irritation if applied simultaneously</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-start">
+                                            <div class="flex-shrink-0 bg-yellow-100 dark:bg-yellow-900/30 rounded-full w-8 h-8 flex items-center justify-center text-yellow-700 dark:text-yellow-300 mt-1">
+                                                ⚠️
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="font-medium">Aldehydes + High Humidity</p>
+                                                <p class="text-sm">Chanel No. 5 and similar aldehyde-heavy fragrances can undergo molecular changes in extremely humid environments</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 相消香气 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">🔄</span>
+                                <h4 class="text-xl font-medium">Olfactory Clashes</h4>
+                            </div>
+                            <p class="mb-4">These combinations create jarring or off-putting results:</p>
+                            
+                            <div class="space-y-4">
+                                <!-- 冲突组合 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <table class="w-full">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-left px-2 py-2">Primary Note</th>
+                                                <th class="text-left px-2 py-2">Avoid Combining With</th>
+                                                <th class="text-left px-2 py-2">Alternative Pairs</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="px-2 py-3 border-b border-gray-200 dark:border-gray-700">
+                                                    <span class="font-medium">💐 Floral</span>
+                                                </td>
+                                                <td class="px-2 py-3 border-b border-gray-200 dark:border-gray-700">
+                                                    Heavy gourmand notes (dark chocolate, coffee)
+                                                </td>
+                                                <td class="px-2 py-3 border-b border-gray-200 dark:border-gray-700">
+                                                    Fruity, light vanilla, amber
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-2 py-3 border-b border-gray-200 dark:border-gray-700">
+                                                    <span class="font-medium">🍋 Citrus</span>
+                                                </td>
+                                                <td class="px-2 py-3 border-b border-gray-200 dark:border-gray-700">
+                                                    Marine aquatics, strong leather
+                                                </td>
+                                                <td class="px-2 py-3 border-b border-gray-200 dark:border-gray-700">
+                                                    Herbs, light woods, neroli
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-2 py-3 border-b border-gray-200 dark:border-gray-700">
+                                                    <span class="font-medium">🏝️ Tropical</span>
+                                                </td>
+                                                <td class="px-2 py-3 border-b border-gray-200 dark:border-gray-700">
+                                                    Mossy greens, heavy incense
+                                                </td>
+                                                <td class="px-2 py-3 border-b border-gray-200 dark:border-gray-700">
+                                                    Coconut, vanilla, light white florals
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-2 py-3">
+                                                    <span class="font-medium">🌲 Woody</span>
+                                                </td>
+                                                <td class="px-2 py-3">
+                                                    Candy-like sweet notes, bubblegum
+                                                </td>
+                                                <td class="px-2 py-3">
+                                                    Spices, tobacco, leather, moss
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <!-- 专家建议 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2 flex items-center">
+                                        <span class="text-xl mr-2">💭</span> Expert Perspective
+                                    </h5>
+                                    <blockquote class="italic border-l-4 border-apple-lavender pl-4">
+                                        "The most successful fragrance layering happens when you understand both harmony and contrast. Think of it as composing music – sometimes complementary notes create beautiful harmonies, while occasionally strategic dissonance adds depth and interest."
+                                        <footer class="mt-2 text-sm">— Francis Kurkdjian, Master Perfumer</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 沉浸式体验升级 -->
+        <section id="experience" class="mb-20 py-16">
+            <div class="max-w-7xl mx-auto glass-effect rounded-3xl shadow-xl p-8 md:p-12 transform transition-all hover:shadow-2xl">
+                <h2 class="text-3xl font-bold section-title">🌈 Immersive Fragrance Experiences</h2>
+                <p class="text-xl text-center mb-12 max-w-4xl mx-auto">Transform your relationship with scent through interactive tools and reflective practices that deepen your fragrance journey.</p>
+                
+                <!-- 虚拟调香实验室 -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">🧪 Virtual Perfume Laboratory</h3>
+                    
+                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl p-8">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                                <h4 class="text-xl font-medium mb-4 flex items-center">
+                                    <span class="text-2xl mr-2">⚗️</span> Create Your Custom Blend
+                                </h4>
+                                <p class="mb-6">Experiment with professional perfumery techniques in our interactive lab. Adjust note proportions and discover your perfect personal formula.</p>
+                                
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4 mb-6">
+                                    <h5 class="font-medium mb-2">How It Works:</h5>
+                                    <ol class="list-decimal ml-5 space-y-2">
+                                        <li>Select your preferred notes from our curated ingredient library</li>
+                                        <li>Adjust the concentration levels using precision blending tools</li>
+                                        <li>Fine-tune your formula based on virtual scent preview</li>
+                                        <li>Save your formulation to your personal recipe book</li>
+                                    </ol>
+                                </div>
+                                
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium mb-2">Featured Tools:</h5>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-center">
+                                            <span class="text-xl mr-2">🎭</span>
+                                            <span><span class="font-medium">Accord Builder</span> - Layer complementary notes to create complex accords</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <span class="text-xl mr-2">⏱️</span>
+                                            <span><span class="font-medium">Evolution Simulator</span> - Visualize how your blend develops over time</span>
+                                        </li>
+                                        <li class="flex items-center">
+                                            <span class="text-xl mr-2">🧠</span>
+                                            <span><span class="font-medium">Scent AI</span> - Get recommendations based on your preferences</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="md:w-1/2">
+                                <div class="bg-apple-mist/30 dark:bg-apple-gray-800/30 p-6 rounded-xl border border-apple-lavender/30 h-full flex flex-col">
+                                    <h4 class="text-xl font-medium mb-4 text-center">Laboratory Interface Preview</h4>
+                                    
+                                    <!-- 模拟调香界面 -->
+                                    <div class="flex-grow flex flex-col">
+                                        <!-- 模拟标签页 -->
+                                        <div class="flex border-b border-apple-gray-200 dark:border-apple-gray-700 mb-4">
+                                            <div class="px-4 py-2 border-b-2 border-apple-lavender font-medium">Composition</div>
+                                            <div class="px-4 py-2 text-gray-500 dark:text-gray-400">Notes Library</div>
+                                            <div class="px-4 py-2 text-gray-500 dark:text-gray-400">My Formulas</div>
+                                        </div>
+                                        
+                                        <!-- 模拟调香区域 -->
+                                        <div class="flex-grow flex flex-col justify-between">
+                                            <!-- 配方内容区域 -->
+                                            <div class="space-y-4 mb-6">
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-medium">Bergamot (Top)</p>
+                                                    <div class="w-32 h-6 bg-apple-gray-200 dark:bg-apple-gray-700 rounded-full overflow-hidden">
+                                                        <div class="h-full bg-gradient-to-r from-apple-lavender to-apple-mist rounded-full" style="width: 65%"></div>
+                                                    </div>
+                                                    <p>15%</p>
+                                                </div>
+                                                
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-medium">Rose (Middle)</p>
+                                                    <div class="w-32 h-6 bg-apple-gray-200 dark:bg-apple-gray-700 rounded-full overflow-hidden">
+                                                        <div class="h-full bg-gradient-to-r from-apple-lavender to-apple-mist rounded-full" style="width: 85%"></div>
+                                                    </div>
+                                                    <p>30%</p>
+                                                </div>
+                                                
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-medium">Sandalwood (Base)</p>
+                                                    <div class="w-32 h-6 bg-apple-gray-200 dark:bg-apple-gray-700 rounded-full overflow-hidden">
+                                                        <div class="h-full bg-gradient-to-r from-apple-lavender to-apple-mist rounded-full" style="width: 100%"></div>
+                                                    </div>
+                                                    <p>40%</p>
+                                                </div>
+                                                
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-medium">Vanilla (Base)</p>
+                                                    <div class="w-32 h-6 bg-apple-gray-200 dark:bg-apple-gray-700 rounded-full overflow-hidden">
+                                                        <div class="h-full bg-gradient-to-r from-apple-lavender to-apple-mist rounded-full" style="width: 40%"></div>
+                                                    </div>
+                                                    <p>15%</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- 控制按钮 -->
+                                            <div class="flex justify-between">
+                                                <button class="px-4 py-2 bg-apple-gray-200 dark:bg-apple-gray-700 rounded-lg hover:bg-apple-gray-300 dark:hover:bg-apple-gray-600 transition-colors">
+                                                    Reset
+                                                </button>
+                                                <button class="px-6 py-2 bg-gradient-to-r from-apple-lavender to-apple-mist rounded-lg text-white hover:opacity-90 transition-opacity">
+                                                    Preview Scent
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 气味日记 -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-center">📔 Digital Scent Journal</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- 日记功能介绍 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">📝</span>
+                                <h4 class="text-xl font-medium">Track Your Olfactory Journey</h4>
+                            </div>
+                            <p class="mb-6">Document your evolving relationship with fragrance through our intuitive journaling system:</p>
+                            
+                            <div class="space-y-6">
+                                <!-- 功能特性 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2">Core Features</h5>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start">
+                                            <span class="text-xl mr-2 mt-0.5">📊</span>
+                                            <div>
+                                                <p class="font-medium">Performance Tracking</p>
+                                                <p class="text-sm">Record longevity, projection, and sillage data for your collection</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-xl mr-2 mt-0.5">🌡️</span>
+                                            <div>
+                                                <p class="font-medium">Environmental Context</p>
+                                                <p class="text-sm">Log weather conditions and how they affect fragrance development</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="text-xl mr-2 mt-0.5">📸</span>
+                                            <div>
+                                                <p class="font-medium">Visual Documentation</p>
+                                                <p class="text-sm">Capture bottle imagery and create a visual archive of your collection</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <!-- 权益说明 -->
+                                <div class="bg-apple-gray-100/50 dark:bg-apple-gray-800/50 rounded-xl p-4">
+                                    <h5 class="font-medium text-lg mb-2">Benefits of Journaling</h5>
+                                    <p class="mb-3">Research shows that maintaining a fragrance journal can:</p>
+                                    <ul class="space-y-2 ml-6 list-disc">
+                                        <li>Improve scent memory and recognition by up to 40%</li>
+                                        <li>Enhance appreciation of complex fragrances through structured analysis</li>
+                                        <li>Prevent redundant purchases by documenting similarities across your collection</li>
+                                        <li>Identify patterns in your preferences to guide future explorations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 日记样例 -->
+                        <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl mr-3">📖</span>
+                                <h4 class="text-xl font-medium">Sample Entry Templates</h4>
+                            </div>
+                            <p class="mb-4">Choose from our curated templates or create your own custom format:</p>
+                            
+                            <div class="space-y-8">
+                                <!-- 样例1 -->
+                                <div class="bg-white/60 dark:bg-apple-gray-700/60 rounded-xl p-5 shadow-sm">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h5 class="font-medium text-lg">Diptyque Philosykos</h5>
+                                        <p class="text-sm bg-apple-lavender/20 text-apple-lavender dark:text-white rounded-full px-3 py-1">Green | Woody</p>
+                                    </div>
+                                    
+                                    <div class="mb-4 pb-4 border-b border-gray-200 dark:border-gray-600">
+                                        <div class="grid grid-cols-3 gap-2 text-center text-sm">
+                                            <div>
+                                                <p class="font-medium">First Impression</p>
+                                                <div class="flex justify-center mt-1">
+                                                    <span>🌟</span><span>🌟</span><span>🌟</span><span>🌟</span><span>⭐</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p class="font-medium">Longevity</p>
+                                                <div class="flex justify-center mt-1">
+                                                    <span>🌟</span><span>🌟</span><span>🌟</span><span>⭐</span><span>⭐</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <p class="font-medium">Uniqueness</p>
+                                                <div class="flex justify-center mt-1">
+                                                    <span>🌟</span><span>🌟</span><span>🌟</span><span>🌟</span><span>⭐</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <h6 class="font-medium mb-2">Evolution Notes:</h6>
+                                        <p class="text-sm italic">Begins with a burst of raw fig leaf and green sap, transitions to creamy coconut milk after 30 minutes, and settles into a beautiful cedar base that stays close to the skin for about 4-5 hours. Performs exceptionally well in humid weather.</p>
+                                    </div>
+                                    
+                                    <div class="text-right text-sm text-gray-500 dark:text-gray-400">
+                                        May 15, 2023 • 75°F • Partly Cloudy
+                                    </div>
+                                </div>
+                                
+                                <!-- 样例2 - 简化版 -->
+                                <div class="bg-white/60 dark:bg-apple-gray-700/60 rounded-xl p-5 shadow-sm">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h5 class="font-medium text-lg">Quick Impression</h5>
+                                        <p class="text-sm bg-apple-mist/20 text-apple-mist dark:text-white rounded-full px-3 py-1">Sampling</p>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <h6 class="font-medium mb-2">Jo Malone English Pear & Freesia</h6>
+                                        <div class="flex items-center space-x-4 mb-3">
+                                            <p class="text-sm font-medium">Initial Reaction:</p>
+                                            <div class="flex">
+                                                <span>💚</span><span>💚</span><span>💚</span><span>🤍</span><span>🤍</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm italic">Crisp autumn pear with delicate floral undertones. Pleasant but lacks staying power. Might layer well with Wood Sage & Sea Salt to enhance longevity. Consider for spring office wear.</p>
+                                    </div>
+                                    
+                                    <div class="flex justify-between items-center text-sm">
+                                        <span>June 3, 2023</span>
+                                        <button class="px-3 py-1 bg-apple-lavender/20 rounded-full text-apple-lavender dark:text-white hover:bg-apple-lavender/30 transition-colors">
+                                            Add to Wishlist
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA区域 -->
+                    <div class="mt-12 text-center">
+                        <button class="px-8 py-3 bg-gradient-to-r from-apple-lavender to-apple-mist rounded-full text-white font-medium shadow-md hover:shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:opacity-90">
+                            💫 Begin Your Fragrance Adventure
+                        </button>
+                        <p class="mt-3 text-sm">Your personal scent journey starts with a single note</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 香水推荐部分 -->
         <section id="perfume-recommendations" class="hidden">
             <div class="max-w-7xl mx-auto glass-effect rounded-3xl shadow-xl p-8 md:p-12 transform transition-all hover:shadow-2xl">
                 <h2 class="text-3xl font-bold mb-4 text-center">✨ Your Perfect Perfume Matches ✨</h2>
@@ -1066,50 +1464,5 @@
     </footer>
 
     <script src="scripts.js"></script>
-    <!-- 修复显示问题的脚本 -->
-    <script>
-        // 在页面加载完成后检查是否有显示问题
-        window.addEventListener('DOMContentLoaded', function() {
-            console.log("页面加载完成，设置修复程序...");
-            
-            // 在提交测试后的事件监听器
-            document.addEventListener('click', function(event) {
-                if (event.target && (event.target.id === 'submit-quiz' || event.target.closest('#submit-quiz'))) {
-                    console.log("检测到测试提交，准备修复显示问题...");
-                    
-                    // 延迟执行以确保原始代码已运行
-                    setTimeout(function() {
-                        const recommendationsContainer = document.getElementById('perfume-recommendations');
-                        if (recommendationsContainer) {
-                            console.log("找到推荐容器，修复显示问题");
-                            recommendationsContainer.classList.remove('hidden');
-                            recommendationsContainer.style.display = 'block';
-                            recommendationsContainer.style.visibility = 'visible';
-                            recommendationsContainer.style.opacity = '1';
-                            
-                            // 确保可见后滚动到该区域
-                            recommendationsContainer.scrollIntoView({behavior: 'smooth'});
-                        }
-                    }, 3000); // 3秒后执行，确保原始脚本有足够时间处理
-                }
-            });
-            
-            // 添加控制台调试命令
-            window.fixRecommendations = function() {
-                const recommendationsContainer = document.getElementById('perfume-recommendations');
-                if (recommendationsContainer) {
-                    recommendationsContainer.classList.remove('hidden');
-                    recommendationsContainer.style.display = 'block';
-                    recommendationsContainer.style.visibility = 'visible';
-                    recommendationsContainer.style.opacity = '1';
-                    recommendationsContainer.scrollIntoView({behavior: 'smooth'});
-                    return "推荐区域已修复并显示";
-                }
-                return "找不到推荐区域元素";
-            };
-            
-            console.log("修复程序设置完成。如果推荐内容不显示，请在控制台输入 fixRecommendations() 手动修复");
-        });
-    </script>
 </body>
 </html>
