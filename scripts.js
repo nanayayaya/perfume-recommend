@@ -1,4 +1,109 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // 幻灯片控制函数
+    function initSlideshow() {
+        console.log("初始化幻灯片...");
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        
+        if (slides.length === 0 || dots.length === 0) {
+            console.error("未找到幻灯片或导航点元素");
+            return;
+        }
+        
+        console.log(`找到 ${slides.length} 张幻灯片和 ${dots.length} 个导航点`);
+        
+        let currentSlide = 0;
+        let slideInterval;
+        
+        // 确保所有幻灯片初始状态正确
+        slides.forEach((slide, index) => {
+            if (index === 0) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+        
+        dots.forEach((dot, index) => {
+            if (index === 0) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+        
+        // 启动轮播定时器
+        startSlideInterval();
+        
+        // 启动轮播定时器函数
+        function startSlideInterval() {
+            clearInterval(slideInterval); // 清除现有定时器
+            slideInterval = setInterval(nextSlide, 4000); // 每4秒切换一次图片
+            console.log("开始自动轮播");
+        }
+        
+        // 点击导航点切换幻灯片
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                showSlide(index);
+                startSlideInterval();
+            });
+        });
+        
+        // 显示指定幻灯片
+        function showSlide(index) {
+            console.log(`显示幻灯片 ${index}`);
+            // 先把所有幻灯片和导航点设为非活动
+            slides.forEach((slide) => {
+                slide.classList.remove('active');
+            });
+            
+            dots.forEach((dot) => {
+                dot.classList.remove('active');
+            });
+            
+            // 设置当前幻灯片和导航点为活动状态
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            
+            currentSlide = index;
+        }
+        
+        // 显示下一张幻灯片
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        // 当用户离开页面和返回页面时重置定时器
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'visible') {
+                startSlideInterval();
+            } else {
+                clearInterval(slideInterval);
+            }
+        });
+    }
+    
+    // 确保DOM加载完成后立即初始化幻灯片
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSlideshowOnLoad);
+    } else {
+        initSlideshowOnLoad();
+    }
+    
+    function initSlideshowOnLoad() {
+        setTimeout(() => {
+            if (document.querySelector('.slideshow-container')) {
+                console.log("找到幻灯片容器，正在初始化...");
+                initSlideshow();
+            } else {
+                console.error("未找到幻灯片容器");
+            }
+        }, 100); // 短暂延迟确保DOM元素已完全加载
+    }
+
     // 所有问题数据
     const quizQuestions = [
         {
@@ -615,6 +720,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.querySelector('.quiz-intro').classList.add('hidden');
                     showQuestion(currentQuestion);
                 });
+                
+                // 重新初始化幻灯片
+                if (document.querySelector('.slideshow-container')) {
+                    initSlideshow();
+                }
             });
         }, 1800); // 1.8秒后显示香水推荐，给用户感觉是在"分析"他们的选择
     }
