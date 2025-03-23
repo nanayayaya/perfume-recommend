@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🎩",
                     title: "The Grand Budapest Hotel",
-                    description: "Symmetrical aesthetics → Vintage pink pepper + iris, elegant and intellectual",
+                    explanation: "Symmetrical aesthetics → Vintage pink pepper + iris, elegant and intellectual",
                     value: "grand_budapest",
                     notes: ["pink_pepper", "iris"],
                     complexity: 3
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🌌",
                     title: "Blade Runner 2049",
-                    description: "Cyberpunk → Metallic patchouli + electronic smoke notes",
+                    explanation: "Cyberpunk → Metallic patchouli + electronic smoke notes",
                     value: "blade_runner",
                     notes: ["patchouli", "electronic_smoke"],
                     complexity: 5
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🍄",
                     title: "Alice in Wonderland",
-                    description: "Fantasy adventure → Psychedelic mushroom + berry gourmand notes",
+                    explanation: "Fantasy adventure → Psychedelic mushroom + berry gourmand notes",
                     value: "alice",
                     notes: ["mushroom", "berry"],
                     complexity: 4
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🎻",
                     title: "The Legend of 1900",
-                    description: "Classical romance → Sea salt + vintage cedarwood",
+                    explanation: "Classical romance → Sea salt + vintage cedarwood",
                     value: "legend_1900",
                     notes: ["sea_salt", "cedarwood"],
                     complexity: 2
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🎷",
                     title: "Jazz (Miles Davis)",
-                    description: "→ Whiskey + tobacco notes",
+                    explanation: "→ Whiskey + tobacco notes",
                     value: "jazz",
                     notes: ["whiskey", "tobacco"],
                     intensity: 4
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🎸",
                     title: "Classic Rock (Queen)",
-                    description: "→ Leather + amber",
+                    explanation: "→ Leather + amber",
                     value: "rock",
                     notes: ["leather", "amber"],
                     intensity: 5
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🎹",
                     title: "Electronic Music (Daft Punk)",
-                    description: "→ Synthetic musk + ozone elements",
+                    explanation: "→ Synthetic musk + ozone elements",
                     value: "electronic",
                     notes: ["synthetic_musk", "ozone"],
                     intensity: 2
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🎻",
                     title: "Classical Music (Bach)",
-                    description: "→ Cashmere wood + old paper scent",
+                    explanation: "→ Cashmere wood + old paper scent",
                     value: "classical",
                     notes: ["cashmere_wood", "paper"],
                     intensity: 3
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🎭",
                     title: "Surrealism",
-                    description: "→ Fantastic aldehydes",
+                    explanation: "→ Fantastic aldehydes",
                     value: "surrealism",
                     notes: ["aldehydes", "strange_fruits"],
                     quirkiness: 5
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🎪",
                     title: "Pop Art",
-                    description: "→ Sweet fruit notes",
+                    explanation: "→ Sweet fruit notes",
                     value: "pop_art",
                     notes: ["sweet_fruits", "candy"],
                     quirkiness: 3
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🏛️",
                     title: "Renaissance",
-                    description: "→ Myrrh + frankincense",
+                    explanation: "→ Myrrh + frankincense",
                     value: "renaissance",
                     notes: ["myrrh", "frankincense"],
                     quirkiness: 1
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🖌️",
                     title: "Street Art",
-                    description: "→ Spray paint metallic notes",
+                    explanation: "→ Spray paint metallic notes",
                     value: "street_art",
                     notes: ["metallic", "spray_paint"],
                     quirkiness: 4
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "☕",
                     title: "Paris Café",
-                    description: "Croissant + black coffee → Coffee + butter notes",
+                    explanation: "Croissant + black coffee → Coffee + butter notes",
                     value: "paris",
                     notes: ["coffee", "butter"],
                     region: "europe"
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🍵",
                     title: "Kyoto Tea Room",
-                    description: "Matcha + wagashi → Matcha + bamboo freshness",
+                    explanation: "Matcha + wagashi → Matcha + bamboo freshness",
                     value: "kyoto",
                     notes: ["matcha", "bamboo"],
                     region: "asia"
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🌮",
                     title: "Mexico City Market",
-                    description: "Chili sauce + corn tortillas → Chili + lime notes",
+                    explanation: "Chili sauce + corn tortillas → Chili + lime notes",
                     value: "mexico",
                     notes: ["chili", "lime"],
                     region: "america"
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🥑",
                     title: "California Health Breakfast",
-                    description: "Avocado toast → Fig + green leaves notes",
+                    explanation: "Avocado toast → Fig + green leaves notes",
                     value: "california",
                     notes: ["fig", "green_leaves"],
                     region: "america"
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🔮",
                     title: "Gypsy Tarot Cards",
-                    description: "→ Ambergris + mysterious incense",
+                    explanation: "→ Ambergris + mysterious incense",
                     value: "tarot",
                     notes: ["ambergris", "incense"],
                     spirituality: 5
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🌌",
                     title: "Nordic Runes",
-                    description: "→ Cold fir + glacier water aquatic notes",
+                    explanation: "→ Cold fir + glacier water aquatic notes",
                     value: "runes",
                     notes: ["fir", "glacier_water"],
                     spirituality: 3
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🐉",
                     title: "Chinese I Ching",
-                    description: "→ Agarwood + pu-erh tea",
+                    explanation: "→ Agarwood + pu-erh tea",
                     value: "iching",
                     notes: ["agarwood", "tea"],
                     spirituality: 4
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🌵",
                     title: "Shamanic Herbs",
-                    description: "→ Sage + holy wood smoke",
+                    explanation: "→ Sage + holy wood smoke",
                     value: "shamanic",
                     notes: ["sage", "wood_smoke"],
                     spirituality: 4
@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🌋🗿",
                     title: "Easter Island Adventure",
-                    description: "→ Volcanic minerals + ancient moss",
+                    explanation: "→ Volcanic minerals + ancient moss",
                     value: "easter_island",
                     notes: ["volcanic", "moss"],
                     adventure: 5
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🏰🎭",
                     title: "Vienna Opera House",
-                    description: "→ Velvet + gilded decoration notes",
+                    explanation: "→ Velvet + gilded decoration notes",
                     value: "vienna",
                     notes: ["velvet", "gold"],
                     adventure: 2
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🏄‍♂️🌴",
                     title: "Bali Surfing",
-                    description: "→ Coconut milk + seaweed salt notes",
+                    explanation: "→ Coconut milk + seaweed salt notes",
                     value: "bali",
                     notes: ["coconut", "seaweed"],
                     adventure: 4
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🚀🌕",
                     title: "Moon Base",
-                    description: "→ Vacuum metallic + oxygen bubble notes",
+                    explanation: "→ Vacuum metallic + oxygen bubble notes",
                     value: "moon",
                     notes: ["metallic", "oxygen"],
                     adventure: 5
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🥂",
                     title: "1920s Jazz Age",
-                    description: "→ Champagne + feather fringe notes",
+                    explanation: "→ Champagne + feather fringe notes",
                     value: "1920s",
                     notes: ["champagne", "feather"],
                     nostalgia: 4
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "☮️",
                     title: "1960s Hippie Movement",
-                    description: "→ Cannabis + psychedelic patchouli",
+                    explanation: "→ Cannabis + psychedelic patchouli",
                     value: "1960s",
                     notes: ["cannabis", "patchouli"],
                     nostalgia: 3
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🪩",
                     title: "1980s Disco Fever",
-                    description: "→ Neon tube-like synthetic notes",
+                    explanation: "→ Neon tube-like synthetic notes",
                     value: "1980s",
                     notes: ["synthetic", "neon"],
                     nostalgia: 2
@@ -267,12 +267,128 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                     emoji: "🤖",
                     title: "3020s Future City",
-                    description: "→ Liquid metal + nano-particle notes",
+                    explanation: "→ Liquid metal + nano-particle notes",
                     value: "3020s",
                     notes: ["metal", "nano"],
                     nostalgia: 0
                 }
             ]
+        }
+    ];
+
+    // 定义推荐香水数据
+    const perfumeData = [
+        {
+            id: 1,
+            name: "Byredo Bibliothèque",
+            image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            notes: {
+                top: ["Peach", "Plum"],
+                middle: ["Violet", "Peony"],
+                base: ["Leather", "Patchouli", "Vanilla"]
+            },
+            price: "$190",
+            description: "A sophisticated fragrance that evokes the atmosphere of an old library with leather-bound books.",
+            profiles: ["intellectual", "elegant", "vintage"],
+            suitedFor: ["grand_budapest", "classical"]
+        },
+        {
+            id: 2,
+            name: "Maison Margiela Replica Jazz Club",
+            image: "https://images.unsplash.com/photo-1615144178805-991dfd8156f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            notes: {
+                top: ["Pink Pepper", "Lemon", "Neroli"],
+                middle: ["Rum", "Clary Sage"],
+                base: ["Tobacco Leaf", "Vanilla Bean", "Styrax"]
+            },
+            price: "$135",
+            description: "A warm and spicy fragrance reminiscent of a Brooklyn jazz club.",
+            profiles: ["warm", "sophisticated", "masculine"],
+            suitedFor: ["jazz", "1920s", "rock"]
+        },
+        {
+            id: 3,
+            name: "Diptyque Philosykos",
+            image: "https://images.unsplash.com/photo-1592945403345-980585f18b26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            notes: {
+                top: ["Fig Leaf", "Green Notes"],
+                middle: ["Fig", "Coconut"],
+                base: ["Cedar", "Woody Notes"]
+            },
+            price: "$165",
+            description: "A fresh and green fragrance inspired by the fig trees of Greece.",
+            profiles: ["fresh", "natural", "mediterranean"],
+            suitedFor: ["california", "bali", "green_leaves"]
+        },
+        {
+            id: 4,
+            name: "Le Labo Santal 33",
+            image: "https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            notes: {
+                top: ["Violet Accord", "Cardamom"],
+                middle: ["Iris", "Ambrox"],
+                base: ["Sandalwood", "Cedar", "Leather"]
+            },
+            price: "$215",
+            description: "An iconic unisex fragrance that blends spicy, leathery, and musky notes.",
+            profiles: ["iconic", "unisex", "distinctive"],
+            suitedFor: ["leather", "rock", "surrealism"]
+        },
+        {
+            id: 5,
+            name: "Tom Ford Tobacco Vanille",
+            image: "https://images.unsplash.com/photo-1617184003107-0df15fea4903?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            notes: {
+                top: ["Tobacco Leaf", "Spices"],
+                middle: ["Vanilla", "Cacao"],
+                base: ["Dried Fruits", "Woody Notes"]
+            },
+            price: "$240",
+            description: "A rich, spicy, and sweet fragrance with opulent notes of tobacco and vanilla.",
+            profiles: ["luxurious", "rich", "sweet"],
+            suitedFor: ["tobacco", "jazz", "renaissance"]
+        },
+        {
+            id: 6,
+            name: "Frederic Malle Portrait of a Lady",
+            image: "https://images.unsplash.com/photo-1585178433635-fbf36dc1e376?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            notes: {
+                top: ["Rose", "Blackcurrant"],
+                middle: ["Raspberry", "Clove"],
+                base: ["Patchouli", "Sandalwood", "Incense"]
+            },
+            price: "$275",
+            description: "An opulent and sophisticated fragrance built around an unprecedented concentration of rose.",
+            profiles: ["opulent", "intense", "elegant"],
+            suitedFor: ["tarot", "vienna", "renaissance"]
+        },
+        {
+            id: 7,
+            name: "Comme des Garçons Concrete",
+            image: "https://images.unsplash.com/photo-1589732025089-075a3485b04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            notes: {
+                top: ["Sandalwood"],
+                middle: ["Rose Oxide"],
+                base: ["Concrete Accord", "Woody Notes"]
+            },
+            price: "$145",
+            description: "A futuristic and industrial fragrance with a unique concrete accord.",
+            profiles: ["avant-garde", "architectural", "modern"],
+            suitedFor: ["blade_runner", "street_art", "3020s"]
+        },
+        {
+            id: 8,
+            name: "Jo Malone English Pear & Freesia",
+            image: "https://images.unsplash.com/photo-1608528577891-eb055944b2d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+            notes: {
+                top: ["Pear", "Melon"],
+                middle: ["Freesia", "Rose"],
+                base: ["Musk", "Patchouli", "Amber"]
+            },
+            price: "$155",
+            description: "A delicate and fresh fragrance capturing the luscious scent of just-ripe pears and freesias.",
+            profiles: ["light", "fresh", "elegant"],
+            suitedFor: ["california", "pop_art", "alice"]
         }
     ];
 
@@ -303,24 +419,26 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 创建进度条
         const progressBar = `
-            <div class="progress-bar mb-8">
-                <div class="progress-bar-fill" style="width: ${(index + 1) / quizQuestions.length * 100}%"></div>
+            <div class="mb-6 w-full bg-apple-gray-200 dark:bg-apple-gray-700 h-2 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-apple-purple to-apple-pink h-full rounded-full transition-all" style="width: ${(index + 1) / quizQuestions.length * 100}%"></div>
+            </div>
+            <div class="text-right text-sm text-apple-gray-500 dark:text-apple-gray-400 mb-8">
+                Question ${index + 1} of ${quizQuestions.length}
             </div>
         `;
         
         // 构建问题HTML
         questionElement.innerHTML = `
             ${progressBar}
-            <h3 class="text-2xl font-semibold mb-6">${question.title}</h3>
+            <h3 class="text-2xl font-semibold mb-4">${question.title}</h3>
             <p class="text-xl mb-8">${question.question}</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 ${question.options.map((option, optionIndex) => `
-                    <button class="option-card bg-apple-gray-100 dark:bg-apple-gray-800 p-6 rounded-xl hover:shadow-md transition-all text-left flex items-start" 
+                    <button class="option-card bg-apple-gray-100 dark:bg-apple-gray-800 p-6 rounded-xl hover:bg-apple-gray-200 dark:hover:bg-apple-gray-700 hover:shadow-lg transition-all text-left flex items-start" 
                             data-value="${option.value}" data-index="${optionIndex}">
                         <span class="text-3xl mr-4">${option.emoji}</span>
                         <div>
-                            <h4 class="font-semibold mb-1">${option.title}</h4>
-                            <p class="text-apple-gray-700 dark:text-apple-gray-300">${option.description}</p>
+                            <h4 class="font-semibold">${option.title}</h4>
                         </div>
                     </button>
                 `).join('')}
@@ -335,20 +453,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const optionCards = document.querySelectorAll('.option-card');
         optionCards.forEach(card => {
             card.addEventListener('click', function() {
+                // 高亮选中选项
+                optionCards.forEach(c => c.classList.remove('ring-2', 'ring-apple-pink'));
+                this.classList.add('ring-2', 'ring-apple-pink');
+                
                 // 保存用户选择
                 const selectedValue = this.getAttribute('data-value');
                 const selectedIndex = parseInt(this.getAttribute('data-index'));
-                userSelections.push({
-                    questionId: question.id,
-                    value: selectedValue,
-                    optionData: question.options[selectedIndex]
-                });
                 
-                // 显示下一题
-                currentQuestion++;
+                // 延迟进入下一题，给用户一个视觉反馈
                 setTimeout(() => {
+                    userSelections.push({
+                        questionId: question.id,
+                        value: selectedValue,
+                        optionData: question.options[selectedIndex]
+                    });
+                    
+                    // 显示下一题
+                    currentQuestion++;
                     showQuestion(currentQuestion);
-                }, 300);
+                }, 400);
             });
         });
     }
@@ -356,7 +480,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 显示结果
     function showResults() {
         // 分析用户选择并生成香水推荐
-        const recommendations = analyzeSelections(userSelections);
+        const recommendations = generatePerfumeRecommendations(userSelections);
         
         // 隐藏问卷部分
         quizContainer.innerHTML = '';
@@ -367,8 +491,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 构建临时结果HTML
         resultsElement.innerHTML = `
-            <h3 class="text-2xl font-semibold mb-6">Analyzing Your Preferences</h3>
-            <p class="text-xl mb-8">We're selecting the perfect perfumes for your unique style...</p>
+            <h3 class="text-2xl font-semibold mb-6 text-center">Analyzing Your Preferences</h3>
+            <p class="text-xl mb-8 text-center">We're selecting the perfect perfumes for your unique style...</p>
             <div class="flex justify-center">
                 <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-apple-pink"></div>
             </div>
@@ -379,24 +503,31 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 显示推荐香水产品部分
         setTimeout(() => {
-            // 显示之前添加的香水推荐部分
-            document.getElementById('perfume-recommendations').classList.remove('hidden');
+            // 获取推荐香水区域
+            const recommendationsContainer = document.getElementById('perfume-recommendations');
+            
+            // 更新推荐香水的内容
+            updateRecommendationsSection(recommendationsContainer, recommendations);
+            
+            // 显示推荐香水区域
+            recommendationsContainer.classList.remove('hidden');
             
             // 平滑滚动到推荐区域
-            document.getElementById('perfume-recommendations').scrollIntoView({ 
+            recommendationsContainer.scrollIntoView({ 
                 behavior: 'smooth' 
             });
             
             // 添加重新开始按钮
             const restartButton = document.createElement('div');
-            restartButton.className = 'text-center mt-8';
+            restartButton.className = 'text-center mt-12';
             restartButton.innerHTML = `
-                <button id="restart-quiz" class="bg-apple-blue hover:bg-apple-blue/90 text-white font-semibold py-3 px-8 rounded-full text-lg transition-all">
-                    Retake Quiz
+                <button id="restart-quiz" class="bg-apple-pink hover:bg-apple-pink/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 group relative overflow-hidden">
+                    <span class="relative z-10">Discover More Scents</span>
+                    <span class="absolute inset-0 bg-gradient-to-r from-apple-purple to-apple-pink opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 </button>
             `;
             
-            document.getElementById('perfume-recommendations').appendChild(restartButton);
+            recommendationsContainer.appendChild(restartButton);
             
             // 添加重新开始按钮事件
             document.getElementById('restart-quiz').addEventListener('click', function() {
@@ -405,7 +536,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 userSelections = [];
                 
                 // 隐藏推荐区域
-                document.getElementById('perfume-recommendations').classList.add('hidden');
+                recommendationsContainer.classList.add('hidden');
                 
                 // 如果有存在的重启按钮，移除它
                 if (document.getElementById('restart-quiz')) {
@@ -414,11 +545,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // 显示介绍页
                 const introElement = document.createElement('div');
-                introElement.className = 'quiz-intro animate-fade-in';
+                introElement.className = 'quiz-intro animate-fade-in text-center';
                 introElement.innerHTML = `
-                    <p class="text-xl mb-8">Answer our unique personality quiz to discover perfumes that match your aesthetic and cultural preferences.</p>
-                    <button id="start-quiz" class="bg-apple-blue hover:bg-apple-blue/90 text-white font-semibold py-3 px-8 rounded-full text-lg transition-all">
-                        Start The Quiz
+                    <p class="text-xl mb-10 max-w-3xl mx-auto">Your journey to the perfect signature scent begins with a few simple questions about your preferences and personality.</p>
+                    <button id="start-quiz" class="bg-apple-pink hover:bg-apple-pink/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 relative overflow-hidden group">
+                        <span class="relative z-10">Start Your Scent Journey</span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-apple-purple to-apple-pink opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     </button>
                 `;
                 
@@ -436,94 +568,142 @@ document.addEventListener('DOMContentLoaded', function() {
                     showQuestion(currentQuestion);
                 });
             });
-        }, 1500); // 1.5秒后显示香水推荐，给用户感觉是在"分析"他们的选择
+        }, 1800); // 1.8秒后显示香水推荐，给用户感觉是在"分析"他们的选择
     }
 
-    // 分析用户选择并生成推荐
-    function analyzeSelections(selections) {
-        // 这里只是示例逻辑，实际产品中可以更复杂
+    // 根据用户选择生成具体香水推荐
+    function generatePerfumeRecommendations(selections) {
+        // 收集所有的价值标识符和笔记
+        const selectedValues = selections.map(s => s.value);
         const allNotes = selections.flatMap(s => s.optionData.notes);
-        const uniqueNotes = [...new Set(allNotes)];
         
-        // 常见的香水推荐模板
-        const perfumeTemplates = [
-            {
-                name: "Ethereal Dreamscape",
-                description: "A complex, layered scent that evolves throughout the day, revealing new facets of your personality.",
-                emoji: "✨",
-                baseNotes: ["amber", "musk", "cedarwood"]
-            },
-            {
-                name: "Velvet Noir",
-                description: "A mysterious, sophisticated fragrance with depth and intrigue that leaves a memorable impression.",
-                emoji: "🌃",
-                baseNotes: ["tobacco", "leather", "vanilla"]
-            },
-            {
-                name: "Luminous Aura",
-                description: "A bright, uplifting scent that enhances your natural energy and draws people to your optimistic presence.",
-                emoji: "🌞",
-                baseNotes: ["citrus", "white flowers", "green_leaves"]
-            },
-            {
-                name: "Mystic Veil",
-                description: "An otherworldly blend that transcends conventional perfumery, for those who walk between worlds.",
-                emoji: "🌙",
-                baseNotes: ["incense", "wood_smoke", "moss"]
-            }
-        ];
+        // 创建推荐评分系统
+        let perfumeScores = {};
         
-        // 生成个性化推荐
-        const recommendations = [];
-        
-        // 根据用户选择选择模板
-        let selectedTemplate;
-        
-        // 电影选择偏向复杂度
-        const movieChoice = selections.find(s => s.questionId === 1);
-        if (movieChoice && movieChoice.optionData.complexity > 3) {
-            selectedTemplate = perfumeTemplates[0]; // 复杂的Ethereal Dreamscape
-        } else {
-            selectedTemplate = perfumeTemplates[2]; // 简单的Luminous Aura
-        }
-        
-        // 添加第一个推荐
-        recommendations.push({
-            name: selectedTemplate.name,
-            description: selectedTemplate.description,
-            emoji: selectedTemplate.emoji,
-            notes: [...selectedTemplate.baseNotes, ...uniqueNotes.slice(0, 3)]
+        // 为每个香水初始化评分
+        perfumeData.forEach(perfume => {
+            perfumeScores[perfume.id] = 0;
+            
+            // 基于直接匹配增加分数
+            perfume.suitedFor.forEach(trait => {
+                if (selectedValues.includes(trait)) {
+                    perfumeScores[perfume.id] += 3;
+                }
+            });
+            
+            // 基于笔记匹配增加分数
+            allNotes.forEach(note => {
+                const allPerfumeNotes = [
+                    ...perfume.notes.top, 
+                    ...perfume.notes.middle, 
+                    ...perfume.notes.base
+                ].map(n => n.toLowerCase());
+                
+                if (allPerfumeNotes.some(n => n.includes(note) || note.includes(n))) {
+                    perfumeScores[perfume.id] += 1;
+                }
+            });
+            
+            // 添加一些随机性以避免完全相同的结果
+            perfumeScores[perfume.id] += Math.random() * 0.5;
         });
         
-        // 音乐选择影响第二个推荐
-        const musicChoice = selections.find(s => s.questionId === 2);
-        if (musicChoice && (musicChoice.value === "jazz" || musicChoice.value === "rock")) {
-            recommendations.push({
-                name: "Vintage Vinyl",
-                description: "A bold, statement-making fragrance that's unapologetically authentic and full of character.",
-                emoji: "🎵",
-                notes: ["leather", "tobacco", "amber", ...uniqueNotes.slice(0, 2)]
-            });
-        } else {
-            recommendations.push({
-                name: "Harmonic Essence",
-                description: "A perfectly balanced composition that creates harmony and tranquility wherever you go.",
-                emoji: "🌊",
-                notes: ["sea_salt", "cashmere_wood", "synthetic_musk", ...uniqueNotes.slice(0, 2)]
-            });
-        }
+        // 根据评分对香水进行排序
+        const sortedPerfumes = Object.entries(perfumeScores)
+            .sort((a, b) => b[1] - a[1])
+            .map(([id]) => perfumeData.find(p => p.id === parseInt(id)));
         
-        // 根据神秘学选择添加第三个推荐
-        const mysticalChoice = selections.find(s => s.questionId === 5);
-        if (mysticalChoice) {
-            recommendations.push({
-                name: "Sacred Temple",
-                description: "An ancient, spiritual blend that connects you to forgotten wisdom and hidden knowledge.",
-                emoji: "🏮",
-                notes: [...mysticalChoice.optionData.notes, "ambergris", "vanilla"]
-            });
-        }
+        // 返回前4个推荐
+        return sortedPerfumes.slice(0, 4);
+    }
+
+    // 更新推荐香水区域
+    function updateRecommendationsSection(container, recommendations) {
+        // 更新标题
+        const titleElement = container.querySelector('h2');
+        titleElement.textContent = "Your Perfect Perfume Matches";
         
-        return recommendations;
+        // 更新描述
+        const descriptionElement = container.querySelector('p');
+        descriptionElement.innerHTML = "Based on your unique preferences, we've curated these <span class='text-apple-pink font-semibold'>exclusive fragrances</span> that will complement your personality.";
+        
+        // 找到卡片容器
+        const cardsContainer = container.querySelector('.grid');
+        cardsContainer.innerHTML = '';
+        
+        // 为每个推荐香水创建卡片
+        recommendations.forEach((perfume, index) => {
+            // 获取用户选择中与该香水匹配的选项
+            const matchingSelections = userSelections.filter(selection => 
+                perfume.suitedFor.includes(selection.value)
+            );
+            
+            // 构建匹配原因文本
+            let matchReason = '';
+            if (matchingSelections.length > 0) {
+                const selection = matchingSelections[0];
+                const question = quizQuestions.find(q => q.id === selection.questionId);
+                const option = question.options.find(o => o.value === selection.value);
+                
+                matchReason = `<div class="mt-4 bg-apple-gray-200/50 dark:bg-apple-gray-700/50 p-3 rounded-lg">
+                    <span class="font-semibold text-apple-pink">Why this matches you: </span>
+                    Your preference for ${option.title} suggests ${option.explanation}
+                </div>`;
+            }
+            
+            // 构建笔记展示
+            const notes = `
+                <div class="flex flex-wrap gap-2 mt-3 mb-4">
+                    <div class="flex flex-col items-center">
+                        <span class="text-xs text-apple-gray-500 dark:text-apple-gray-400 mb-1">Top</span>
+                        <div class="flex gap-1">
+                            ${perfume.notes.top.map(note => 
+                                `<span class="px-2 py-1 bg-apple-pink/10 text-apple-pink rounded-full text-xs">${note}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-xs text-apple-gray-500 dark:text-apple-gray-400 mb-1">Middle</span>
+                        <div class="flex gap-1">
+                            ${perfume.notes.middle.map(note => 
+                                `<span class="px-2 py-1 bg-apple-purple/10 text-apple-purple rounded-full text-xs">${note}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-xs text-apple-gray-500 dark:text-apple-gray-400 mb-1">Base</span>
+                        <div class="flex gap-1">
+                            ${perfume.notes.base.map(note => 
+                                `<span class="px-2 py-1 bg-apple-blue/10 text-apple-blue rounded-full text-xs">${note}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // 创建卡片
+            const card = document.createElement('div');
+            card.className = 'bg-apple-gray-100 dark:bg-apple-gray-800 rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1';
+            card.innerHTML = `
+                <div class="h-64 overflow-hidden relative">
+                    <div class="absolute top-3 left-3 bg-apple-purple text-white px-3 py-1 rounded-full text-sm font-medium z-10">
+                        Match #${index + 1}
+                    </div>
+                    <img src="${perfume.image}" alt="${perfume.name}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-2">${perfume.name}</h3>
+                    <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-2">${perfume.description}</p>
+                    ${notes}
+                    ${matchReason}
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-lg font-semibold">${perfume.price}</span>
+                        <a href="#" class="bg-apple-blue hover:bg-apple-blue/90 text-white py-2 px-4 rounded-full text-sm transition-all">Learn More</a>
+                    </div>
+                </div>
+            `;
+            
+            cardsContainer.appendChild(card);
+        });
     }
 });
