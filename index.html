@@ -339,6 +339,89 @@
             border-radius: 20px;
             backdrop-filter: blur(4px);
         }
+        
+        /* 新增: 科普内容区域样式 */
+        .perfume-education {
+            --color-tint: rgba(var(--apple-purple-rgb, 175, 82, 222), 0.05);
+            background: var(--color-tint);
+            transition: all 0.5s ease;
+        }
+        
+        .highlight {
+            color: var(--apple-pink);
+            font-weight: 500;
+        }
+        
+        .science-section,
+        .fact-section,
+        .craft-section,
+        .secret-section,
+        .science-crossover-section,
+        .tips-section,
+        .interactive-section {
+            position: relative;
+            line-height: 1.8;
+        }
+        
+        .apple-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--apple-blue);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .apple-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: rgba(0, 122, 255, 0.9);
+        }
+        
+        .apple-button:active {
+            transform: translateY(0);
+        }
+        
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        
+        /* 用户生成内容区域 */
+        .user-content-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+        }
+        
+        .dark .user-content-section {
+            background: rgba(0, 0, 0, 0.1);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+        
+        /* 科普卡片悬停效果 */
+        .glass-effect:hover .highlight {
+            text-shadow: 0 0 8px rgba(255, 45, 85, 0.5);
+        }
+        
+        /* 媒体查询适配 */
+        @media (max-width: 768px) {
+            .perfume-education {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -378,10 +461,10 @@
                         </div>
                         <div class="slide fade absolute inset-0">
                             <img src="images/green.jpg" alt="绿色调香水" class="w-full h-full object-cover">
-                        </div>
+                    </div>
                         <div class="slide fade absolute inset-0">
                             <img src="images/brown.jpg" alt="棕色调香水" class="w-full h-full object-cover">
-                        </div>
+                </div>
                         
                         <!-- 添加导航点 -->
                         <div class="absolute bottom-4 left-0 right-0 z-20 flex justify-center">
@@ -391,11 +474,11 @@
                                 <span class="dot" data-slide="2"></span>
                                 <span class="dot" data-slide="3"></span>
                                 <span class="dot" data-slide="4"></span>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                
+                    </div>
+                </div>
+
                 <div id="quiz-container">
                     <div class="quiz-intro animate-fade-in text-center">
                         <div class="mb-10 max-w-3xl mx-auto bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20 shadow-xl transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
@@ -420,7 +503,7 @@
                                 </p>
                             </div>
                             <div class="w-32 h-1 bg-gradient-to-r from-apple-purple to-apple-pink mx-auto mt-4 rounded-full"></div>
-                        </div>
+                            </div>
                         <button id="start-quiz" class="bg-apple-pink hover:bg-apple-pink/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 relative overflow-hidden group">
                             <span class="relative z-10">✨ Begin Your Enchanted Journey ✨</span>
                             <span class="absolute inset-0 bg-gradient-to-r from-apple-purple to-apple-pink opacity-0 group-hover:opacity-100 transition-all"></span>
@@ -451,7 +534,7 @@
                     <h3 class="text-xl font-semibold mb-2">✨ Find Your Perfect Scent ✨</h3>
                     <p class="text-apple-gray-400">© 2023 Your Company Name. All rights reserved.</p>
                 </div>
-                <div class="flex space-x-4">
+                    <div class="flex space-x-4">
                     <a href="#" class="text-apple-gray-300 hover:text-white transition-colors">Privacy Policy</a>
                     <a href="#" class="text-apple-gray-300 hover:text-white transition-colors">Terms of Service</a>
                     <a href="#" class="text-apple-gray-300 hover:text-white transition-colors">Contact Us</a>

@@ -497,6 +497,231 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
+    // 添加香水科普内容数据结构
+    const perfumeEducationData = {
+        // 香调DNA科普内容
+        dnaContent: {
+            "aquatic": {
+                title: "🌊 Why Aquatic Notes Remind Us of the Ocean",
+                content: `
+                    <div class="science-section">
+                        <p><span class="highlight">🧪 Scientific Revelation</span>: The molecule Calone, a key component in aquatic fragrances, has a structure similar to sea water evaporation compounds. This triggers hippocampus-based ocean memories.</p>
+                        <p><span class="highlight">🏛️ Cultural Origins</span>: Consider Diptyque's "waterside garden" imagery in their fig-based fragrances, blending Mediterranean coastal impressions.</p>
+                        <p><span class="highlight">📊 Global Trends</span>: 35% of coastal city dwellers prefer aquatic notes in their fragrances.</p>
+                    </div>
+                `
+            },
+            "woody": {
+                title: "🌲 The Millennial Dialogue Between Cedarwood & Sandalwood",
+                content: `
+                    <div class="science-section">
+                        <p><span class="highlight">🗺️ Geographic Origins</span>: Compare the density variations between Himalayan Cedarwood (found in Dior Sauvage) and Mysore Sandalwood (featured in Jo Malone fragrances).</p>
+                        <p><span class="highlight">🧠 Olfactory Psychology</span>: Woody notes activate the orbitofrontal cortex in the brain, producing neural signals associated with "security" and "grounding".</p>
+                    </div>
+                `
+            },
+            "floral": {
+                title: "🌹 The Secret Language of Flowers",
+                content: `
+                    <div class="science-section">
+                        <p><span class="highlight">🔍 Molecular Complexity</span>: A single Damascus rose contains over 300 aromatic molecules, creating one of nature's most complex scent profiles.</p>
+                        <p><span class="highlight">⏳ Historical Impact</span>: Rose waters were used by ancient Egyptian pharaohs as offerings to the gods, believing their scent could transcend to the afterlife.</p>
+                    </div>
+                `
+            },
+            "oriental": {
+                title: "✨ The Mystic Journey of Spices and Resins",
+                content: `
+                    <div class="science-section">
+                        <p><span class="highlight">🧭 Trade History</span>: The famed Silk Road transported not just silks but precious aromatics like frankincense and myrrh, which were worth more than gold by weight.</p>
+                        <p><span class="highlight">🔥 Alchemical Traditions</span>: Arabian perfumery developed distillation techniques in the 9th century, transforming how humanity captured scent.</p>
+                    </div>
+                `
+            },
+            "citrus": {
+                title: "🍋 The Brightness of Citrus: Nature's Mood Enhancer",
+                content: `
+                    <div class="science-section">
+                        <p><span class="highlight">⚡️ Neurological Effects</span>: Limonene, the primary molecule in citrus oils, has been shown to directly influence serotonin pathways in the brain.</p>
+                        <p><span class="highlight">⏱️ Volatility Secrets</span>: Citrus notes are always top notes because their molecular structure makes them evaporate faster than other scent compounds.</p>
+                    </div>
+                `
+            }
+        },
+        
+        // 香调冷知识
+        coldFacts: {
+            "rose": {
+                title: "🌹 Rose Notes: The Royal Deception",
+                content: `
+                    <div class="fact-section">
+                        <p><span class="highlight">👑 Historical Easter Egg</span>: Louis XIV used rose water to mask the unpleasant odors of Versailles Palace, establishing roses as a symbol of refinement.</p>
+                        <p><span class="highlight">🧪 Chemical Paradox</span>: Damascus roses actually contain sulfur compounds - the same molecular family responsible for unpleasant odors!</p>
+                    </div>
+                `
+            },
+            "citrus": {
+                title: "🍊 The Citrus Industry Secret",
+                content: `
+                    <div class="fact-section">
+                        <p><span class="highlight">🔬 Industry Revelation</span>: 90% of citrus fragrances use synthetic limonene rather than natural extracts.</p>
+                        <p><span class="highlight">💰 Economic Impact</span>: It takes approximately 3,000 lemons to produce one kilogram of cold-pressed lemon oil.</p>
+                    </div>
+                `
+            },
+            "oud": {
+                title: "🪵 Oud: The Liquid Gold of Perfumery",
+                content: `
+                    <div class="fact-section">
+                        <p><span class="highlight">💎 Rarity Factor</span>: Genuine oud comes from agarwood trees infected with a specific fungus - only 2% of these trees naturally produce it.</p>
+                        <p><span class="highlight">⚖️ Market Value</span>: High-quality oud can cost more than gold by weight, reaching prices of $100,000 per kilogram.</p>
+                    </div>
+                `
+            },
+            "musk": {
+                title: "✨ Musk: From Animal Kingdom to Laboratory",
+                content: `
+                    <div class="fact-section">
+                        <p><span class="highlight">🦌 Ethical Evolution</span>: Originally derived from musk deer glands, almost all modern musks are synthetic recreations designed to replicate the animal scent.</p>
+                        <p><span class="highlight">👃 Olfactory Illusion</span>: Some synthetic musks can cause "specific anosmia" - about 10% of people cannot smell certain musk molecules at all!</p>
+                    </div>
+                `
+            }
+        },
+        
+        // 工艺解密
+        craftSecrets: [
+            {
+                title: "⚗️ How 1 Ton of Rose Petals Becomes 5ml of Essential Oil",
+                content: `
+                    <div class="craft-section">
+                        <p><span class="highlight">🔥 Traditional Distillation</span> vs <span class="highlight">❄️ Supercritical CO₂ Extraction</span>: The former captures water-soluble compounds while the latter preserves heat-sensitive molecules.</p>
+                        <p><span class="highlight">🌹 Molecular Richness</span>: Damascus roses contain 300+ aromatic molecules while China's Pingyin roses have only 127 identifiable compounds.</p>
+                        <button class="apple-button">Watch Extraction Process ▶️</button>
+                    </div>
+                `
+            },
+            {
+                title: "🔮 The Art of Synthetic Molecules",
+                content: `
+                    <div class="craft-section">
+                        <p><span class="highlight">🧪 Nature-Identical Creation</span>: Modern perfumers can synthesize molecules that are chemically identical to those found in nature, but at a fraction of the environmental cost.</p>
+                        <p><span class="highlight">🌟 Innovation Timeline</span>: The first synthetic fragrance compound, coumarin (extracted from tonka beans), was created in 1868, revolutionizing the entire perfume industry.</p>
+                    </div>
+                `
+            }
+        ],
+        
+        // 行业揭秘
+        industrySecrets: [
+            {
+                title: "⏳ The Truth About Perfume Shelf Life",
+                content: `
+                    <div class="secret-section">
+                        <p><span class="highlight">🧫 Experimental Evidence</span>: Unopened perfumes stored in ideal conditions have been found usable after 50+ years, contradicting conventional marketing.</p>
+                        <p><span class="highlight">📝 Oxidation Facts</span>: The alcohol base in perfumes actually helps preserve ingredients rather than degrading them, when protected from light and heat.</p>
+                        <button class="apple-button">View Microscopic Comparison 🔍</button>
+                    </div>
+                `
+            },
+            {
+                title: "🕵️‍♀️ The Dupe Perfume Trap",
+                content: `
+                    <div class="secret-section">
+                        <p><span class="highlight">🧪 Chemical Substitutions</span>: Imitation fragrances often use ethyl maltol to simulate sandalwood notes, creating an initially similar but shorter-lasting impression.</p>
+                        <p><span class="highlight">📊 Concentration Differences</span>: Authentic perfumes typically contain 15-30% aromatic compounds, while many dupes contain just 3-8%.</p>
+                    </div>
+                `
+            }
+        ],
+        
+        // 气味与科学跨界
+        scienceCrossover: [
+            {
+                title: "🔬 Olfactory Memory: The Scientific Validation of the Proust Effect",
+                content: `
+                    <div class="science-crossover-section">
+                        <p><span class="highlight">🧠 Neural Mechanism</span>: The amygdala encodes scent-emotion connections directly, bypassing conscious processing - explaining why smells trigger powerful memories.</p>
+                        <p><span class="highlight">📊 Case Study</span>: Cedar notes activate the brain's "security" regions, making it a common base note in fragrances designed to evoke comfort.</p>
+                        <button class="apple-button">View AR Brain Activation Model 🧠</button>
+                    </div>
+                `
+            },
+            {
+                title: "🧬 Your Genetic Scent Fingerprint",
+                content: `
+                    <div class="science-crossover-section">
+                        <p><span class="highlight">🔬 Receptor Variation</span>: Humans have approximately 400 olfactory receptors, but genetic variations mean no two people smell the exact same scent identically.</p>
+                        <p><span class="highlight">🔍 Personal Chemistry</span>: Your skin's pH and bacterial composition transform perfumes uniquely on your skin - creating your signature scent interaction.</p>
+                    </div>
+                `
+            }
+        ],
+        
+        // 实用技巧
+        practicalTips: {
+            mobile: {
+                title: "📱 Essential Tips for On-the-Go Fragrance",
+                content: `
+                    <div class="tips-section">
+                        <p><span class="highlight">🔄 Innovative Application</span>: Spray a small amount on the inside of your phone case for subtle fragrance release during calls.</p>
+                        <p><span class="highlight">☀️ Preservation Advisory</span>: Avoid direct sunlight exposure - UV rays accelerate perfume breakdown by disrupting molecular bonds.</p>
+                        <p><span class="highlight">🧊 Summer Strategy</span>: Store travel atomizers in your refrigerator before a hot day out for longer-lasting projection.</p>
+                    </div>
+                `
+            },
+            desktop: {
+                title: "🖥️ Workspace Scenting Strategies",
+                content: `
+                    <div class="tips-section">
+                        <p><span class="highlight">💧 Diffusion Hack</span>: Add a few drops of fragrance to your humidifier for subtle, all-day office scenting.</p>
+                        <p><span class="highlight">👔 Professional Courtesy</span>: Choose low-sillage fragrances with minimal projection to avoid disrupting colleagues in shared spaces.</p>
+                        <p><span class="highlight">📝 Concentration Boost</span>: Citrus and mint notes have been shown to improve focus during extended work sessions.</p>
+                    </div>
+                `
+            }
+        },
+        
+        // 互动内容
+        interactiveContent: {
+            title: "🎨 Your Personal Scent Laboratory",
+            content: `
+                <div class="interactive-section">
+                    <p><span class="highlight">🔮 Custom Blend Analysis</span>: Upload your fragrance collection and our AI will generate a scent compatibility report for layering possibilities.</p>
+                    <p><span class="highlight">🧪 DIY Citrus Solid Perfume</span>: Create your own portable fragrance with simple ingredients.</p>
+                    <div class="user-content-section">
+                        <p><span class="highlight">👤 Community Insight</span>: User @ScentExplorer: "Layering the peach shower gel with amber perfume creates the perfect pseudo-skin scent!"</p>
+                        <button class="apple-button">Copy This Recipe ✂️</button>
+                    </div>
+                </div>
+            `
+        },
+        
+        // 转化入口
+        conversionEntries: {
+            "aquatic": {
+                product: "Hermès Un Jardin Sur Le Nil",
+                text: "Experience the pinnacle of aquatic fragrances →"
+            },
+            "woody": {
+                product: "Diptyque Tam Dao",
+                text: "Discover the #1 rated spiritual sandalwood →"
+            },
+            "floral": {
+                product: "Frédéric Malle Portrait of a Lady",
+                text: "Explore the queen of rose compositions →"
+            },
+            "oriental": {
+                product: "Tom Ford Tobacco Vanille",
+                text: "Indulge in the ultimate spiced amber experience →"
+            },
+            "citrus": {
+                product: "Acqua di Parma Colonia",
+                text: "Discover Italian citrus perfection →"
+            }
+        }
+    };
+
     let currentQuestion = 0;
     let userSelections = [];
     const quizContainer = document.getElementById('quiz-container');
@@ -608,6 +833,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // 分析用户选择并生成香水推荐
         const recommendations = generatePerfumeRecommendations(userSelections);
         
+        // 确定用户的主要香调偏好
+        const userPerfumeProfile = determineUserPerfumeProfile(userSelections);
+        
         // 隐藏问卷部分
         quizContainer.innerHTML = '';
         
@@ -635,6 +863,9 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // 更新推荐香水的内容
             updateRecommendationsSection(recommendationsContainer, recommendations);
+            
+            // 显示科普内容区域
+            createAndAddEducationSection(recommendationsContainer, userPerfumeProfile);
             
             // 显示推荐香水区域
             recommendationsContainer.classList.remove('hidden');
@@ -884,5 +1115,288 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.classList.add('animate-fade-in');
             }, 100 * index);
         });
+    }
+
+    // 确定用户的香水档案偏好
+    function determineUserPerfumeProfile(selections) {
+        // 收集所有的选项特征
+        const allNotes = selections.flatMap(s => s.optionData.notes);
+        const valueChoices = selections.map(s => s.value);
+        
+        // 定义香调映射
+        const noteToFamily = {
+            'pink_pepper': 'floral',
+            'iris': 'floral',
+            'patchouli': 'woody',
+            'electronic_smoke': 'oriental',
+            'mushroom': 'woody',
+            'berry': 'fruity',
+            'sea_salt': 'aquatic',
+            'cedarwood': 'woody',
+            'whiskey': 'oriental',
+            'tobacco': 'oriental',
+            'leather': 'woody',
+            'amber': 'oriental',
+            'synthetic_musk': 'musk',
+            'ozone': 'aquatic',
+            'cashmere_wood': 'woody',
+            'paper': 'woody',
+            'aldehydes': 'floral',
+            'strange_fruits': 'fruity',
+            'sweet_fruits': 'fruity',
+            'candy': 'gourmand',
+            'myrrh': 'oriental',
+            'frankincense': 'oriental',
+            'metallic': 'aquatic',
+            'spray_paint': 'aquatic',
+            'coffee': 'gourmand',
+            'butter': 'gourmand',
+            'matcha': 'green',
+            'bamboo': 'green',
+            'chili': 'spicy',
+            'lime': 'citrus',
+            'fig': 'fruity',
+            'green_leaves': 'green',
+            'ambergris': 'amber',
+            'incense': 'oriental',
+            'fir': 'woody',
+            'glacier_water': 'aquatic',
+            'agarwood': 'woody',
+            'tea': 'green',
+            'sage': 'herbal',
+            'wood_smoke': 'woody',
+            'volcanic': 'earthy',
+            'moss': 'green',
+            'velvet': 'floral',
+            'gold': 'oriental',
+            'coconut': 'tropical',
+            'seaweed': 'aquatic',
+            'metallic': 'aquatic',
+            'oxygen': 'aquatic',
+            'champagne': 'sparkling',
+            'feather': 'powdery',
+            'cannabis': 'herbal',
+            'neon': 'synthetic',
+            'metal': 'metallic',
+            'nano': 'synthetic'
+        };
+        
+        // 统计香调家族出现次数
+        const familyCounts = {};
+        allNotes.forEach(note => {
+            if (noteToFamily[note]) {
+                const family = noteToFamily[note];
+                familyCounts[family] = (familyCounts[family] || 0) + 1;
+            }
+        });
+        
+        // 找出最常见的香调家族
+        let dominantFamily = 'floral'; // 默认
+        let maxCount = 0;
+        
+        for (const family in familyCounts) {
+            if (familyCounts[family] > maxCount) {
+                maxCount = familyCounts[family];
+                dominantFamily = family;
+            }
+        }
+        
+        // 映射到主要香调类别
+        const familyToMainProfile = {
+            'floral': 'floral',
+            'woody': 'woody',
+            'oriental': 'oriental',
+            'fruity': 'floral',
+            'aquatic': 'aquatic',
+            'green': 'green',
+            'gourmand': 'oriental',
+            'musk': 'oriental',
+            'spicy': 'oriental',
+            'citrus': 'citrus',
+            'herbal': 'green',
+            'earthy': 'woody',
+            'tropical': 'aquatic',
+            'metallic': 'aquatic',
+            'synthetic': 'aquatic',
+            'powdery': 'floral',
+            'sparkling': 'citrus',
+            'amber': 'oriental'
+        };
+        
+        // 确定主要风格
+        const mainProfile = familyToMainProfile[dominantFamily] || 'floral';
+        
+        // 确定冷知识类别
+        const coldFactsMapping = {
+            'grand_budapest': 'rose',
+            'legend_1900': 'musk',
+            'jazz': 'oud',
+            'classical': 'musk',
+            'renaissance': 'oud',
+            'pop_art': 'citrus',
+            'california': 'citrus',
+            'mexico': 'citrus',
+            'iching': 'oud',
+            'tarot': 'rose'
+        };
+        
+        let coldFactType = 'rose'; // 默认
+        
+        for (const value of valueChoices) {
+            if (coldFactsMapping[value]) {
+                coldFactType = coldFactsMapping[value];
+                break;
+            }
+        }
+        
+        // 确定使用设备类型 (在实际场景中可以通过UA检测)
+        const deviceType = window.innerWidth <= 768 ? 'mobile' : 'desktop';
+        
+        return {
+            mainProfile: mainProfile,
+            coldFactType: coldFactType,
+            deviceType: deviceType
+        };
+    }
+
+    // 创建并添加科普内容区域
+    function createAndAddEducationSection(container, userProfile) {
+        // 创建科普内容区域
+        const educationSection = document.createElement('section');
+        educationSection.className = 'perfume-education max-w-7xl mx-auto glass-effect rounded-3xl shadow-xl p-8 md:p-12 transform transition-all hover:shadow-2xl mt-20 animate-fade-in';
+        
+        // 获取合适的香调DNA内容
+        const dnaContent = perfumeEducationData.dnaContent[userProfile.mainProfile] || perfumeEducationData.dnaContent.floral;
+        
+        // 获取合适的冷知识内容
+        const coldFact = perfumeEducationData.coldFacts[userProfile.coldFactType] || perfumeEducationData.coldFacts.rose;
+        
+        // 随机选择一个工艺解密
+        const craftSecret = perfumeEducationData.craftSecrets[Math.floor(Math.random() * perfumeEducationData.craftSecrets.length)];
+        
+        // 随机选择一个行业揭秘
+        const industrySecret = perfumeEducationData.industrySecrets[Math.floor(Math.random() * perfumeEducationData.industrySecrets.length)];
+        
+        // 随机选择一个科学跨界
+        const scienceCrossover = perfumeEducationData.scienceCrossover[Math.floor(Math.random() * perfumeEducationData.scienceCrossover.length)];
+        
+        // 获取合适的实用技巧
+        const practicalTip = perfumeEducationData.practicalTips[userProfile.deviceType];
+        
+        // 获取互动内容
+        const interactiveContent = perfumeEducationData.interactiveContent;
+        
+        // 获取转化入口
+        const conversionEntry = perfumeEducationData.conversionEntries[userProfile.mainProfile] || perfumeEducationData.conversionEntries.floral;
+        
+        // 构建科普内容HTML
+        educationSection.innerHTML = `
+            <h2 class="text-3xl font-bold mb-8 text-center">✨ Expand Your Fragrance Knowledge ✨</h2>
+            
+            <!-- 用户相关内容 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Your Scent DNA</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 香调DNA -->
+                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                        <h4 class="text-xl font-medium mb-4">${dnaContent.title}</h4>
+                        ${dnaContent.content}
+                    </div>
+                    
+                    <!-- 专属冷知识 -->
+                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                        <h4 class="text-xl font-medium mb-4">${coldFact.title}</h4>
+                        ${coldFact.content}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 通用科普内容 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Perfume Industry Insights</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 工艺解密 -->
+                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                        <h4 class="text-xl font-medium mb-4">${craftSecret.title}</h4>
+                        ${craftSecret.content}
+                    </div>
+                    
+                    <!-- 行业揭秘 -->
+                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                        <h4 class="text-xl font-medium mb-4">${industrySecret.title}</h4>
+                        ${industrySecret.content}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 场景化生活方式 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Fragrance Lifestyle</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 气味与科学跨界 -->
+                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                        <h4 class="text-xl font-medium mb-4">${scienceCrossover.title}</h4>
+                        ${scienceCrossover.content}
+                    </div>
+                    
+                    <!-- 实用技巧 -->
+                    <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                        <h4 class="text-xl font-medium mb-4">${practicalTip.title}</h4>
+                        ${practicalTip.content}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 互动与转化 -->
+            <div class="mb-8">
+                <div class="glass-effect rounded-2xl overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2 p-6">
+                    <h4 class="text-xl font-medium mb-4">${interactiveContent.title}</h4>
+                    ${interactiveContent.content}
+                </div>
+            </div>
+            
+            <!-- 转化入口 -->
+            <div class="text-center mt-12">
+                <a href="#" class="bg-apple-blue hover:bg-apple-blue/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center group relative overflow-hidden">
+                    <span class="relative z-10">${conversionEntry.text}</span>
+                    <span class="ml-2 relative z-10">✨</span>
+                    <span class="absolute inset-0 bg-gradient-to-r from-apple-purple to-apple-blue opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                </a>
+            </div>
+        `;
+        
+        // 添加科普内容到容器
+        container.appendChild(educationSection);
+        
+        // 添加交互事件
+        setTimeout(() => {
+            // 为所有按钮添加点击动画
+            const buttons = educationSection.querySelectorAll('.apple-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 添加点击波浪效果
+                    const ripple = document.createElement('span');
+                    ripple.className = 'absolute inset-0 bg-white/20 rounded-full scale-0';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.animation = 'ripple 0.6s linear';
+                    ripple.style.transformOrigin = 'center';
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 700);
+                    
+                    // 显示一个简单的提示
+                    const actionText = this.textContent;
+                    alert(`Feature coming soon: ${actionText}`);
+                });
+            });
+        }, 100);
     }
 });
