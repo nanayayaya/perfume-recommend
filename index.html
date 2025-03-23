@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PerfumeRecommend - Find Your Perfect Scent</title>
+    <meta name="description" content="Discover your perfect perfume through our personalized quiz. We analyze your preferences to recommend scents that match your unique personality.">
+    <link rel="canonical" href="https://perfumerecommend.life" />
+    <link rel="stylesheet" href="styles.css">
+    <!-- 使用Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        apple: {
+                            blue: '#007AFF',
+                            green: '#34C759',
+                            indigo: '#5856D6',
+                            orange: '#FF9500',
+                            pink: '#FF2D55',
+                            purple: '#AF52DE',
+                            red: '#FF3B30',
+                            teal: '#5AC8FA',
+                            yellow: '#FFCC00',
+                            gray: {
+                                100: '#F2F2F7',
+                                200: '#E5E5EA',
+                                300: '#D1D1D6',
+                                400: '#C7C7CC',
+                                500: '#AEAEB2',
+                                600: '#8E8E93',
+                                700: '#636366',
+                                800: '#48484A',
+                                900: '#3A3A3C',
+                                950: '#1C1C1E'
+                            }
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white dark:bg-apple-gray-950 text-apple-gray-900 dark:text-white">
+    <header class="bg-gradient-to-r from-apple-purple to-apple-pink py-20 px-6 md:px-12">
+        <div class="container mx-auto max-w-6xl">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Find Your Perfect Scent</h1>
+            <p class="text-xl md:text-2xl text-white/90 max-w-3xl">Discover your signature perfume through our personalized quiz. We analyze your aesthetic and cultural preferences to recommend scents that match your unique personality.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto max-w-6xl px-6 py-12 md:py-20">
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-apple-gray-900 dark:text-white">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-apple-gray-100 dark:bg-apple-gray-800 p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-apple-blue rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Take the Quiz</h3>
+                    <p class="text-apple-gray-700 dark:text-apple-gray-300">Answer our uniquely crafted questions about your preferences and personality.</p>
+                </div>
+                <div class="bg-apple-gray-100 dark:bg-apple-gray-800 p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-apple-green rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">AI Analysis</h3>
+                    <p class="text-apple-gray-700 dark:text-apple-gray-300">Our algorithm analyzes your responses to identify your scent profile and preferences.</p>
+                </div>
+                <div class="bg-apple-gray-100 dark:bg-apple-gray-800 p-8 rounded-2xl">
+                    <div class="w-16 h-16 bg-apple-pink rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Get Recommendations</h3>
+                    <p class="text-apple-gray-700 dark:text-apple-gray-300">Receive personalized perfume recommendations that perfectly match your unique style.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="bg-white dark:bg-apple-gray-900 p-8 md:p-12 rounded-3xl shadow-xl mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-apple-gray-900 dark:text-white">Find Your Signature Scent</h2>
+            
+            <div id="quiz-container" class="space-y-12">
+                <!-- 问卷题目将通过JavaScript动态加载 -->
+                <div class="quiz-intro">
+                    <p class="text-xl mb-8">Answer our unique personality quiz to discover perfumes that match your aesthetic and cultural preferences.</p>
+                    <button id="start-quiz" class="bg-apple-blue hover:bg-apple-blue/90 text-white font-semibold py-3 px-8 rounded-full text-lg transition-all">
+                        Start The Quiz
+                    </button>
+                </div>
+
+                <!-- 示例问题界面 -->
+                <div class="quiz-question hidden" id="question-1">
+                    <h3 class="text-2xl font-semibold mb-6">Film Aesthetics</h3>
+                    <p class="text-xl mb-8">Which film's visual world would you most like to live in?</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <button class="option-card bg-apple-gray-100 dark:bg-apple-gray-800 p-6 rounded-xl hover:shadow-md transition-all text-left flex items-start">
+                            <span class="text-3xl mr-4">🎩</span>
+                            <div>
+                                <h4 class="font-semibold mb-1">The Grand Budapest Hotel</h4>
+                                <p class="text-apple-gray-700 dark:text-apple-gray-300">Symmetrical aesthetics → Vintage pink pepper + iris, elegant and intellectual</p>
+                            </div>
+                        </button>
+                        <button class="option-card bg-apple-gray-100 dark:bg-apple-gray-800 p-6 rounded-xl hover:shadow-md transition-all text-left flex items-start">
+                            <span class="text-3xl mr-4">🌌</span>
+                            <div>
+                                <h4 class="font-semibold mb-1">Blade Runner 2049</h4>
+                                <p class="text-apple-gray-700 dark:text-apple-gray-300">Cyberpunk → Metallic patchouli + electronic smoke notes</p>
+                            </div>
+                        </button>
+                        <button class="option-card bg-apple-gray-100 dark:bg-apple-gray-800 p-6 rounded-xl hover:shadow-md transition-all text-left flex items-start">
+                            <span class="text-3xl mr-4">🍄</span>
+                            <div>
+                                <h4 class="font-semibold mb-1">Alice in Wonderland</h4>
+                                <p class="text-apple-gray-700 dark:text-apple-gray-300">Fantasy adventure → Psychedelic mushroom + berry gourmand notes</p>
+                            </div>
+                        </button>
+                        <button class="option-card bg-apple-gray-100 dark:bg-apple-gray-800 p-6 rounded-xl hover:shadow-md transition-all text-left flex items-start">
+                            <span class="text-3xl mr-4">🎻</span>
+                            <div>
+                                <h4 class="font-semibold mb-1">The Legend of 1900</h4>
+                                <p class="text-apple-gray-700 dark:text-apple-gray-300">Classical romance → Sea salt + vintage cedarwood</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-apple-gray-900 dark:text-white">Why Our Approach Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Beyond Basic Preferences</h3>
+                    <p class="text-lg text-apple-gray-700 dark:text-apple-gray-300 mb-4">Traditional perfume quizzes only ask about obvious preferences. Our approach dives deeper, using cultural and aesthetic choices to map your true scent personality.</p>
+                    <p class="text-lg text-apple-gray-700 dark:text-apple-gray-300">By understanding your aesthetic sensibilities through film, music, and art preferences, we create a more nuanced picture of your ideal scent profile.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Science-Backed Recommendations</h3>
+                    <p class="text-lg text-apple-gray-700 dark:text-apple-gray-300 mb-4">Our recommendation algorithm uses data from thousands of perfume profiles and cultural preferences to find your perfect match.</p>
+                    <p class="text-lg text-apple-gray-700 dark:text-apple-gray-300">We've mapped the complex relationship between aesthetic preferences and scent appreciation to create recommendations that feel surprisingly personal.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-apple-gray-100 dark:bg-apple-gray-800 p-8 md:p-12 rounded-3xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-apple-gray-900 dark:text-white">Ready to Find Your Perfect Scent?</h2>
+            <p class="text-xl mb-8 max-w-3xl">Take our unique personality quiz and discover perfumes curated specifically for your aesthetic sensibilities and cultural preferences.</p>
+            <a href="#quiz" class="bg-apple-purple hover:bg-apple-purple/90 text-white font-semibold py-3 px-8 rounded-full text-lg inline-block transition-all">
+                Start The Quiz
+            </a>
+        </section>
+    </main>
+
+    <footer class="bg-apple-gray-900 text-white py-12 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">PerfumeRecommend</h3>
+                    <p class="text-apple-gray-400">Discover your signature scent through our personalized quiz.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-apple-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#quiz" class="text-apple-gray-400 hover:text-white transition-colors">Take the Quiz</a></li>
+                        <li><a href="#" class="text-apple-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-apple-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-apple-gray-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path></svg>
+                        </a>
+                        <a href="#" class="text-apple-gray-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path></svg>
+                        </a>
+                        <a href="#" class="text-apple-gray-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-apple-gray-800 pt-8">
+                <p class="text-apple-gray-400 text-center">&copy; 2023 PerfumeRecommend. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

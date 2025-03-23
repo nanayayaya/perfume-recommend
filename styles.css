@@ -1,0 +1,137 @@
+/* 自定义样式补充Tailwind CSS */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* 选项卡片动画效果 */
+.option-card {
+  transition: all 0.3s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.option-card.selected {
+  border: 2px solid #007AFF;
+  background-color: rgba(0, 122, 255, 0.1);
+}
+
+/* 进度条样式 */
+.progress-bar {
+  height: 6px;
+  background-color: #E5E5EA;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, #AF52DE, #FF2D55);
+  transition: width 0.5s ease;
+}
+
+/* 结果页动画 */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.result-card {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F2F2F7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8E8E93;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #636366;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .quiz-question h3 {
+    font-size: 1.5rem;
+  }
+  
+  .quiz-question p {
+    font-size: 1.125rem;
+  }
+  
+  .option-card {
+    padding: 1rem;
+  }
+}
+
+/* 深色模式增强 */
+@media (prefers-color-scheme: dark) {
+  .progress-bar {
+    background-color: #3A3A3C;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1C1C1E;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #636366;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8E8E93;
+  }
+}
+
+/* 辅助功能增强 */
+:focus {
+  outline: 2px solid #007AFF;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .option-card,
+  .result-card {
+    animation: none;
+    transition: none;
+  }
+  
+  .option-card:hover {
+    transform: none;
+  }
+  
+  .progress-bar-fill {
+    transition: none;
+  }
+}
