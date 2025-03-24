@@ -1,54 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 添加平滑滚动效果
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // 为所有按钮添加涟漪效果
-    const buttons = document.querySelectorAll('button, .btn-fancy');
-    buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const ripple = document.createElement('span');
-            ripple.classList.add('ripple-effect');
-            ripple.style.left = `${x}px`;
-            ripple.style.top = `${y}px`;
-            
-            this.appendChild(ripple);
-            
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-        });
-    });
-    
-    // 为玻璃态卡片添加悬停效果
-    const glassCards = document.querySelectorAll('.glass-effect');
-    glassCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.classList.add('card-active');
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.classList.remove('card-active');
-        });
-    });
-    
-    // 原有的幻灯片控制函数
+    // 幻灯片控制函数
     function initSlideshow() {
         console.log("初始化幻灯片...");
         const slides = document.querySelectorAll('.slide');
@@ -68,8 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
         slides.forEach((slide, index) => {
             if (index === 0) {
                 slide.classList.add('active');
-                // 为第一张幻灯片添加入场动画
-                slide.style.animation = 'fadeIn 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards';
             } else {
                 slide.classList.remove('active');
             }
@@ -86,80 +35,39 @@ document.addEventListener('DOMContentLoaded', function() {
         // 启动轮播定时器
         startSlideInterval();
         
-        // 启动轮播定时器函数 - 使用更平滑的过渡
+        // 启动轮播定时器函数
         function startSlideInterval() {
             clearInterval(slideInterval); // 清除现有定时器
-            slideInterval = setInterval(nextSlide, 5000); // 增加时间间隔到5秒，给用户更多观看时间
+            slideInterval = setInterval(nextSlide, 2000); // 每2秒切换一次图片
             console.log("开始自动轮播");
         }
         
-        // 点击导航点切换幻灯片 - 添加更平滑的过渡
+        // 点击导航点切换幻灯片
         dots.forEach((dot, index) => {
-            dot.addEventListener('click', function() {
+            dot.addEventListener('click', () => {
                 clearInterval(slideInterval);
                 showSlide(index);
                 startSlideInterval();
-                
-                // 添加点击反馈
-                this.classList.add('dot-clicked');
-                setTimeout(() => {
-                    this.classList.remove('dot-clicked');
-                }, 300);
             });
         });
         
-        // 显示指定幻灯片 - 改进过渡效果
+        // 显示指定幻灯片
         function showSlide(index) {
             console.log(`显示幻灯片 ${index}`);
+            // 先把所有幻灯片和导航点设为非活动
+            slides.forEach((slide) => {
+                slide.classList.remove('active');
+            });
             
-            // 先淡出当前幻灯片
-            if (slides[currentSlide]) {
-                const currentSlideEl = slides[currentSlide];
-                currentSlideEl.style.opacity = '1';
-                currentSlideEl.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-                
-                // 触发回流以应用过渡
-                currentSlideEl.offsetHeight;
-                
-                currentSlideEl.style.opacity = '0';
-                
-                setTimeout(() => {
-                    // 然后切换类，准备显示新幻灯片
-                    slides.forEach((slide) => {
-                        slide.classList.remove('active');
-                    });
-                    
-                    dots.forEach((dot) => {
-                        dot.classList.remove('active');
-                    });
-                    
-                    // 设置新幻灯片为活动，并淡入
-                    slides[index].classList.add('active');
-                    slides[index].style.opacity = '0';
-                    slides[index].style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-                    
-                    // 触发回流以应用过渡
-                    slides[index].offsetHeight;
-                    
-                    slides[index].style.opacity = '1';
-                    dots[index].classList.add('active');
-                    
-                    currentSlide = index;
-                }, 400); // 等待淡出完成一半
-            } else {
-                // 直接设置新幻灯片
-                slides.forEach((slide) => slide.classList.remove('active'));
-                dots.forEach((dot) => dot.classList.remove('active'));
-                
-                slides[index].classList.add('active');
-                slides[index].style.opacity = '0';
-                slides[index].style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-                slides[index].offsetHeight;
-                slides[index].style.opacity = '1';
-                dots[index].classList.add('active');
-                
-                currentSlide = index;
-            }
+            dots.forEach((dot) => {
+                dot.classList.remove('active');
+            });
+            
+            // 设置当前幻灯片和导航点为活动状态
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            
+            currentSlide = index;
         }
         
         // 显示下一张幻灯片
@@ -1029,7 +937,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 创建进度条
         const progressBar = `
-            <div class="mb-6 w-full bg-apple-gray-200 dark:bg-apple-gray-700 h-2 rounded-full overflow-hidden">
+            <div class="mb-6 w-full bg-apple-gray-200 dark:bg-white/70 h-2 rounded-full overflow-hidden">
                 <div class="bg-gradient-to-r from-apple-purple to-apple-pink h-full rounded-full transition-all" style="width: ${(index + 1) / quizQuestions.length * 100}%"></div>
             </div>
             <div class="text-right text-sm text-apple-gray-500 dark:text-apple-gray-400 mb-8">
@@ -1504,7 +1412,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const question = quizQuestions.find(q => q.id === selection.questionId);
                 const option = question.options.find(o => o.value === selection.value);
                 
-                matchReason = `<div class="mt-4 bg-apple-gray-100/60 dark:bg-apple-gray-700/60 p-5 rounded-xl backdrop-blur-sm">
+                matchReason = `<div class="mt-4 bg-apple-gray-100/60 dark:bg-white/60 p-5 rounded-xl backdrop-blur-sm">
                     <div class="flex items-center mb-2">
                         <span class="text-xl mr-2">✨</span>
                         <span class="font-semibold text-gradient">Why This Matches You</span>
@@ -1631,7 +1539,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="mt-6 space-y-4">
                     <h4 class="text-base font-medium text-apple-gray-700 dark:text-apple-gray-300">Fragrance Notes</h4>
                     <div class="grid grid-cols-3 gap-3">
-                        <div class="bg-apple-gray-100/60 dark:bg-apple-gray-700/60 rounded-xl p-3 backdrop-blur-sm">
+                        <div class="bg-apple-gray-100/60 dark:bg-white/70 rounded-xl p-3 backdrop-blur-sm">
                             <div class="flex items-center justify-center mb-2">
                                 <span class="text-xl">${topNotesEmoji}</span>
                             </div>
@@ -1642,7 +1550,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 ).join('')}
                             </div>
                         </div>
-                        <div class="bg-apple-gray-100/60 dark:bg-apple-gray-700/60 rounded-xl p-3 backdrop-blur-sm">
+                        <div class="bg-apple-gray-100/60 dark:bg-white/70 rounded-xl p-3 backdrop-blur-sm">
                             <div class="flex items-center justify-center mb-2">
                                 <span class="text-xl">${middleNotesEmoji}</span>
                             </div>
@@ -1653,7 +1561,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 ).join('')}
                             </div>
                         </div>
-                        <div class="bg-apple-gray-100/60 dark:bg-apple-gray-700/60 rounded-xl p-3 backdrop-blur-sm">
+                        <div class="bg-apple-gray-100/60 dark:bg-white/70 rounded-xl p-3 backdrop-blur-sm">
                             <div class="flex items-center justify-center mb-2">
                                 <span class="text-xl">${baseNotesEmoji}</span>
                             </div>
@@ -1681,12 +1589,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         <img src="${perfume.image}" alt="${perfume.name}" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1592845998667-7752de3dac13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80';">
                     </div>
                     <div class="absolute bottom-4 left-4 right-4 z-20">
-                        <div class="bg-white/80 dark:bg-apple-gray-800/80 backdrop-blur-md px-4 py-3 rounded-xl">
+                        <div class="bg-white/80 dark:bg-white/90 backdrop-blur-md px-4 py-3 rounded-xl">
                             <h3 class="text-xl font-semibold">${perfume.name}</h3>
                             <div class="flex items-center justify-between">
                                 <span class="text-base font-medium">${perfume.price}</span>
                                 <div class="flex space-x-1">
-                                    <span class="px-2 py-1 rounded-md bg-apple-gray-200/50 dark:bg-apple-gray-700/50 text-xs">★★★★★</span>
+                                    <span class="px-2 py-1 rounded-md bg-apple-gray-200/50 dark:bg-apple-gray-100/50 text-xs">★★★★★</span>
                                 </div>
                             </div>
                         </div>
