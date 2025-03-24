@@ -1927,10 +1927,65 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Laboratory Interface 功能
     function initLaboratoryInterface() {
-        // 检查Laboratory Interface是否存在
-        const labInterface = document.querySelector('.bg-apple-mist\\/30');
-        if (!labInterface) return;
-
+        console.log("初始化Laboratory Interface...");
+        
+        // 首先尝试通过ID查找
+        let labInterface = document.getElementById('laboratory-interface');
+        
+        // 如果找不到，尝试其他选择器
+        if (!labInterface) {
+            // 尝试多种选择器定位Laboratory Interface元素
+            const labInterfaceSelectors = [
+                '.laboratory-interface',
+                '.bg-apple-mist\\/30',
+                'div:has(h4:contains("Laboratory Interface"))',
+                'div.bg-apple-mist',
+                'div.dark\\:bg-apple-gray-800\\/30'
+            ];
+            
+            // 尝试多种选择器
+            for (const selector of labInterfaceSelectors) {
+                try {
+                    const elements = document.querySelectorAll(selector);
+                    if (elements.length > 0) {
+                        for (const el of elements) {
+                            if (el.textContent.includes('Laboratory Interface')) {
+                                labInterface = el;
+                                console.log("找到Laboratory Interface元素:", selector);
+                                break;
+                            }
+                        }
+                    }
+                    if (labInterface) break;
+                } catch (e) {
+                    console.log("选择器错误:", selector, e);
+                }
+            }
+        } else {
+            console.log("通过ID找到Laboratory Interface元素");
+        }
+        
+        // 如果找不到元素，尝试通过文本内容查找
+        if (!labInterface) {
+            console.log("通过常规选择器未找到Laboratory Interface，尝试通过文本查找...");
+            const allDivs = document.querySelectorAll('div');
+            for (const div of allDivs) {
+                if (div.textContent.includes('Laboratory Interface Preview')) {
+                    // 找到包含文本的元素，获取其最近的容器
+                    labInterface = div.closest('.p-6') || div.parentElement;
+                    console.log("通过文本内容找到Laboratory Interface元素");
+                    break;
+                }
+            }
+        }
+        
+        if (!labInterface) {
+            console.error("无法找到Laboratory Interface元素");
+            return;
+        }
+        
+        console.log("开始初始化Laboratory Interface组件...");
+        
         // 创建滑块元素替换原来的进度条
         const ingredientBars = labInterface.querySelectorAll('.flex.justify-between.items-center');
         const ingredients = [
@@ -2229,4 +2284,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // 初始化Laboratory Interface
         initLaboratoryInterface();
     });
+    
+    // 确保在所有资源（包括图片）加载完成后初始化Laboratory Interface
+    window.onload = function() {
+        console.log("页面完全加载完成，初始化Laboratory Interface...");
+        setTimeout(() => {
+            initLaboratoryInterface();
+        }, 500); // 增加短暂延迟，确保DOM完全渲染
+    };
 });
