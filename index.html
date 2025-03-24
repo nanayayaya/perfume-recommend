@@ -542,14 +542,10 @@
                     <button class="hidden md:block bg-gradient-to-r from-apple-purple to-apple-pink text-white py-2 px-4 rounded-full font-medium shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5">
                         Start Quiz
                     </button>
-                    <!-- 主题切换按钮 -->
-                    <button id="theme-toggle" class="ml-4 p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                        <svg id="sun-icon" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                        <svg id="moon-icon" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                        </svg>
+                    <!-- 语言切换按钮 -->
+                    <button id="language-toggle" class="ml-4 p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <span id="lang-icon-en" class="h-5 w-5 flex items-center justify-center font-semibold text-sm">EN</span>
+                        <span id="lang-icon-zh" class="h-5 w-5 hidden flex items-center justify-center font-semibold text-sm">中</span>
                     </button>
                     <div class="ml-3 md:hidden">
                         <button id="mobile-menu-button" class="text-apple-gray-800 dark:text-white hover:bg-apple-gray-200 dark:hover:bg-apple-gray-700 p-2 rounded-md">
@@ -595,7 +591,11 @@
 
     <header class="py-12 animate-fade-in">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 title-highlight animate-float">Find Your Perfect Scent</h1>
+            <!-- 主要标题区 -->
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 title-highlight animate-float" data-i18n="mainTitle">Find Your Perfect Scent</h1>
+                <p class="text-xl md:text-2xl mb-6 animate-fade-in-up" data-i18n="mainSubtitle">Your personal fragrance journey guided by science and art</p>
+            </div>
             <p class="text-xl md:text-2xl text-apple-gray-800 dark:text-apple-gray-200 max-w-3xl mx-auto animate-pulse">✨ Discover your signature perfume through our personalized quiz ✨</p>
         </div>
     </header>
@@ -683,7 +683,7 @@
                 <div class="flex items-center justify-center mb-6">
                     <h2 class="text-3xl font-bold text-center inline-flex items-center">
                         <span class="text-2xl mr-2">✨</span>
-                        <span>Find Your Perfect Scent</span>
+                        <span data-i18n="quizTitle">Find Your Perfect Scent</span>
                         <span class="text-2xl ml-2">✨</span>
                     </h2>
                     <div class="h-1 w-16 bg-gradient-to-r from-apple-pink to-apple-purple rounded-full ml-3"></div>
@@ -717,7 +717,7 @@
                         
                         <!-- 更新的开始按钮 -->
                         <button id="start-quiz" class="relative overflow-hidden group px-8 py-4 bg-gradient-to-r from-apple-purple to-apple-pink rounded-full text-white font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1">
-                            <span class="relative z-10 flex items-center justify-center">
+                            <span class="relative z-10 flex items-center justify-center" data-i18n="startButton">
                                 <span class="text-lg mr-2">✨</span>
                                 <span>Begin Your Enchanted Journey</span>
                                 <span class="text-lg ml-2">✨</span>

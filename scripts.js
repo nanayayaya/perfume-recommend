@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // 初始化语言设置
+    initLanguageSwitcher();
+    
     // 幻灯片控制函数
     function initSlideshow() {
         console.log("初始化幻灯片...");
@@ -1923,5 +1926,79 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         }, 100);
+    }
+
+    // 语言切换功能
+    function initLanguageSwitcher() {
+        const languageToggle = document.getElementById('language-toggle');
+        const langIconEn = document.getElementById('lang-icon-en');
+        const langIconZh = document.getElementById('lang-icon-zh');
+        
+        // 检查是否已经设置了语言
+        let currentLang = localStorage.getItem('preferred-language') || 'en';
+        
+        // 初始化界面语言
+        setLanguage(currentLang);
+        
+        // 添加点击事件
+        if (languageToggle) {
+            languageToggle.addEventListener('click', function() {
+                // 切换语言
+                currentLang = currentLang === 'en' ? 'zh' : 'en';
+                localStorage.setItem('preferred-language', currentLang);
+                
+                // 更新界面
+                setLanguage(currentLang);
+            });
+        }
+        
+        // 设置语言函数
+        function setLanguage(lang) {
+            if (lang === 'en') {
+                // 显示英文图标
+                if (langIconEn) langIconEn.classList.remove('hidden');
+                if (langIconZh) langIconZh.classList.add('hidden');
+                
+                // 这里是英文设置
+                translateToEnglish();
+            } else {
+                // 显示中文图标
+                if (langIconEn) langIconEn.classList.add('hidden');
+                if (langIconZh) langIconZh.classList.remove('hidden');
+                
+                // 这里是中文设置
+                translateToChinese();
+            }
+        }
+        
+        // 翻译成英文
+        function translateToEnglish() {
+            // 获取页面需要翻译的元素并设置为英文
+            const elementsToTranslate = document.querySelectorAll('[data-i18n]');
+            
+            // 标题和按钮翻译
+            document.querySelector('h1.title-highlight')?.innerText = 'Find Your Perfect Scent';
+            document.querySelector('#start-quiz span')?.innerText = 'Begin Your Enchanted Journey';
+            document.querySelector('#quiz h2 span:nth-child(2)')?.innerText = 'Find Your Perfect Scent';
+            
+            // 推荐部分标题
+            const recommendationTitle = document.querySelector('#recommendation h2');
+            if (recommendationTitle) recommendationTitle.textContent = "✨ Your Perfect Perfume Matches ✨";
+        }
+        
+        // 翻译成中文
+        function translateToChinese() {
+            // 获取页面需要翻译的元素并设置为中文
+            const elementsToTranslate = document.querySelectorAll('[data-i18n]');
+            
+            // 标题和按钮翻译
+            document.querySelector('h1.title-highlight')?.innerText = '寻找你的专属香气';
+            document.querySelector('#start-quiz span')?.innerText = '开始你的香氛之旅';
+            document.querySelector('#quiz h2 span:nth-child(2)')?.innerText = '发现你的理想香水';
+            
+            // 推荐部分标题
+            const recommendationTitle = document.querySelector('#recommendation h2');
+            if (recommendationTitle) recommendationTitle.textContent = "✨ 为您推荐的完美香水 ✨";
+        }
     }
 });
