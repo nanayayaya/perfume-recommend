@@ -463,8 +463,8 @@ document.addEventListener('DOMContentLoaded', function() {
             brand: "Byredo",
             name: "Gypsy Water",
             price: "$280",
-            image: "https://images.unsplash.com/photo-1600612253971-422e7f7faeb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-            description: "灵感来自罗姆人的自由精神，融合了森林与麝香香调的纯净之作。",
+            image: "https://images.unsplash.com/photo-1612116125683-499623fb1730?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80",
+            description: "Inspired by the free spirit of Romani culture, a pure creation that blends forest and musk notes.",
             profiles: ["natural", "fresh", "woody", "mysterious", "unisex", "romantic"],
             suitedFor: ["everyday", "spiritual", "adventure", "outdoors"],
             notes: {
@@ -478,8 +478,8 @@ document.addEventListener('DOMContentLoaded', function() {
             brand: "Maison Francis Kurkdjian",
             name: "Baccarat Rouge 540",
             price: "$325",
-            image: "https://images.unsplash.com/photo-1524469652540-8ea22af8f16b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-            description: "奢华的琥珀香调，散发出水晶般的纯净与复杂性，成为现代香水界的经典。",
+            image: "https://images.unsplash.com/photo-1616604823269-cc8dfbc2bd55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            description: "A luxurious amber scent that radiates crystal-like purity and complexity, becoming a modern classic in perfumery.",
             profiles: ["luxurious", "distinctive", "sweet", "elegant", "warm", "addictive"],
             suitedFor: ["special occasions", "luxury", "romance", "evening"],
             notes: {
@@ -493,8 +493,8 @@ document.addEventListener('DOMContentLoaded', function() {
             brand: "Frederic Malle",
             name: "Portrait of a Lady",
             price: "$395",
-            image: "https://images.unsplash.com/photo-1600612253971-422e7f7faeb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-            description: "强烈而优雅的玫瑰与香料混合，展现出优雅而神秘的女性魅力。",
+            image: "https://images.unsplash.com/photo-1600642859638-bd8fce06fe64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+            description: "An intense yet elegant blend of rose and spices, revealing a mysterious and sophisticated feminine allure.",
             profiles: ["sophisticated", "elegant", "intense", "complex", "opulent", "feminine"],
             suitedFor: ["evening", "formal", "romance", "winter"],
             notes: {
@@ -509,7 +509,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Philosykos",
             price: "$190",
             image: "https://images.unsplash.com/photo-1563170352-ba54c22ec835?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-            description: "充满地中海气息的无花果香调，带来阳光、绿意与温暖的感觉。",
+            description: "A Mediterranean fig scent that brings sunshine, greenery, and warmth to the wearer.",
             profiles: ["fresh", "natural", "mediterranean", "green", "unisex", "vibrant"],
             suitedFor: ["summer", "spring", "casual", "nature"],
             notes: {
@@ -523,8 +523,8 @@ document.addEventListener('DOMContentLoaded', function() {
             brand: "Le Labo",
             name: "Santal 33",
             price: "$215",
-            image: "https://images.unsplash.com/photo-1600612253971-422e7f7faeb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-            description: "一款叛逆的檀香木香水，混合皮革和香料，创造出独特的个人印记。",
+            image: "https://images.unsplash.com/photo-1590833058871-ad218e88abf7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80",
+            description: "A rebellious sandalwood perfume blended with leather and spices, creating a unique personal signature.",
             profiles: ["woody", "distinctive", "unisex", "addictive", "sophisticated"],
             suitedFor: ["everyday", "signature", "urban", "creative"],
             notes: {
@@ -539,7 +539,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Shalimar",
             price: "$160",
             image: "https://images.unsplash.com/photo-1572511354994-e14ef13fe9a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
-            description: "传奇的东方香水，讲述了一个永恒的爱情故事，以其浓郁的香草和琥珀基调而闻名。",
+            description: "A legendary oriental perfume telling a timeless love story, famous for its rich vanilla and amber base notes.",
             profiles: ["vintage", "opulent", "sophisticated", "sensual", "timeless", "romantic"],
             suitedFor: ["evening", "formal", "romance", "winter"],
             notes: {
@@ -554,7 +554,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "L'Eau d'Issey",
             price: "$106",
             image: "https://images.unsplash.com/photo-1563132272-91a02542e938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-            description: "如同清澈山泉的水生花香调，象征纯净与自然平衡之美。",
+            description: "An aquatic floral fragrance like a clear mountain spring, symbolizing purity and the beauty of natural balance.",
             profiles: ["fresh", "aquatic", "light", "modern", "clean", "feminine"],
             suitedFor: ["everyday", "office", "spring", "summer"],
             notes: {
@@ -569,7 +569,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Ambre Sultan",
             price: "$230",
             image: "https://images.unsplash.com/photo-1578083881160-9f96d731dcdd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-            description: "浓郁的东方琥珀香调，融合草本与香脂，展现沙漠般的神秘与野性。",
+            description: "A rich oriental amber fragrance blending herbs and resins, revealing desert-like mystery and wildness.",
             profiles: ["oriental", "rich", "complex", "mysterious", "bold", "intellectual"],
             suitedFor: ["winter", "evening", "artistic", "spiritual"],
             notes: {
@@ -584,7 +584,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Wonderwood",
             price: "$131",
             image: "https://images.unsplash.com/photo-1618330834871-dd22c2c22e35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-            description: "多层次的木质香调探索，结合不同种类的木材与香料，创造出独特的现代气息。",
+            description: "A multi-layered woody exploration combining different types of wood and spices, creating a unique modern atmosphere.",
             profiles: ["woody", "architectural", "unisex", "modern", "distinctive", "intellectual"],
             suitedFor: ["urban", "creative", "autumn", "individuality"],
             notes: {
@@ -1423,7 +1423,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // 匹配香水配置文件 - 改进视觉展示
             const profileBadges = perfume.profiles.map(profile => 
-                `<span class="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-apple-purple/15 to-apple-pink/15 text-apple-purple text-xs mr-1 mb-1 transition-all hover:bg-gradient-to-r hover:from-apple-purple hover:to-apple-pink hover:text-white shadow-sm">${profile}</span>`
+                `<span class="inline-block px-3 py-1.5 rounded-full bg-gradient-to-r from-apple-purple/20 to-apple-pink/20 text-apple-purple dark:text-apple-pink text-xs font-medium mr-1.5 mb-1.5 transition-all hover:scale-105 hover:from-apple-purple/90 hover:to-apple-pink/90 hover:text-white shadow-sm">${profile}</span>`
             ).join('');
             
             // 为每种香调分配合适的emoji
@@ -1432,55 +1432,97 @@ document.addEventListener('DOMContentLoaded', function() {
                 const emojiMap = {
                     top: {
                         default: "🍃", // 默认顶调
-                        citrus: ["bergamot", "lemon", "orange", "grapefruit", "lime", "mandarin"], // 柑橘
-                        spicy: ["pepper", "pink pepper", "sichuan pepper", "cardamom", "cinnamon"], // 香料
-                        green: ["green notes", "fig leaf"], // 绿叶
-                        fruity: ["apple", "pineapple", "blackcurrant", "berry", "melon"] // 水果
+                        citrus: {
+                            keywords: ["bergamot", "lemon", "orange", "grapefruit", "lime", "mandarin", "citrus"],
+                            emoji: ["🍋", "🍊", "🍈", "🪴", "🌞"]
+                        },
+                        spicy: {
+                            keywords: ["pepper", "pink pepper", "sichuan pepper", "cardamom", "cinnamon", "spicy", "spice"],
+                            emoji: ["🌶️", "🔥", "✨", "💫", "⚡"]
+                        },
+                        green: {
+                            keywords: ["green notes", "fig leaf", "leaf", "green"],
+                            emoji: ["🌿", "🍃", "🥬", "🌱", "🌵"]
+                        },
+                        fruity: {
+                            keywords: ["apple", "pineapple", "blackcurrant", "berry", "melon", "fruit"],
+                            emoji: ["🍎", "🍏", "🍍", "🫐", "🍓"]
+                        },
+                        floral: {
+                            keywords: ["flower", "floral", "rose", "blooming"],
+                            emoji: ["🌷", "🌹", "🌺", "🌻", "🌼"]
+                        }
                     },
                     middle: {
                         default: "🌸", // 默认中调
-                        floral: ["rose", "jasmine", "lily", "iris", "ylang-ylang", "tuberose", "violet"], // 花香
-                        herbal: ["sage", "lavender", "rosemary", "clary sage"], // 草本
-                        spicy: ["clove", "nutmeg", "cinnamon"], // 香料
-                        woody: ["cedar", "birch", "cypress"] // 木质
+                        floral: {
+                            keywords: ["rose", "jasmine", "lily", "iris", "ylang-ylang", "tuberose", "violet", "flower"],
+                            emoji: ["🌸", "🌹", "🌺", "🌻", "🌷"]
+                        },
+                        herbal: {
+                            keywords: ["sage", "lavender", "rosemary", "clary sage", "herb"],
+                            emoji: ["🌱", "🪴", "🧪", "🧴", "🌿"]
+                        },
+                        spicy: {
+                            keywords: ["clove", "nutmeg", "cinnamon", "spice"],
+                            emoji: ["🧂", "🌶️", "🔮", "⭐", "✨"]
+                        },
+                        woody: {
+                            keywords: ["cedar", "birch", "cypress", "wood"],
+                            emoji: ["🪵", "🌲", "🌳", "🧩", "🪑"]
+                        },
+                        fruity: {
+                            keywords: ["fruit", "berry", "sweet"],
+                            emoji: ["🍑", "🍒", "🍐", "🥭", "🍇"]
+                        }
                     },
                     base: {
                         default: "🌫️", // 默认基调
-                        woody: ["sandalwood", "cedar", "vetiver", "patchouli", "oud", "guaiac"], // 木质
-                        amber: ["amber", "ambergris", "benzoin"], // 琥珀
-                        sweet: ["vanilla", "tonka bean", "cacao"], // 甜香
-                        musky: ["musk", "white musks"], // 麝香
-                        leather: ["leather", "suede"] // 皮革
+                        woody: {
+                            keywords: ["sandalwood", "cedar", "vetiver", "patchouli", "oud", "guaiac", "wood"],
+                            emoji: ["🪵", "🌲", "🌳", "🏔️", "🗻"]
+                        },
+                        amber: {
+                            keywords: ["amber", "ambergris", "benzoin"],
+                            emoji: ["✨", "💫", "🔮", "💎", "🌟"]
+                        },
+                        sweet: {
+                            keywords: ["vanilla", "tonka bean", "cacao", "sweet"],
+                            emoji: ["🍯", "🧁", "🍦", "🍨", "🧊"]
+                        },
+                        musky: {
+                            keywords: ["musk", "white musks"],
+                            emoji: ["🧴", "☁️", "🌫️", "🔮", "💭"]
+                        },
+                        leather: {
+                            keywords: ["leather", "suede"],
+                            emoji: ["👜", "👛", "🧳", "📔", "🪑"]
+                        },
+                        balsamic: {
+                            keywords: ["resin", "balsam", "myrrh", "frankincense"],
+                            emoji: ["🪵", "🧬", "💧", "✨", "💫"]
+                        }
                     }
                 };
                 
-                // 找出笔记类型
+                // 为特定类型的笔记选择emoji
                 let noteCategory = "default";
                 let emoji = emojiMap[noteType].default;
                 
-                // 检查笔记是否属于特定类别
-                for (const [category, categoryNotes] of Object.entries(emojiMap[noteType])) {
+                // 从笔记中检测关键词匹配
+                for (const category in emojiMap[noteType]) {
                     if (category === "default") continue;
                     
-                    // 如果是数组（具体成分列表），检查是否有匹配
-                    if (Array.isArray(categoryNotes)) {
-                        for (const note of notes) {
-                            if (categoryNotes.some(cn => note.toLowerCase().includes(cn.toLowerCase()))) {
-                                switch (category) {
-                                    case "citrus": emoji = "🍋"; break;
-                                    case "spicy": emoji = noteType === "top" ? "🌶️" : "🧂"; break;
-                                    case "green": emoji = "🌿"; break;
-                                    case "fruity": emoji = "🍎"; break;
-                                    case "floral": emoji = "🌺"; break;
-                                    case "herbal": emoji = "🌱"; break;
-                                    case "woody": emoji = "🪵"; break;
-                                    case "amber": emoji = "✨"; break;
-                                    case "sweet": emoji = "🍯"; break;
-                                    case "musky": emoji = "🧴"; break;
-                                    case "leather": emoji = "👜"; break;
-                                }
-                                return emoji;
-                            }
+                    const categoryInfo = emojiMap[noteType][category];
+                    const keywords = categoryInfo.keywords;
+                    const emojis = categoryInfo.emoji;
+                    
+                    // 寻找匹配的关键词
+                    for (const note of notes) {
+                        if (keywords.some(keyword => note.toLowerCase().includes(keyword.toLowerCase()))) {
+                            // 随机选择一个emoji以增加多样性
+                            const randomIndex = Math.floor(Math.random() * emojis.length);
+                            return emojis[randomIndex];
                         }
                     }
                 }
@@ -1544,7 +1586,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         ✨ Match #${index + 1}
                     </div>
                     <div class="h-72 overflow-hidden">
-                        <img src="${perfume.image}" alt="${perfume.name}" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1557053506-91e2ac5c3f2a?q=80&w=2097&auto=format&fit=crop';">
+                        <img src="${perfume.image}" alt="${perfume.name}" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1592845998667-7752de3dac13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80';">
                     </div>
                     <div class="absolute bottom-4 left-4 right-4 z-20">
                         <div class="bg-white/80 dark:bg-apple-gray-800/80 backdrop-blur-md px-4 py-3 rounded-xl">
