@@ -937,7 +937,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 创建进度条
         const progressBar = `
-            <div class="mb-6 w-full bg-apple-gray-200 dark:bg-white/70 h-2 rounded-full overflow-hidden">
+            <div class="mb-6 w-full bg-apple-gray-200 dark:bg-apple-gray-700 h-2 rounded-full overflow-hidden">
                 <div class="bg-gradient-to-r from-apple-purple to-apple-pink h-full rounded-full transition-all" style="width: ${(index + 1) / quizQuestions.length * 100}%"></div>
             </div>
             <div class="text-right text-sm text-apple-gray-500 dark:text-apple-gray-400 mb-8">
@@ -1412,7 +1412,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const question = quizQuestions.find(q => q.id === selection.questionId);
                 const option = question.options.find(o => o.value === selection.value);
                 
-                matchReason = `<div class="mt-4 bg-apple-gray-100/60 dark:bg-white/60 p-5 rounded-xl backdrop-blur-sm">
+                matchReason = `<div class="mt-4 bg-apple-gray-100/60 dark:bg-apple-gray-700/60 p-5 rounded-xl backdrop-blur-sm">
                     <div class="flex items-center mb-2">
                         <span class="text-xl mr-2">✨</span>
                         <span class="font-semibold text-gradient">Why This Matches You</span>
@@ -1539,7 +1539,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="mt-6 space-y-4">
                     <h4 class="text-base font-medium text-apple-gray-700 dark:text-apple-gray-300">Fragrance Notes</h4>
                     <div class="grid grid-cols-3 gap-3">
-                        <div class="bg-apple-gray-100/60 dark:bg-white/70 rounded-xl p-3 backdrop-blur-sm">
+                        <div class="bg-apple-gray-100/60 dark:bg-apple-gray-700/60 rounded-xl p-3 backdrop-blur-sm">
                             <div class="flex items-center justify-center mb-2">
                                 <span class="text-xl">${topNotesEmoji}</span>
                             </div>
@@ -1550,7 +1550,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 ).join('')}
                             </div>
                         </div>
-                        <div class="bg-apple-gray-100/60 dark:bg-white/70 rounded-xl p-3 backdrop-blur-sm">
+                        <div class="bg-apple-gray-100/60 dark:bg-apple-gray-700/60 rounded-xl p-3 backdrop-blur-sm">
                             <div class="flex items-center justify-center mb-2">
                                 <span class="text-xl">${middleNotesEmoji}</span>
                             </div>
@@ -1561,7 +1561,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 ).join('')}
                             </div>
                         </div>
-                        <div class="bg-apple-gray-100/60 dark:bg-white/70 rounded-xl p-3 backdrop-blur-sm">
+                        <div class="bg-apple-gray-100/60 dark:bg-apple-gray-700/60 rounded-xl p-3 backdrop-blur-sm">
                             <div class="flex items-center justify-center mb-2">
                                 <span class="text-xl">${baseNotesEmoji}</span>
                             </div>
@@ -1589,12 +1589,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         <img src="${perfume.image}" alt="${perfume.name}" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1592845998667-7752de3dac13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80';">
                     </div>
                     <div class="absolute bottom-4 left-4 right-4 z-20">
-                        <div class="bg-white/80 dark:bg-white/90 backdrop-blur-md px-4 py-3 rounded-xl">
+                        <div class="bg-white/80 dark:bg-apple-gray-800/80 backdrop-blur-md px-4 py-3 rounded-xl">
                             <h3 class="text-xl font-semibold">${perfume.name}</h3>
                             <div class="flex items-center justify-between">
                                 <span class="text-base font-medium">${perfume.price}</span>
                                 <div class="flex space-x-1">
-                                    <span class="px-2 py-1 rounded-md bg-apple-gray-200/50 dark:bg-apple-gray-100/50 text-xs">★★★★★</span>
+                                    <span class="px-2 py-1 rounded-md bg-apple-gray-200/50 dark:bg-apple-gray-700/50 text-xs">★★★★★</span>
                                 </div>
                             </div>
                         </div>
@@ -1924,4 +1924,309 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, 100);
     }
+
+    // Laboratory Interface 功能
+    function initLaboratoryInterface() {
+        // 检查Laboratory Interface是否存在
+        const labInterface = document.querySelector('.bg-apple-mist\\/30');
+        if (!labInterface) return;
+
+        // 创建滑块元素替换原来的进度条
+        const ingredientBars = labInterface.querySelectorAll('.flex.justify-between.items-center');
+        const ingredients = [
+            { name: "Bergamot (Top)", value: 15 },
+            { name: "Rose (Middle)", value: 30 },
+            { name: "Sandalwood (Base)", value: 40 },
+            { name: "Vanilla (Base)", value: 15 }
+        ];
+        
+        // 总计值显示
+        const totalEl = document.createElement('div');
+        totalEl.className = 'mt-4 text-right font-medium';
+        totalEl.textContent = 'Total: 100%';
+        
+        // 在进度条容器后添加总计
+        const progressContainer = labInterface.querySelector('.space-y-4.mb-6');
+        progressContainer.appendChild(totalEl);
+        
+        // 转换每个进度条为滑块
+        ingredientBars.forEach((bar, index) => {
+            if (index >= ingredients.length) return;
+            
+            // 获取原始元素
+            const progressBar = bar.querySelector('.w-32.h-6');
+            const percentText = bar.querySelector('p:last-child');
+            
+            // 创建滑块
+            const slider = document.createElement('input');
+            slider.type = 'range';
+            slider.min = '0';
+            slider.max = '100';
+            slider.value = ingredients[index].value;
+            slider.className = 'w-32 h-6 accent-apple-lavender';
+            slider.dataset.index = index;
+            
+            // 替换进度条为滑块
+            progressBar.parentNode.replaceChild(slider, progressBar);
+            
+            // 更新百分比文本
+            percentText.textContent = `${slider.value}%`;
+            
+            // 添加滑块事件监听
+            slider.addEventListener('input', updateFormula);
+        });
+        
+        // 重置按钮功能
+        const resetButton = labInterface.querySelector('button:first-of-type');
+        resetButton.addEventListener('click', () => {
+            ingredientBars.forEach((bar, index) => {
+                if (index >= ingredients.length) return;
+                const slider = bar.querySelector('input[type="range"]');
+                slider.value = ingredients[index].value;
+                bar.querySelector('p:last-child').textContent = `${slider.value}%`;
+            });
+            updateFormula();
+            showNotification('Formula reset to original values');
+        });
+        
+        // 预览气味按钮功能
+        const previewButton = labInterface.querySelector('button:last-of-type');
+        previewButton.addEventListener('click', () => {
+            // 创建香水配方预览
+            createScentPreview();
+        });
+        
+        // 辅助函数：更新配方
+        function updateFormula() {
+            let total = 0;
+            const sliders = labInterface.querySelectorAll('input[type="range"]');
+            
+            sliders.forEach(slider => {
+                const percentText = slider.closest('.flex').querySelector('p:last-child');
+                percentText.textContent = `${slider.value}%`;
+                total += parseInt(slider.value);
+            });
+            
+            // 更新总计
+            totalEl.textContent = `Total: ${total}%`;
+            if (total > 100) {
+                totalEl.className = 'mt-4 text-right font-medium text-red-500';
+            } else if (total < 100) {
+                totalEl.className = 'mt-4 text-right font-medium text-yellow-500';
+            } else {
+                totalEl.className = 'mt-4 text-right font-medium text-green-500';
+            }
+        }
+        
+        // 创建香水配方预览
+        function createScentPreview() {
+            // 获取当前配方
+            const sliders = labInterface.querySelectorAll('input[type="range"]');
+            const formula = [];
+            let total = 0;
+            
+            sliders.forEach((slider, index) => {
+                formula.push({
+                    name: ingredients[index].name,
+                    value: parseInt(slider.value)
+                });
+                total += parseInt(slider.value);
+            });
+            
+            // 如果总计不等于100%，显示警告
+            if (total !== 100) {
+                showNotification('Your formula should total exactly 100%', 'warning');
+                return;
+            }
+            
+            // 预览香水的特性
+            const characteristics = {
+                longevity: 0,
+                sillage: 0,
+                uniqueness: 0
+            };
+            
+            // 根据配方计算特性
+            formula.forEach(ingredient => {
+                const name = ingredient.name.toLowerCase();
+                if (name.includes('bergamot')) {
+                    characteristics.longevity += ingredient.value * 0.5;
+                    characteristics.sillage += ingredient.value * 0.8;
+                    characteristics.uniqueness += ingredient.value * 0.3;
+                } else if (name.includes('rose')) {
+                    characteristics.longevity += ingredient.value * 0.7;
+                    characteristics.sillage += ingredient.value * 0.7;
+                    characteristics.uniqueness += ingredient.value * 0.6;
+                } else if (name.includes('sandalwood')) {
+                    characteristics.longevity += ingredient.value * 0.9;
+                    characteristics.sillage += ingredient.value * 0.5;
+                    characteristics.uniqueness += ingredient.value * 0.7;
+                } else if (name.includes('vanilla')) {
+                    characteristics.longevity += ingredient.value * 0.8;
+                    characteristics.sillage += ingredient.value * 0.6;
+                    characteristics.uniqueness += ingredient.value * 0.4;
+                }
+            });
+            
+            // 归一化特性值
+            characteristics.longevity = Math.min(Math.round(characteristics.longevity / 20), 5);
+            characteristics.sillage = Math.min(Math.round(characteristics.sillage / 20), 5);
+            characteristics.uniqueness = Math.min(Math.round(characteristics.uniqueness / 20), 5);
+            
+            // 创建预览对话框
+            showScentPreview(formula, characteristics);
+        }
+        
+        // 显示香水预览对话框
+        function showScentPreview(formula, characteristics) {
+            // 创建模态对话框
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50';
+            
+            // 对话框内容
+            modal.innerHTML = `
+                <div class="bg-white dark:bg-apple-gray-800 rounded-xl p-6 max-w-md w-full mx-4 shadow-2xl">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold">Custom Scent Preview</h3>
+                        <button class="text-apple-gray-500 hover:text-apple-gray-700 dark:hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-medium mb-2">Your Formula</h4>
+                        <div class="space-y-2">
+                            ${formula.map(item => `
+                                <div class="flex justify-between items-center">
+                                    <span>${item.name}</span>
+                                    <span class="font-medium">${item.value}%</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-medium mb-2">Fragrance Profile</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>Longevity</span>
+                                    <span>${'★'.repeat(characteristics.longevity)}${'☆'.repeat(5-characteristics.longevity)}</span>
+                                </div>
+                                <div class="w-full h-2 bg-apple-gray-200 dark:bg-apple-gray-700 rounded-full mt-1">
+                                    <div class="h-full bg-gradient-to-r from-apple-lavender to-apple-purple rounded-full" style="width: ${characteristics.longevity*20}%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>Sillage</span>
+                                    <span>${'★'.repeat(characteristics.sillage)}${'☆'.repeat(5-characteristics.sillage)}</span>
+                                </div>
+                                <div class="w-full h-2 bg-apple-gray-200 dark:bg-apple-gray-700 rounded-full mt-1">
+                                    <div class="h-full bg-gradient-to-r from-apple-lavender to-apple-purple rounded-full" style="width: ${characteristics.sillage*20}%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between">
+                                    <span>Uniqueness</span>
+                                    <span>${'★'.repeat(characteristics.uniqueness)}${'☆'.repeat(5-characteristics.uniqueness)}</span>
+                                </div>
+                                <div class="w-full h-2 bg-apple-gray-200 dark:bg-apple-gray-700 rounded-full mt-1">
+                                    <div class="h-full bg-gradient-to-r from-apple-lavender to-apple-purple rounded-full" style="width: ${characteristics.uniqueness*20}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 bg-apple-gray-100 dark:bg-apple-gray-700/50 rounded-lg">
+                        <p class="text-sm italic">Your custom blend creates a ${getBlendDescription(characteristics)}.</p>
+                    </div>
+                    
+                    <div class="flex justify-end mt-6">
+                        <button class="px-6 py-2 bg-gradient-to-r from-apple-purple to-apple-pink text-white rounded-lg hover:opacity-90 transition-opacity">
+                            Save This Formula
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // 添加到页面
+            document.body.appendChild(modal);
+            
+            // 关闭按钮功能
+            const closeButton = modal.querySelector('button');
+            closeButton.addEventListener('click', () => {
+                modal.classList.add('opacity-0');
+                setTimeout(() => {
+                    document.body.removeChild(modal);
+                }, 300);
+            });
+            
+            // 保存配方按钮
+            const saveButton = modal.querySelector('button:last-child');
+            saveButton.addEventListener('click', () => {
+                showNotification('Your custom formula has been saved!', 'success');
+                closeButton.click();
+            });
+        }
+        
+        // 根据特性生成描述
+        function getBlendDescription(characteristics) {
+            const totalScore = characteristics.longevity + characteristics.sillage + characteristics.uniqueness;
+            
+            if (totalScore >= 12) {
+                return "masterful composition with exceptional depth and projection";
+            } else if (totalScore >= 10) {
+                return "sophisticated scent with impressive staying power";
+            } else if (totalScore >= 8) {
+                return "balanced fragrance with good performance and character";
+            } else if (totalScore >= 6) {
+                return "pleasant blend with moderate presence";
+            } else {
+                return "subtle and intimate personal scent";
+            }
+        }
+        
+        // 显示通知
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            let bgColor = 'bg-apple-blue';
+            
+            if (type === 'warning') {
+                bgColor = 'bg-yellow-500';
+            } else if (type === 'success') {
+                bgColor = 'bg-green-500';
+            } else if (type === 'error') {
+                bgColor = 'bg-red-500';
+            }
+            
+            notification.className = `fixed bottom-4 right-4 ${bgColor} text-white px-4 py-2 rounded-lg shadow-lg transform transition-transform duration-300 translate-y-20 opacity-0`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            // 显示通知
+            setTimeout(() => {
+                notification.classList.remove('translate-y-20', 'opacity-0');
+            }, 10);
+            
+            // 3秒后隐藏
+            setTimeout(() => {
+                notification.classList.add('translate-y-20', 'opacity-0');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+    }
+
+    // 页面加载后初始化
+    document.addEventListener('DOMContentLoaded', function() {
+        // 原有的初始化代码...
+        
+        // 初始化Laboratory Interface
+        initLaboratoryInterface();
+    });
 });
