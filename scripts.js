@@ -1607,17 +1607,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-apple-gray-700 dark:text-apple-gray-300 mb-5 leading-relaxed">${perfume.description}</p>
                     ${notes}
                     ${matchReason}
-                    <div class="flex justify-between items-center mt-6 pt-4 border-t border-apple-gray-200 dark:border-apple-gray-700">
-                        <a href="#" class="text-apple-blue hover:underline flex items-center">
+                    <div class="flex justify-center items-center mt-6 pt-4 border-t border-apple-gray-200 dark:border-apple-gray-700">
+                        <a href="#" class="text-apple-blue hover:underline flex items-center py-2 px-5 rounded-full text-sm transition-all transform hover:-translate-y-1">
                             <span>View Details</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                             </svg>
                         </a>
-                        <button class="bg-apple-blue hover:bg-apple-blue/90 text-white py-2 px-5 rounded-full text-sm transition-all transform hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center">
-                            <span class="mr-1">Add to Cart</span>
-                            <span>🛍️</span>
-                        </button>
                     </div>
                 </div>
             `;
