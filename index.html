@@ -16,34 +16,56 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         :root {
-            --apple-pink: #ff2d55;
-            --apple-purple: #af52de;
-            --apple-blue: #007aff;
-            --apple-lavender: #e6e6fa;
+            /* 更新主题色彩 - 更时尚现代的配色方案 */
+            --apple-pink: #ff4d8d;
+            --apple-purple: #8a5cf7;
+            --apple-blue: #2d82ff;
+            --apple-teal: #5ac8fa;
+            --apple-lavender: #e0d7ff;
+            --apple-cream: #fffaf3;
+            --apple-mint: #e9fff5;
+            --apple-gold: #ffd700;
             --apple-mist: #f8f8f8;
-            --apple-gray-100: #f5f5f7;
-            --apple-gray-200: #e5e5e7;
-            --apple-gray-300: #d2d2d7;
-            --apple-gray-400: #a5a5a7;
-            --apple-gray-500: #86868b;
-            --apple-gray-700: #424245;
-            --apple-gray-800: #1d1d1f;
-            --apple-gray-900: #121214;
+            --apple-gray-100: #f7f7f9;
+            --apple-gray-200: #eaeaee;
+            --apple-gray-300: #d8d8df;
+            --apple-gray-400: #a9a9b4;
+            --apple-gray-500: #8c8c96;
+            --apple-gray-700: #3d3d47;
+            --apple-gray-800: #1d1d27;
+            --apple-gray-900: #12121c;
+            
+            /* 阴影变量 */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.16);
+            
+            /* 圆角变量 */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1.5rem;
+            --radius-xl: 2rem;
         }
         
+        /* 增强版动画 */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            0% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-7px) rotate(0.5deg); }
+            50% { transform: translateY(-12px) rotate(-0.5deg); }
+            75% { transform: translateY(-7px) rotate(0.25deg); }
+            100% { transform: translateY(0) rotate(0deg); }
         }
         
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(0.98); }
+            100% { opacity: 1; transform: scale(1); }
         }
         
         @keyframes gradient {
@@ -53,26 +75,42 @@
         }
         
         @keyframes scent-float {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(5px, -5px); }
-            50% { transform: translate(0, -10px); }
-            75% { transform: translate(-5px, -5px); }
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(8px, -8px) rotate(3deg); }
+            50% { transform: translate(0, -16px) rotate(-2deg); }
+            75% { transform: translate(-8px, -8px) rotate(1deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
         
         .animate-fade-in {
-            animation: fadeIn 0.5s ease-out forwards;
+            animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
         
         .animate-float {
-            animation: float 6s ease-in-out infinite;
+            animation: float 8s ease-in-out infinite;
         }
         
         .animate-pulse {
-            animation: pulse 3s infinite;
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
         
         .animate-scent {
-            animation: scent-float 8s ease-in-out infinite;
+            animation: scent-float 10s ease-in-out infinite;
+        }
+        
+        .animate-shimmer {
+            background: linear-gradient(90deg, 
+                          rgba(255,255,255,0) 0%, 
+                          rgba(255,255,255,0.2) 25%, 
+                          rgba(255,255,255,0.2) 50%, 
+                          rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
         }
         
         .hidden {
@@ -82,36 +120,47 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             color: var(--apple-gray-800);
-            transition: background-color 0.3s, color 0.3s;
-            background: linear-gradient(-45deg, #feeeed, #fcf0f3, #f0e6f6, #e6e8ff);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            /* 更丰富多彩的渐变背景 */
+            background: linear-gradient(-45deg, #ffeaf1, #f7eaff, #eaf6ff, #e9fff5);
             background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+            animation: gradient 20s ease infinite;
             min-height: 100vh;
         }
         
-        /* 香氛粒子装饰 */
+        /* 增强型香氛粒子装饰 */
         .scent-particle {
             position: fixed;
             pointer-events: none;
-            opacity: 0.3;
+            opacity: 0.4;
             z-index: -1;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
+            transition: all 0.3s ease;
         }
         
         @media (prefers-color-scheme: dark) {
             body {
-                background: linear-gradient(-45deg, #302428, #261e2a, #1a1a2e, #1e1637);
+                /* 更深邃精致的暗色模式渐变 */
+                background: linear-gradient(-45deg, #301f28, #25204a, #1e2b4a, #1b3039);
                 background-size: 400% 400%;
-                animation: gradient 15s ease infinite;
+                animation: gradient 25s ease infinite;
                 color: white;
+            }
+            
+            .scent-particle {
+                filter: drop-shadow(0 0 8px rgba(153, 102, 255, 0.4));
             }
         }
         
+        /* 基础颜色类 */
         .bg-apple-pink { background-color: var(--apple-pink); }
         .text-apple-pink { color: var(--apple-pink); }
         .bg-apple-purple { background-color: var(--apple-purple); }
         .text-apple-purple { color: var(--apple-purple); }
         .bg-apple-blue { background-color: var(--apple-blue); }
         .text-apple-blue { color: var(--apple-blue); }
+        .bg-apple-teal { background-color: var(--apple-teal); }
+        .text-apple-teal { color: var(--apple-teal); }
         .bg-apple-gray-100 { background-color: var(--apple-gray-100); }
         .bg-apple-gray-200 { background-color: var(--apple-gray-200); }
         .text-apple-gray-300 { color: var(--apple-gray-300); }
@@ -122,9 +171,31 @@
         .bg-apple-gray-800 { background-color: var(--apple-gray-800); }
         .text-apple-gray-800 { color: var(--apple-gray-800); }
         
-        .hover\:bg-apple-pink\/90:hover { background-color: rgba(255, 45, 85, 0.9); }
-        .hover\:bg-apple-blue\/90:hover { background-color: rgba(0, 122, 255, 0.9); }
-        .hover\:bg-apple-gray-200:hover { background-color: var(--apple-gray-200); }
+        /* 交互效果增强 */
+        .hover\:bg-apple-pink\/90:hover { 
+            background-color: rgba(255, 77, 141, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 77, 141, 0.3);
+        }
+        .hover\:bg-apple-blue\/90:hover { 
+            background-color: rgba(45, 130, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(45, 130, 255, 0.3);
+        }
+        .hover\:bg-apple-purple\/90:hover { 
+            background-color: rgba(138, 92, 247, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(138, 92, 247, 0.3);
+        }
+        .hover\:bg-apple-gray-200:hover { 
+            background-color: var(--apple-gray-200);
+            transform: translateY(-1px);
+        }
+        
+        /* 交互状态过渡 */
+        button, a, .interactive {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
         
         @media (prefers-color-scheme: dark) {
             .dark\:bg-apple-gray-700 { background-color: var(--apple-gray-700); }
@@ -132,368 +203,187 @@
             .dark\:text-apple-gray-300 { color: var(--apple-gray-300); }
             .dark\:text-apple-gray-400 { color: var(--apple-gray-400); }
             .dark\:text-white { color: white; }
-            .dark\:hover\:bg-apple-gray-700:hover { background-color: var(--apple-gray-700); }
+            .dark\:hover\:bg-apple-gray-700:hover { 
+                background-color: var(--apple-gray-700);
+                transform: translateY(-1px);
+            }
         }
         
-        /* 玻璃态效果 */
+        /* 增强型玻璃态效果 */
         .glass-effect {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08);
+            transition: all 0.4s ease;
+        }
+        
+        .glass-effect:hover {
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
         
         .dark .glass-effect {
-            background: rgba(29, 29, 31, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(29, 29, 39, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
         }
         
-        /* 渐变背景 */
+        .dark .glass-effect:hover {
+            background: rgba(29, 29, 39, 0.7);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+        }
+        
+        /* 增强型渐变背景 */
         .bg-gradient-to-r {
             background-image: linear-gradient(to right, var(--gradient-from), var(--gradient-to));
+            transition: all 0.3s ease;
         }
+        
         .from-apple-purple {
             --gradient-from: var(--apple-purple);
         }
+        
         .to-apple-pink {
             --gradient-to: var(--apple-pink);
         }
         
-        /* 卡片效果 */
-        .hover\:shadow-md:hover { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
-        .hover\:shadow-lg:hover { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
-        .hover\:shadow-xl:hover { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
-        
-        /* 动画效果 */
-        .transform { transform: translateZ(0); }
-        .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
-        .hover\:-translate-y-1:hover { transform: translateY(-0.25rem); }
-        .duration-300 { transition-duration: 300ms; }
-        .duration-500 { transition-duration: 500ms; }
-        .hover\:scale-105:hover { transform: scale(1.05); }
-        
-        /* 新增：带光效果的标题 */
-        .title-highlight {
-            background: linear-gradient(120deg, var(--apple-purple), var(--apple-pink));
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+        /* 全新微妙发光效果 */
+        .soft-glow {
             position: relative;
+        }
+        
+        .soft-glow::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .soft-glow:hover::after {
+            opacity: 1;
+        }
+        
+        /* 标题高亮效果 */
+        .title-highlight {
+            position: relative;
+            z-index: 1;
             display: inline-block;
         }
         
-        .title-highlight::after {
+        .title-highlight::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 0.4em;
+            bottom: 0.1em;
+            left: 0;
+            background: linear-gradient(to right, var(--apple-pink), var(--apple-purple));
+            z-index: -1;
+            opacity: 0.3;
+            transform: skew(-12deg) rotate(-2deg);
+            transition: all 0.3s ease;
+        }
+        
+        .title-highlight:hover::before {
+            height: 0.5em;
+            opacity: 0.4;
+            transform: skew(-8deg) rotate(-1deg);
+        }
+        
+        /* 交互反馈设计 */
+        .subtle-scale {
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .subtle-scale:hover {
+            transform: scale(1.03);
+        }
+        
+        .subtle-scale:active {
+            transform: scale(0.98);
+        }
+        
+        /* 精细按钮效果 */
+        .btn-fancy {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to right, var(--apple-purple), var(--apple-pink));
+            color: white;
+            font-weight: 600;
+            border-radius: 9999px;
+            padding: 0.75rem 1.5rem;
+            transform: translateY(0);
+            box-shadow: 0 4px 14px rgba(138, 92, 247, 0.3);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .btn-fancy:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(138, 92, 247, 0.4);
+        }
+        
+        .btn-fancy:active {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(138, 92, 247, 0.3);
+        }
+        
+        .btn-fancy::before {
             content: '';
             position: absolute;
             top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(120deg, rgba(175, 82, 222, 0), rgba(255, 45, 85, 0.4), rgba(175, 82, 222, 0));
-            background-size: 200% 100%;
-            animation: shimmer 2s infinite;
-            -webkit-background-clip: text;
-            opacity: 0.7;
-        }
-        
-        /* 香水笔记标签样式 */
-        .note-tag {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            margin: 0.2rem;
-            transition: all 0.3s;
-        }
-        
-        .note-tag-top {
-            background-color: rgba(255, 45, 85, 0.1);
-            color: var(--apple-pink);
-        }
-        
-        .note-tag-middle {
-            background-color: rgba(175, 82, 222, 0.1);
-            color: var(--apple-purple);
-        }
-        
-        .note-tag-base {
-            background-color: rgba(0, 122, 255, 0.1);
-            color: var(--apple-blue);
-        }
-        
-        .note-tag:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* 笔记容器 */
-        .notes-container {
-            display: flex;
-            flex-direction: column;
-            background: rgba(250, 250, 250, 0.5);
-            border-radius: 0.75rem;
-            padding: 1rem;
-            margin: 1rem 0;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s;
-        }
-        
-        .dark .notes-container {
-            background: rgba(30, 30, 32, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .notes-container:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .notes-row {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-        
-        .notes-label {
-            width: 4rem;
-            display: flex;
-            align-items: center;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        .notes-label-emoji {
-            margin-right: 0.3rem;
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: 100% 0; transform: translateX(-100%); }
-            100% { background-position: 0 0; transform: translateX(100%); }
-        }
-        
-        @keyframes shimmer-light {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        .animate-shimmer {
-            animation: shimmer-light 1.5s infinite;
-        }
-        
-        /* 幻灯片样式 */
-        .slideshow-container {
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
-            border-radius: 0.75rem;
-            overflow: hidden;
-        }
-        
-        .slideshow-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-            z-index: 1;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s ease;
         }
         
-        .slide.active {
-            opacity: 1;
-            z-index: 2;
+        .btn-fancy:hover::before {
+            left: 100%;
         }
         
-        /* 导航点样式 */
-        .dot {
-            height: 12px;
-            width: 12px;
-            background-color: rgba(255, 255, 255, 0.7);
+        /* 涟漪效果 */
+        .ripple-effect {
+            position: absolute;
             border-radius: 50%;
-            display: inline-block;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 0 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-        }
-        
-        .dot.active {
-            background-color: var(--apple-pink);
-            transform: scale(1.3);
-            box-shadow: 0 3px 6px rgba(255, 45, 85, 0.3);
-        }
-        
-        .dots-container {
-            z-index: 10;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 20px;
-            backdrop-filter: blur(4px);
-        }
-        
-        /* 新增: 科普内容区域样式 */
-        .perfume-education {
-            --color-tint: rgba(var(--apple-purple-rgb, 175, 82, 222), 0.05);
-            background: var(--color-tint);
-            transition: all 0.5s ease;
-        }
-        
-        .highlight {
-            color: var(--apple-pink);
-            font-weight: 500;
-        }
-        
-        .science-section,
-        .fact-section,
-        .craft-section,
-        .secret-section,
-        .science-crossover-section,
-        .tips-section,
-        .interactive-section {
-            position: relative;
-            line-height: 1.8;
-        }
-        
-        .apple-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--apple-blue);
-            color: white;
-            padding: 0.5rem 1.25rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-top: 1rem;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .apple-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background: rgba(0, 122, 255, 0.9);
-        }
-        
-        .apple-button:active {
-            transform: translateY(0);
+            background-color: rgba(255, 255, 255, 0.4);
+            width: 100px;
+            height: 100px;
+            margin-top: -50px;
+            margin-left: -50px;
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
         }
         
         @keyframes ripple {
             to {
-                transform: scale(4);
+                transform: scale(2.5);
                 opacity: 0;
             }
         }
         
-        /* 用户生成内容区域 */
-        .user-content-section {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(4px);
-            border-radius: 0.75rem;
-            padding: 1rem;
-            margin-top: 1rem;
-            border: 1px dashed rgba(255, 255, 255, 0.3);
+        /* 卡片激活状态 */
+        .card-active {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 36px rgba(31, 38, 135, 0.15);
         }
         
-        .dark .user-content-section {
-            background: rgba(0, 0, 0, 0.1);
-            border: 1px dashed rgba(255, 255, 255, 0.1);
-        }
-        
-        /* 科普卡片悬停效果 */
-        .glass-effect:hover .highlight {
-            text-shadow: 0 0 8px rgba(255, 45, 85, 0.5);
-        }
-        
-        /* 媒体查询适配 */
-        @media (max-width: 768px) {
-            .perfume-education {
-                padding: 1.5rem;
-            }
-        }
-        
-        /* 导航栏样式 */
-        .nav-link {
-            position: relative;
-            color: var(--apple-gray-700);
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 0;
-        }
-        
-        .dark .nav-link {
-            color: var(--apple-gray-300);
-        }
-        
-        .nav-link:hover {
-            color: var(--apple-pink);
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            background: linear-gradient(to right, var(--apple-purple), var(--apple-pink));
-            transition: width 0.3s ease, left 0.3s ease;
-            transform: translateX(-50%);
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .mobile-nav-link {
-            display: block;
-            padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
-            color: var(--apple-gray-700);
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .dark .mobile-nav-link {
-            color: var(--apple-gray-300);
-        }
-        
-        .mobile-nav-link:hover {
-            background-color: rgba(255, 45, 85, 0.1);
-            color: var(--apple-pink);
-        }
-        
-        /* 章节标题样式 */
-        .section-title {
-            position: relative;
-            margin-bottom: 2rem;
-            font-weight: 700;
-            text-align: center;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -0.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4rem;
-            height: 0.25rem;
-            border-radius: 0.25rem;
-            background: linear-gradient(to right, var(--apple-purple), var(--apple-pink));
+        /* 导航点点击效果 */
+        .dot-clicked {
+            transform: scale(1.4) !important;
+            box-shadow: 0 0 12px rgba(255, 77, 141, 0.6) !important;
         }
     </style>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <!-- 背景装饰元素 -->
@@ -542,10 +432,14 @@
                     <button class="hidden md:block bg-gradient-to-r from-apple-purple to-apple-pink text-white py-2 px-4 rounded-full font-medium shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-0.5">
                         Start Quiz
                     </button>
-                    <!-- 语言切换按钮 -->
-                    <button id="language-toggle" class="ml-4 p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                        <span id="lang-icon-en" class="h-5 w-5 flex items-center justify-center font-semibold text-sm">EN</span>
-                        <span id="lang-icon-zh" class="h-5 w-5 hidden flex items-center justify-center font-semibold text-sm">中</span>
+                    <!-- 主题切换按钮 -->
+                    <button id="theme-toggle" class="ml-4 p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <svg id="sun-icon" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg id="moon-icon" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
                     </button>
                     <div class="ml-3 md:hidden">
                         <button id="mobile-menu-button" class="text-apple-gray-800 dark:text-white hover:bg-apple-gray-200 dark:hover:bg-apple-gray-700 p-2 rounded-md">
@@ -591,11 +485,7 @@
 
     <header class="py-12 animate-fade-in">
         <div class="container mx-auto px-4 text-center">
-            <!-- 主要标题区 -->
-            <div class="text-center mb-8">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 title-highlight animate-float" data-i18n="mainTitle">Find Your Perfect Scent</h1>
-                <p class="text-xl md:text-2xl mb-6 animate-fade-in-up" data-i18n="mainSubtitle">Your personal fragrance journey guided by science and art</p>
-            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 title-highlight animate-float">Find Your Perfect Scent</h1>
             <p class="text-xl md:text-2xl text-apple-gray-800 dark:text-apple-gray-200 max-w-3xl mx-auto animate-pulse">✨ Discover your signature perfume through our personalized quiz ✨</p>
         </div>
     </header>
@@ -619,25 +509,25 @@
                             <a href="#education" class="block sm:inline-block w-full sm:w-auto px-6 py-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-medium rounded-lg shadow-md hover:shadow-lg border border-gray-200 dark:border-gray-700 transition-all transform hover:-translate-y-0.5 text-center">
                                 Learn More
                             </a>
-                        </div>
+                    </div>
                         
                         <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
                             <div class="flex flex-col items-center">
                                 <div class="text-3xl mb-2">🧪</div>
                                 <p class="text-sm text-center font-medium text-gray-700 dark:text-gray-300">Science-Backed</p>
-                            </div>
+                </div>
                             <div class="flex flex-col items-center">
                                 <div class="text-3xl mb-2">🌿</div>
                                 <p class="text-sm text-center font-medium text-gray-700 dark:text-gray-300">Personalized</p>
-                            </div>
+                    </div>
                             <div class="flex flex-col items-center">
                                 <div class="text-3xl mb-2">🔎</div>
                                 <p class="text-sm text-center font-medium text-gray-700 dark:text-gray-300">Curated Selection</p>
-                            </div>
+                </div>
                             <div class="flex flex-col items-center">
                                 <div class="text-3xl mb-2">⚡</div>
                                 <p class="text-sm text-center font-medium text-gray-700 dark:text-gray-300">Fast Results</p>
-                            </div>
+                    </div>
                         </div>
                     </div>
                     
@@ -683,7 +573,7 @@
                 <div class="flex items-center justify-center mb-6">
                     <h2 class="text-3xl font-bold text-center inline-flex items-center">
                         <span class="text-2xl mr-2">✨</span>
-                        <span data-i18n="quizTitle">Find Your Perfect Scent</span>
+                        <span>Find Your Perfect Scent</span>
                         <span class="text-2xl ml-2">✨</span>
                     </h2>
                     <div class="h-1 w-16 bg-gradient-to-r from-apple-pink to-apple-purple rounded-full ml-3"></div>
@@ -717,17 +607,17 @@
                         
                         <!-- 更新的开始按钮 -->
                         <button id="start-quiz" class="relative overflow-hidden group px-8 py-4 bg-gradient-to-r from-apple-purple to-apple-pink rounded-full text-white font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1">
-                            <span class="relative z-10 flex items-center justify-center" data-i18n="startButton">
+                            <span class="relative z-10 flex items-center justify-center">
                                 <span class="text-lg mr-2">✨</span>
                                 <span>Begin Your Enchanted Journey</span>
                                 <span class="text-lg ml-2">✨</span>
                             </span>
                             <!-- 按钮光效 -->
                             <span class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-white/0 via-white/30 to-white/0 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
-                        </button>
+                    </button>
                         
                         <!-- 删除轮廓指示器 -->
-                    </div>
+                </div>
                 </div>
             </div>
         </section>
@@ -791,7 +681,7 @@
                 </div>
                 
                 <!-- 选香难点拆解 -->
-                <div>
+                            <div>
                     <h3 class="text-2xl font-semibold mb-6 text-center">🔍 Demystifying Fragrance Selection Challenges</h3>
                     
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -941,7 +831,7 @@
                 </div>
                 
                 <!-- 空间香氛生态系统 -->
-                <div>
+                            <div>
                     <h3 class="text-2xl font-semibold mb-6 text-center">🏠 Your Home Fragrance Ecosystem</h3>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -1129,7 +1019,7 @@
                 </div>
                 
                 <!-- 产品冲突与禁忌 -->
-                <div>
+                            <div>
                     <h3 class="text-2xl font-semibold mb-6 text-center">⚠️ Fragrance Conflict Warnings</h3>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -1386,7 +1276,7 @@
                                             <div class="flex justify-between">
                                                 <button class="px-4 py-2 bg-apple-gray-200 dark:bg-apple-gray-700 rounded-lg hover:bg-apple-gray-300 dark:hover:bg-apple-gray-600 transition-colors">
                                                     Reset
-                                                </button>
+                        </button>
                                                 <button class="px-6 py-2 bg-gradient-to-r from-apple-lavender to-apple-mist rounded-lg text-white hover:opacity-90 transition-opacity">
                                                     Preview Scent
                                                 </button>
@@ -1400,7 +1290,7 @@
                 </div>
                 
                 <!-- 气味日记 -->
-                <div>
+                            <div>
                     <h3 class="text-2xl font-semibold mb-6 text-center">📔 Digital Scent Journal</h3>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -1422,21 +1312,21 @@
                                             <div>
                                                 <p class="font-medium">Performance Tracking</p>
                                                 <p class="text-sm">Record longevity, projection, and sillage data for your collection</p>
-                                            </div>
+                    </div>
                                         </li>
                                         <li class="flex items-start">
                                             <span class="text-xl mr-2 mt-0.5">🌡️</span>
                                             <div>
                                                 <p class="font-medium">Environmental Context</p>
                                                 <p class="text-sm">Log weather conditions and how they affect fragrance development</p>
-                                            </div>
+                </div>
                                         </li>
                                         <li class="flex items-start">
                                             <span class="text-xl mr-2 mt-0.5">📸</span>
                                             <div>
                                                 <p class="font-medium">Visual Documentation</p>
                                                 <p class="text-sm">Capture bottle imagery and create a visual archive of your collection</p>
-                                            </div>
+            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -1473,13 +1363,13 @@
                                     
                                     <div class="mb-4 pb-4 border-b border-gray-200 dark:border-gray-600">
                                         <div class="grid grid-cols-3 gap-2 text-center text-sm">
-                                            <div>
+                <div>
                                                 <p class="font-medium">First Impression</p>
                                                 <div class="flex justify-center mt-1">
                                                     <span>🌟</span><span>🌟</span><span>🌟</span><span>🌟</span><span>⭐</span>
                                                 </div>
-                                            </div>
-                                            <div>
+                </div>
+                <div>
                                                 <p class="font-medium">Longevity</p>
                                                 <div class="flex justify-center mt-1">
                                                     <span>🌟</span><span>🌟</span><span>🌟</span><span>⭐</span><span>⭐</span>
@@ -1543,7 +1433,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- 香水推荐部分 -->
         <section id="perfume-recommendations" class="hidden">
             <div class="max-w-7xl mx-auto glass-effect rounded-3xl shadow-xl p-8 md:p-12 transform transition-all hover:shadow-2xl">
@@ -1601,15 +1491,15 @@
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
                     </ul>
+                    </div>
                 </div>
-            </div>
             <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2023 Scent Discoveries. All rights reserved.</p>
                 <div class="flex items-center">
                     <span class="text-gray-500 text-sm">Made with</span>
                     <span class="text-red-500 mx-1">❤️</span>
                     <span class="text-gray-500 text-sm">for fragrance enthusiasts</span>
-                </div>
+            </div>
             </div>
         </div>
     </footer>

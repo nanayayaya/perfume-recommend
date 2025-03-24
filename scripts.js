@@ -1,8 +1,54 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 初始化语言设置
-    initLanguageSwitcher();
+    // 添加平滑滚动效果
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
     
-    // 幻灯片控制函数
+    // 为所有按钮添加涟漪效果
+    const buttons = document.querySelectorAll('button, .btn-fancy');
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple-effect');
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+    
+    // 为玻璃态卡片添加悬停效果
+    const glassCards = document.querySelectorAll('.glass-effect');
+    glassCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.classList.add('card-active');
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.classList.remove('card-active');
+        });
+    });
+    
+    // 原有的幻灯片控制函数
     function initSlideshow() {
         console.log("初始化幻灯片...");
         const slides = document.querySelectorAll('.slide');
@@ -22,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
         slides.forEach((slide, index) => {
             if (index === 0) {
                 slide.classList.add('active');
+                // 为第一张幻灯片添加入场动画
+                slide.style.animation = 'fadeIn 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards';
             } else {
                 slide.classList.remove('active');
             }
@@ -38,39 +86,80 @@ document.addEventListener('DOMContentLoaded', function() {
         // 启动轮播定时器
         startSlideInterval();
         
-        // 启动轮播定时器函数
+        // 启动轮播定时器函数 - 使用更平滑的过渡
         function startSlideInterval() {
             clearInterval(slideInterval); // 清除现有定时器
-            slideInterval = setInterval(nextSlide, 2000); // 每2秒切换一次图片
+            slideInterval = setInterval(nextSlide, 5000); // 增加时间间隔到5秒，给用户更多观看时间
             console.log("开始自动轮播");
         }
         
-        // 点击导航点切换幻灯片
+        // 点击导航点切换幻灯片 - 添加更平滑的过渡
         dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
+            dot.addEventListener('click', function() {
                 clearInterval(slideInterval);
                 showSlide(index);
                 startSlideInterval();
+                
+                // 添加点击反馈
+                this.classList.add('dot-clicked');
+                setTimeout(() => {
+                    this.classList.remove('dot-clicked');
+                }, 300);
             });
         });
         
-        // 显示指定幻灯片
+        // 显示指定幻灯片 - 改进过渡效果
         function showSlide(index) {
             console.log(`显示幻灯片 ${index}`);
-            // 先把所有幻灯片和导航点设为非活动
-            slides.forEach((slide) => {
-                slide.classList.remove('active');
-            });
             
-            dots.forEach((dot) => {
-                dot.classList.remove('active');
-            });
-            
-            // 设置当前幻灯片和导航点为活动状态
-            slides[index].classList.add('active');
-            dots[index].classList.add('active');
-            
-            currentSlide = index;
+            // 先淡出当前幻灯片
+            if (slides[currentSlide]) {
+                const currentSlideEl = slides[currentSlide];
+                currentSlideEl.style.opacity = '1';
+                currentSlideEl.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                
+                // 触发回流以应用过渡
+                currentSlideEl.offsetHeight;
+                
+                currentSlideEl.style.opacity = '0';
+                
+                setTimeout(() => {
+                    // 然后切换类，准备显示新幻灯片
+                    slides.forEach((slide) => {
+                        slide.classList.remove('active');
+                    });
+                    
+                    dots.forEach((dot) => {
+                        dot.classList.remove('active');
+                    });
+                    
+                    // 设置新幻灯片为活动，并淡入
+                    slides[index].classList.add('active');
+                    slides[index].style.opacity = '0';
+                    slides[index].style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                    
+                    // 触发回流以应用过渡
+                    slides[index].offsetHeight;
+                    
+                    slides[index].style.opacity = '1';
+                    dots[index].classList.add('active');
+                    
+                    currentSlide = index;
+                }, 400); // 等待淡出完成一半
+            } else {
+                // 直接设置新幻灯片
+                slides.forEach((slide) => slide.classList.remove('active'));
+                dots.forEach((dot) => dot.classList.remove('active'));
+                
+                slides[index].classList.add('active');
+                slides[index].style.opacity = '0';
+                slides[index].style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                slides[index].offsetHeight;
+                slides[index].style.opacity = '1';
+                dots[index].classList.add('active');
+                
+                currentSlide = index;
+            }
         }
         
         // 显示下一张幻灯片
@@ -1926,79 +2015,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         }, 100);
-    }
-
-    // 语言切换功能
-    function initLanguageSwitcher() {
-        const languageToggle = document.getElementById('language-toggle');
-        const langIconEn = document.getElementById('lang-icon-en');
-        const langIconZh = document.getElementById('lang-icon-zh');
-        
-        // 检查是否已经设置了语言
-        let currentLang = localStorage.getItem('preferred-language') || 'en';
-        
-        // 初始化界面语言
-        setLanguage(currentLang);
-        
-        // 添加点击事件
-        if (languageToggle) {
-            languageToggle.addEventListener('click', function() {
-                // 切换语言
-                currentLang = currentLang === 'en' ? 'zh' : 'en';
-                localStorage.setItem('preferred-language', currentLang);
-                
-                // 更新界面
-                setLanguage(currentLang);
-            });
-        }
-        
-        // 设置语言函数
-        function setLanguage(lang) {
-            if (lang === 'en') {
-                // 显示英文图标
-                if (langIconEn) langIconEn.classList.remove('hidden');
-                if (langIconZh) langIconZh.classList.add('hidden');
-                
-                // 这里是英文设置
-                translateToEnglish();
-            } else {
-                // 显示中文图标
-                if (langIconEn) langIconEn.classList.add('hidden');
-                if (langIconZh) langIconZh.classList.remove('hidden');
-                
-                // 这里是中文设置
-                translateToChinese();
-            }
-        }
-        
-        // 翻译成英文
-        function translateToEnglish() {
-            // 获取页面需要翻译的元素并设置为英文
-            const elementsToTranslate = document.querySelectorAll('[data-i18n]');
-            
-            // 标题和按钮翻译
-            document.querySelector('h1.title-highlight')?.innerText = 'Find Your Perfect Scent';
-            document.querySelector('#start-quiz span')?.innerText = 'Begin Your Enchanted Journey';
-            document.querySelector('#quiz h2 span:nth-child(2)')?.innerText = 'Find Your Perfect Scent';
-            
-            // 推荐部分标题
-            const recommendationTitle = document.querySelector('#recommendation h2');
-            if (recommendationTitle) recommendationTitle.textContent = "✨ Your Perfect Perfume Matches ✨";
-        }
-        
-        // 翻译成中文
-        function translateToChinese() {
-            // 获取页面需要翻译的元素并设置为中文
-            const elementsToTranslate = document.querySelectorAll('[data-i18n]');
-            
-            // 标题和按钮翻译
-            document.querySelector('h1.title-highlight')?.innerText = '寻找你的专属香气';
-            document.querySelector('#start-quiz span')?.innerText = '开始你的香氛之旅';
-            document.querySelector('#quiz h2 span:nth-child(2)')?.innerText = '发现你的理想香水';
-            
-            // 推荐部分标题
-            const recommendationTitle = document.querySelector('#recommendation h2');
-            if (recommendationTitle) recommendationTitle.textContent = "✨ 为您推荐的完美香水 ✨";
-        }
     }
 });
