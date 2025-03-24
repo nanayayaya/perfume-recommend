@@ -1423,7 +1423,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // 匹配香水配置文件 - 改进视觉展示
             const profileBadges = perfume.profiles.map(profile => 
-                `<span class="inline-block px-3 py-1.5 rounded-full bg-gradient-to-r from-apple-purple/20 to-apple-pink/20 text-apple-purple dark:text-apple-pink text-xs font-medium mr-1.5 mb-1.5 transition-all hover:scale-105 hover:from-apple-purple/90 hover:to-apple-pink/90 hover:text-white shadow-sm">${profile}</span>`
+                `<span class="inline-block px-3 py-1.5 rounded-full bg-gradient-to-r from-apple-purple/20 to-apple-pink/20 text-apple-purple dark:text-apple-pink text-xs font-medium mr-1.5 mb-1.5 transition-all hover:scale-105 hover:from-apple-purple/90 hover:to-apple-pink/90 hover:text-amber-300 dark:hover:text-cyan-300 shadow-sm">${profile}</span>`
             ).join('');
             
             // 为每种香调分配合适的emoji
