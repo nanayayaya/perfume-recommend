@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "No. 5",
             price: "$350",
             image: "https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=704&q=80",
-            description: "一款传奇香水，以其复杂的花香调和浓郁的情感表达而著称。",
+            description: "The legendary fragrance known for its complex floral composition and rich emotional expression.",
             profiles: ["sophisticated", "iconic", "feminine", "elegant", "complex", "timeless"],
             suitedFor: ["romance", "night", "classics", "formal"],
             notes: {
@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Sauvage",
             price: "$155",
             image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-            description: "以强烈的清新和浓郁的木质香调为特色，是现代男性气息的象征。",
+            description: "A powerful blend of fresh and woody notes, embodying the spirit of modern masculinity.",
             profiles: ["fresh", "masculine", "powerful", "modern", "intense"],
             suitedFor: ["everyday", "business", "outdoors", "confidence"],
             notes: {
@@ -419,7 +419,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Tobacco Vanille",
             price: "$375",
             image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-            description: "浓郁的香草与烟草混合，带来温暖馥郁的东方香调体验。",
+            description: "An opulent blend of tobacco and vanilla creating a warm, oriental experience.",
             profiles: ["warm", "luxurious", "rich", "sweet", "addictive", "unisex"],
             suitedFor: ["winter", "evening", "luxury", "comfort"],
             notes: {
@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Aventus",
             price: "$445",
             image: "https://images.unsplash.com/photo-1615354650192-e25b833531e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-            description: "鼓舞人心的男士香水，融合了水果、麝香和木质香调，象征成功与力量。",
+            description: "An inspiring masculine fragrance that blends fruity, musky, and woody notes, symbolizing success and power.",
             profiles: ["confident", "masculine", "distinctive", "sophisticated", "fresh"],
             suitedFor: ["success", "business", "confidence", "leadership"],
             notes: {
@@ -449,7 +449,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Wood Sage & Sea Salt",
             price: "$150",
             image: "https://images.unsplash.com/photo-1553691158-e6ec3c3d9e87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-            description: "清新的海洋气息与温暖的木质香调相融合，如同在海岸边的自然漫步。",
+            description: "A fresh marine scent blended with warm woody notes, like a natural walk along the coastline.",
             profiles: ["fresh", "natural", "light", "mineral", "beachy", "unisex"],
             suitedFor: ["summer", "casual", "outdoors", "relaxation"],
             notes: {
@@ -599,7 +599,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Colonia",
             price: "$175",
             image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-            description: "经典的意大利柑橘香调，清新优雅，展现地中海风情与生活格调。",
+            description: "A classic Italian citrus fragrance, fresh and elegant, showcasing Mediterranean charm and refined lifestyle.",
             profiles: ["fresh", "citrus", "classic", "elegant", "mediterranean", "timeless"],
             suitedFor: ["summer", "spring", "refined", "everyday"],
             notes: {
@@ -614,7 +614,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Terre d'Hermès",
             price: "$150",
             image: "https://images.unsplash.com/photo-1590736969571-da769d512682?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-            description: "大地与矿物质的交响曲，展现自然与人类创造力的完美平衡。",
+            description: "A symphony of earth and minerals, showcasing the perfect balance between nature and human creativity.",
             profiles: ["woody", "mineral", "masculine", "elegant", "earthy", "intellectual"],
             suitedFor: ["business", "outdoors", "autumn", "confidence"],
             notes: {
@@ -629,7 +629,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Jazz Club",
             price: "$144",
             image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-            description: "温暖的烟草与朗姆酒香调，如同走进复古爵士俱乐部的怀旧体验。",
+            description: "Warm tobacco and rum notes that transport you to a vintage jazz club, creating a nostalgic experience.",
             profiles: ["warm", "boozy", "sweet", "vintage", "rich", "nostalgic"],
             suitedFor: ["evening", "winter", "social", "nostalgic"],
             notes: {
@@ -644,7 +644,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Halfeti",
             price: "$285",
             image: "https://images.unsplash.com/photo-1620868489300-566a646a2e76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-            description: "灵感来自土耳其罕见的黑玫瑰，融合香料与皮革，展现东西方的奢华交融。",
+            description: "Inspired by rare Turkish black roses, this fragrance blends spices and leather, representing the luxurious fusion of East and West.",
             profiles: ["oriental", "opulent", "complex", "mysterious", "luxurious", "bold"],
             suitedFor: ["special occasions", "evening", "winter", "luxury"],
             notes: {
@@ -659,7 +659,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Carnal Flower",
             price: "$440",
             image: "https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=704&q=80",
-            description: "现代白花香调的杰作，将夹竹桃花的浓郁与清新完美平衡。",
+            description: "A masterpiece of modern white florals, perfectly balancing the richness and freshness of tuberose.",
             profiles: ["floral", "feminine", "ethereal", "luxurious", "complex", "sensual"],
             suitedFor: ["spring", "summer", "elegant", "confident"],
             notes: {
@@ -674,7 +674,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Avignon",
             price: "$155",
             image: "https://images.unsplash.com/photo-1608257817838-48322be0adeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80",
-            description: "如同走进中世纪大教堂的深邃体验，乳香与木质香调带来神秘的精神氛围。",
+            description: "A profound experience like walking into a medieval cathedral, with incense and woody notes creating a mysterious spiritual atmosphere.",
             profiles: ["spiritual", "mysterious", "incense", "avant-garde", "intellectual", "ethereal"],
             suitedFor: ["spiritual", "winter", "introspection", "artistic"],
             notes: {
@@ -1421,19 +1421,85 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>`;
             }
             
-            // 匹配香水配置文件
+            // 匹配香水配置文件 - 改进视觉展示
             const profileBadges = perfume.profiles.map(profile => 
-                `<span class="inline-block px-3 py-1 rounded-full bg-apple-purple/15 text-apple-purple text-xs mr-1 mb-1 transition-all hover:bg-apple-purple hover:text-white">${profile}</span>`
+                `<span class="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-apple-purple/15 to-apple-pink/15 text-apple-purple text-xs mr-1 mb-1 transition-all hover:bg-gradient-to-r hover:from-apple-purple hover:to-apple-pink hover:text-white shadow-sm">${profile}</span>`
             ).join('');
             
+            // 为每种香调分配合适的emoji
+            function getNoteEmoji(noteType, notes) {
+                // 基于香调类型和具体成分选择合适的emoji
+                const emojiMap = {
+                    top: {
+                        default: "🍃", // 默认顶调
+                        citrus: ["bergamot", "lemon", "orange", "grapefruit", "lime", "mandarin"], // 柑橘
+                        spicy: ["pepper", "pink pepper", "sichuan pepper", "cardamom", "cinnamon"], // 香料
+                        green: ["green notes", "fig leaf"], // 绿叶
+                        fruity: ["apple", "pineapple", "blackcurrant", "berry", "melon"] // 水果
+                    },
+                    middle: {
+                        default: "🌸", // 默认中调
+                        floral: ["rose", "jasmine", "lily", "iris", "ylang-ylang", "tuberose", "violet"], // 花香
+                        herbal: ["sage", "lavender", "rosemary", "clary sage"], // 草本
+                        spicy: ["clove", "nutmeg", "cinnamon"], // 香料
+                        woody: ["cedar", "birch", "cypress"] // 木质
+                    },
+                    base: {
+                        default: "🌫️", // 默认基调
+                        woody: ["sandalwood", "cedar", "vetiver", "patchouli", "oud", "guaiac"], // 木质
+                        amber: ["amber", "ambergris", "benzoin"], // 琥珀
+                        sweet: ["vanilla", "tonka bean", "cacao"], // 甜香
+                        musky: ["musk", "white musks"], // 麝香
+                        leather: ["leather", "suede"] // 皮革
+                    }
+                };
+                
+                // 找出笔记类型
+                let noteCategory = "default";
+                let emoji = emojiMap[noteType].default;
+                
+                // 检查笔记是否属于特定类别
+                for (const [category, categoryNotes] of Object.entries(emojiMap[noteType])) {
+                    if (category === "default") continue;
+                    
+                    // 如果是数组（具体成分列表），检查是否有匹配
+                    if (Array.isArray(categoryNotes)) {
+                        for (const note of notes) {
+                            if (categoryNotes.some(cn => note.toLowerCase().includes(cn.toLowerCase()))) {
+                                switch (category) {
+                                    case "citrus": emoji = "🍋"; break;
+                                    case "spicy": emoji = noteType === "top" ? "🌶️" : "🧂"; break;
+                                    case "green": emoji = "🌿"; break;
+                                    case "fruity": emoji = "🍎"; break;
+                                    case "floral": emoji = "🌺"; break;
+                                    case "herbal": emoji = "🌱"; break;
+                                    case "woody": emoji = "🪵"; break;
+                                    case "amber": emoji = "✨"; break;
+                                    case "sweet": emoji = "🍯"; break;
+                                    case "musky": emoji = "🧴"; break;
+                                    case "leather": emoji = "👜"; break;
+                                }
+                                return emoji;
+                            }
+                        }
+                    }
+                }
+                
+                return emoji;
+            }
+            
             // 构建笔记展示 - 使用新的卡片样式
+            const topNotesEmoji = getNoteEmoji("top", perfume.notes.top);
+            const middleNotesEmoji = getNoteEmoji("middle", perfume.notes.middle);
+            const baseNotesEmoji = getNoteEmoji("base", perfume.notes.base);
+            
             const notes = `
                 <div class="mt-6 space-y-4">
                     <h4 class="text-base font-medium text-apple-gray-700 dark:text-apple-gray-300">Fragrance Notes</h4>
                     <div class="grid grid-cols-3 gap-3">
                         <div class="bg-apple-gray-100/60 dark:bg-apple-gray-700/60 rounded-xl p-3 backdrop-blur-sm">
                             <div class="flex items-center justify-center mb-2">
-                                <span class="text-xl">🍋</span>
+                                <span class="text-xl">${topNotesEmoji}</span>
                             </div>
                             <div class="text-center text-xs font-medium mb-2 text-apple-gray-500">Top Notes</div>
                             <div class="flex flex-col items-center space-y-1">
@@ -1444,7 +1510,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                         <div class="bg-apple-gray-100/60 dark:bg-apple-gray-700/60 rounded-xl p-3 backdrop-blur-sm">
                             <div class="flex items-center justify-center mb-2">
-                                <span class="text-xl">🌺</span>
+                                <span class="text-xl">${middleNotesEmoji}</span>
                             </div>
                             <div class="text-center text-xs font-medium mb-2 text-apple-gray-500">Middle Notes</div>
                             <div class="flex flex-col items-center space-y-1">
@@ -1455,7 +1521,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                         <div class="bg-apple-gray-100/60 dark:bg-apple-gray-700/60 rounded-xl p-3 backdrop-blur-sm">
                             <div class="flex items-center justify-center mb-2">
-                                <span class="text-xl">🌲</span>
+                                <span class="text-xl">${baseNotesEmoji}</span>
                             </div>
                             <div class="text-center text-xs font-medium mb-2 text-apple-gray-500">Base Notes</div>
                             <div class="flex flex-col items-center space-y-1">
@@ -1474,11 +1540,11 @@ document.addEventListener('DOMContentLoaded', function() {
             card.innerHTML = `
                 <div class="relative">
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/40 z-10"></div>
-                    <div class="absolute top-3 left-3 bg-apple-purple text-white px-3 py-1 rounded-full text-sm font-medium z-20 shadow-lg">
+                    <div class="absolute top-3 left-3 bg-gradient-to-r from-apple-purple to-apple-pink text-white px-3 py-1 rounded-full text-sm font-medium z-20 shadow-lg">
                         ✨ Match #${index + 1}
                     </div>
                     <div class="h-72 overflow-hidden">
-                        <img src="${perfume.image}" alt="${perfume.name}" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110">
+                        <img src="${perfume.image}" alt="${perfume.name}" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-110" loading="lazy" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1557053506-91e2ac5c3f2a?q=80&w=2097&auto=format&fit=crop';">
                     </div>
                     <div class="absolute bottom-4 left-4 right-4 z-20">
                         <div class="bg-white/80 dark:bg-apple-gray-800/80 backdrop-blur-md px-4 py-3 rounded-xl">
